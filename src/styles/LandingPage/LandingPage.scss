@@ -3,7 +3,7 @@
 body {
   min-height: 200vh;
   margin: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: $font-family;
   overflow-x: hidden;
   a {
      color: inherit;
