@@ -2,7 +2,7 @@ import React from 'react';
 //Styles
 import './styles/App.css';
 //Components
-import LandingPage from './components/landingPage/LandingPage'
+import LandingPage from './components/LandingPage/LandingPage'
 
 
 
