@@ -32,30 +32,31 @@ const NavBar = () => {
   useEffect(() => {
     return scrollY.onChange((latest) => {
       console.log("Page scroll: ", latest);
-      let moveAbout;
-      let moveSkills;
-      let moveProjects;
-      let moveConnect;
-      if (latest > 20 ) {
-       moveAbout = { x: "3vw", y: "25vh", position: "fixed" }
-       moveSkills = { x: "3vw", y: "35vh", position: "fixed" }
-       moveProjects = { x: "3vw", y: "45vh", position: "fixed" }
-       moveConnect = { x: "3vw", y: "55vh", position: "fixed", color: 'black' }
-        
+      let moveAbout: {} = {};
+      let moveSkills: {} = {};
+      let moveProjects: {} = {};
+      let moveConnect: {} = {};
+      if (latest > 60 ) {
+     
+        const move = { x:"2.5vw", position:"fixed", backgroundColor: '#a557ff' }
+       moveAbout = {  y: "25vh", ...move }
+       moveSkills = {  y: "35vh", ...move}
+       moveProjects = {  y: "45vh", ...move}
+       moveConnect = {  y: "55vh", ...move }
+
         setAbout(moveAbout);
         setSkills(moveSkills)
         setProjects(moveProjects)
-        setConnect(moveConnect)
-       
+        setConnect(moveConnect) 
       }
-      if (latest < 20) {
-        setAbout("none");
-        setSkills("none")
-        setProjects("none")
-        setConnect("none")
+      if (latest < 30) {
+        setAbout({});
+        setSkills({})
+        setProjects({})
+        setConnect({})
     }});
   }, []);
-
+const fix = "fixed"
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -135,14 +136,14 @@ const NavBar = () => {
           <Button
             href="https://github.com/Jbridges1119"
             target="_blank"
-            sx={{ flexGrow: 1, display: { xs: "none", md: "block" }, ml: 8, mt:0.5 }}
+            sx={{  display: { xs: "none", md: "block" }, ml: 8, mt:0.5 }}
           >
             <img src={github} alt={""} loading="lazy" />
           </Button>
           <Button
             href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
             target="_blank"
-            sx={{ flexGrow: 1, display: { xs: "none", md: "block" },mt:0.5 }}
+            sx={{  display: { xs: "none", md: "block" },mt:0.5 }}
           >
             <img color={"white"} src={linkedin} alt={""} loading="lazy" />
           </Button>
@@ -150,84 +151,91 @@ const NavBar = () => {
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
+              
               width: "100%",
               justifyContent: { md: "flex-end" },
               pr: 8,
             }}
           >
          
-              <motion.div animate={about} transition={{type: 'tween',
-}}>
-                <Button
-                  sx={{
+       
+                <motion.button  animate={about} transition={{type: 'tween',
+}}  
+                  style={{
+                    cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
-                    borderRadius: 15,
-                    fontSize: 15,
-                    mt: 2,
-                    mx:1,
+                    borderRadius: 25,
+                    fontSize: 18,
+                    marginTop: 15,
+                    marginInline:5,
                     width: "120px",
-                    pt: 1.1,
+                    padding: 8,
                     fontWeight: "bold",
+                    background:'none',
+                    // position: 'fixed'
                   }}
                 >
-                  About
-                </Button>
-              </motion.div>
-              <motion.div animate={skills} transition={{type: 'tween',
-
-}}>
-                <Button
-                  sx={{
+                 About Me
+                </motion.button>
+             
+                <motion.button animate={skills} transition={{type: 'tween',
+}}
+                   style={{
+                    cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
-                    borderRadius: 15,
-                    fontSize: 15,
-                    mt: 2,mx:1,
+                    borderRadius: 25,
+                    fontSize: 18,
+                    marginTop: 15,
+                    marginInline:5,
                     width: "120px",
-                    pt: 1.1,
+                    padding: 8,
                     fontWeight: "bold",
+                    background:'none'
                   }}
                 >
                   Skills
-                </Button>
-              </motion.div>
-              <motion.div animate={projects} transition={{type: 'tween',
-
-}}>
-                <Button
-                  sx={{
+                </motion.button>
+               
+                  <motion.button animate={projects} transition={{type: 'tween',
+}}
+                  style={{
+                    cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
-                    borderRadius: 15,
-                    fontSize: 15,
-                    mt: 2,mx:1,
+                    borderRadius: 25,
+                    fontSize: 18,
+                    marginTop: 15,
+                    marginInline:5,
                     width: "120px",
-                    pt: 1.1,
+                    padding: 8,
                     fontWeight: "bold",
+                    background:'none'
                   }}
                 >
                   Projects
-                </Button>
-              </motion.div>
-              <motion.div animate={connect} transition={{type: 'tween',
-
-}}>
-                <Button
-                  sx={{
+                  </motion.button>
+ 
+                 <motion.button animate={connect} transition={{type: 'tween',
+}}
+                  style={{
+                    cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
-                    borderRadius: 15,
-                    fontSize: 15,
-                    mt: 2,mx:1,
+                    borderRadius: 25,
+                    fontSize: 18,
+                    marginTop: 15,
+                    marginInline:5,
                     width: "120px",
-                    pt: 1.1,
+                    padding: 8,
                     fontWeight: "bold",
+                    background:'none'
                   }}
                 >
                   Connect
-                </Button>
-              </motion.div>
+                  </motion.button>
+           
             
           </Box>
         </Toolbar>
