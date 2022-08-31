@@ -33,7 +33,13 @@ const Greetings = () => {
          <span className="bounce">e</span>
          <span className="bounce">s</span> */}
 
-        Hello, I'm Jeff Bridges
+        Hello, I'm&nbsp;<Typography variant="h2"
+          sx={{
+            fontWeight:'bold',
+            display: 'inline-block',
+            zIndex: 1,
+            color: "white",
+          }}>Jeff Bridges</Typography>
         </Typography>
         <Typography
           variant="h3"
