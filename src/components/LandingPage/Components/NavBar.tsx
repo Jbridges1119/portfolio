@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
+//MUI5
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -9,15 +11,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+//Style
 import { motion } from "framer-motion";
-import { useScroll, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useInView } from "framer-motion";
+import { useScroll } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
-import '../../../styles/LandingPage/LandingPage.css'
+import "../../../styles/LandingPage/LandingPage.css";
+
 const drawerWidth = 240;
 const navItems = ["About", "Skills", "Projects", "Connect"];
 
@@ -31,32 +32,34 @@ const NavBar = () => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      console.log("Page scroll: ", latest);
       let moveAbout: {} = {};
       let moveSkills: {} = {};
       let moveProjects: {} = {};
       let moveConnect: {} = {};
-      if (latest > 60 ) {
-     
-        const move = { x:"3%", position:"fixed", backgroundColor: '#a557ff' }
-       moveAbout = {  y: "25vh", ...move }
-       moveSkills = {  y: "35vh", ...move}
-       moveProjects = {  y: "45vh", ...move}
-       moveConnect = {  y: "55vh", ...move }
-
+      if (latest > 60) {
+        const move: {} = {
+          x: "32%",
+          position: "fixed",
+          backgroundColor: "#a557ff",
+        };
+        moveAbout = { y: "33vh", ...move };
+        moveSkills = { y: "39vh", ...move };
+        moveProjects = { y: "45vh", ...move };
+        moveConnect = { y: "51vh", ...move };
         setAbout(moveAbout);
-        setSkills(moveSkills)
-        setProjects(moveProjects)
-        setConnect(moveConnect) 
+        setSkills(moveSkills);
+        setProjects(moveProjects);
+        setConnect(moveConnect);
       }
       if (latest < 30) {
         setAbout({});
-        setSkills({})
-        setProjects({})
-        setConnect({})
-    }});
+        setSkills({});
+        setProjects({});
+        setConnect({});
+      }
+    });
   }, []);
-const fix = "fixed"
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -95,8 +98,8 @@ const fix = "fixed"
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-         href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
-         target="_blank"
+            href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
+            target="_blank"
             sx={{
               textAlign: "center",
               my: 1,
@@ -128,7 +131,7 @@ const fix = "fixed"
               mr: 2,
               display: { md: "none" },
               background: "rgba(0,0,0,0.0)",
-              position: 'fixed'
+              position: "fixed",
             }}
           >
             <MenuIcon />
@@ -136,14 +139,14 @@ const fix = "fixed"
           <Button
             href="https://github.com/Jbridges1119"
             target="_blank"
-            sx={{  display: { xs: "none", md: "block" }, ml: 8, mt:0.5 }}
+            sx={{ display: { xs: "none", md: "block" }, ml: 8, mt: 0.5 }}
           >
             <img src={github} alt={""} loading="lazy" />
           </Button>
           <Button
             href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
             target="_blank"
-            sx={{  display: { xs: "none", md: "block" },mt:0.5 }}
+            sx={{ display: { xs: "none", md: "block" }, mt: 0.5 }}
           >
             <img color={"white"} src={linkedin} alt={""} loading="lazy" />
           </Button>
@@ -151,76 +154,92 @@ const fix = "fixed"
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
-              position: 'fixed',   
-              right: 0,          
+              position: "fixed",
+              right: 0,
               justifyContent: { md: "flex-end" },
               pr: 8,
             }}
           >
-          <motion.button animate={about} style={{
-                    cursor: 'pointer',
-                    color: "#fff",
-                    border: "2px solid white",
-                    borderRadius: 25,
-                    fontSize: 18,
-                    marginTop: 15,
-                    marginInline:5,
-                    width: "120px",
-                    
-                    padding: 8,
-                    fontWeight: "bold",
-                    background:'none',
-                   
-                  }}className="btn-nav">About Me</motion.button>
-          <motion.button animate={skills} style={{
-                    cursor: 'pointer',
-                    color: "#fff",
-                    border: "2px solid white",
-                    borderRadius: 25,
-                    fontSize: 18,
-                    marginTop: 15,
-                    marginInline:5,
-                    width: "120px",
-                    
-                    padding: 8,
-                    fontWeight: "bold",
-                    background:'none',
-                   
-                  }}className="btn-nav">Skills</motion.button>
-                   <motion.button animate={projects} style={{
-                    cursor: 'pointer',
-                    color: "#fff",
-                    border: "2px solid white",
-                    borderRadius: 25,
-                    fontSize: 18,
-                    marginTop: 15,
-                    marginInline:5,
-                    width: "120px",
-                    
-                    padding: 8,
-                    fontWeight: "bold",
-                    background:'none',
-                   
-                  }}className="btn-nav">Projects</motion.button>
-                   <motion.button animate={connect} style={{
-                    cursor: 'pointer',
-                    color: "#fff",
-                    border: "2px solid white",
-                    borderRadius: 25,
-                    fontSize: 18,
-                    marginTop: 15,
-                    marginInline:5,
-                    width: "120px",
-                    
-                    padding: 8,
-                    fontWeight: "bold",
-                    background:'none',
-                   
-                  }}className="btn-nav">Connect</motion.button>
-        
-      
-           
-            
+            <motion.button
+              animate={about}
+              style={{
+                cursor: "pointer",
+                color: "#fff",
+                border: "2px solid white",
+                borderRadius: 25,
+                fontSize: 18,
+                marginTop: 15,
+                marginInline: 5,
+                width: "120px",
+
+                padding: 8,
+                fontWeight: "bold",
+                background: "none",
+              }}
+              className="btn-nav"
+            >
+              About Me
+            </motion.button>
+            <motion.button
+              animate={skills}
+              style={{
+                cursor: "pointer",
+                color: "#fff",
+                border: "2px solid white",
+                borderRadius: 25,
+                fontSize: 18,
+                marginTop: 15,
+                marginInline: 5,
+                width: "120px",
+
+                padding: 8,
+                fontWeight: "bold",
+                background: "none",
+              }}
+              className="btn-nav"
+            >
+              Skills
+            </motion.button>
+            <motion.button
+              animate={projects}
+              style={{
+                cursor: "pointer",
+                color: "#fff",
+                border: "2px solid white",
+                borderRadius: 25,
+                fontSize: 18,
+                marginTop: 15,
+                marginInline: 5,
+                width: "120px",
+
+                padding: 8,
+                fontWeight: "bold",
+                background: "none",
+              }}
+              className="btn-nav"
+            >
+              Projects
+            </motion.button>
+            <motion.button
+              animate={connect}
+              style={{
+                cursor: "pointer",
+                color: "#fff",
+                border: "2px solid white",
+                borderRadius: 25,
+                fontSize: 18,
+                marginTop: 15,
+                marginInline: 5,
+                width: "120px",
+
+                padding: 8,
+                fontWeight: "bold",
+                background: "none",
+              }}
+              className="btn-nav"
+            >
+              Connect
+            </motion.button>
           </Box>
         </Toolbar>
       </AppBar>

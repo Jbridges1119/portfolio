@@ -1,20 +1,24 @@
 import React from "react";
 //MUI5
-import { Box, Stack, Typography } from "@mui/material";
-import '../../../styles/LandingPage/LandingPage.css'
+import { Stack, Typography } from "@mui/material";
+//Style
 import { motion } from "framer-motion";
+// import "../../../styles/LandingPage/LandingPage.css";
+
+
 const Greetings = () => {
   return (
     <>
       <Stack spacing={4}>
-        <motion.div >
-        <Typography
-          variant="h2"
-          sx={{
-            zIndex: 1,
-            color: "white",
-          }}>
-         {/* <span className="bounce">H</span>
+        <motion.div>
+          <Typography
+            variant="h2"
+            sx={{
+              zIndex: 1,
+              color: "white",
+            }}
+          >
+            {/* <span className="bounce">H</span>
          <span className="bounce">e</span>
          <span className="bounce">l</span>
          <span className="bounce">l</span>
@@ -34,15 +38,20 @@ const Greetings = () => {
          <span className="bounce">g</span>
          <span className="bounce">e</span>
          <span className="bounce">s</span> */}
-
-        Hello, I'm&nbsp;<Typography variant="h2"
-          sx={{
-            fontWeight:'bold',
-            display: 'inline-block',
-            zIndex: 1,
-            color: "white",
-          }}>Jeff Bridges</Typography>
-        </Typography></motion.div>
+            Hello, I'm&nbsp;
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: "bold",
+                display: "inline-block",
+                zIndex: 1,
+                color: "white",
+              }}
+            >
+              Jeff Bridges
+            </Typography>
+          </Typography>
+        </motion.div>
         <Typography
           variant="h3"
           sx={{
@@ -72,7 +81,7 @@ const Greetings = () => {
           <span className="bounce">p</span>
           <span className="bounce">e</span>
           <span className="bounce">r</span> */}
-Full-Stack Web Developer
+          Full-Stack Web Developer
         </Typography>
       </Stack>
     </>
