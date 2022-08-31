@@ -12,26 +12,26 @@ const Greetings = () => {
             zIndex: 1,
             color: "white",
           }}>
-        {/* // <span className="bounce">H</span>
-        // <span className="bounce">e</span>
-        // <span className="bounce">l</span>
-        // <span className="bounce">l</span>
-        // <span className="bounce">o</span>
-        // <span className="bounce">,&nbsp;</span>
-        // <span className="bounce">I</span>
-        // <span className="bounce">'</span>
-        // <span className="bounce">m&nbsp;</span>
-        // <span className="bounce">J</span>
-        // <span className="bounce">e</span>
-        // <span className="bounce">f</span>
-        // <span className="bounce">f&nbsp;</span>
-        // <span className="bounce">B</span>
-        // <span className="bounce">r</span>
-        // <span className="bounce">i</span>
-        // <span className="bounce">d</span>
-        // <span className="bounce">g</span>
-        // <span className="bounce">e</span>
-        // <span className="bounce">s</span> */}
+         {/* <span className="bounce">H</span>
+         <span className="bounce">e</span>
+         <span className="bounce">l</span>
+         <span className="bounce">l</span>
+         <span className="bounce">o</span>
+         <span className="bounce">,&nbsp;</span>
+         <span className="bounce">I</span>
+         <span className="bounce">'</span>
+         <span className="bounce">m&nbsp;</span>
+         <span className="bounce">J</span>
+         <span className="bounce">e</span>
+         <span className="bounce">f</span>
+         <span className="bounce">f&nbsp;</span>
+         <span className="bounce">B</span>
+         <span className="bounce">r</span>
+         <span className="bounce">i</span>
+         <span className="bounce">d</span>
+         <span className="bounce">g</span>
+         <span className="bounce">e</span>
+         <span className="bounce">s</span> */}
 
         Hello, I'm Jeff Bridges
         </Typography>
