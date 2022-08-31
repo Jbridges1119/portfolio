@@ -25,15 +25,15 @@ const LandingPage: React.FC = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={12} md={1}></Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} lg={1}></Grid>
+        <Grid item xs={12} lg={6}>
           <Greetings />
         </Grid>
        
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} lg={2}>
           <MainButtons />
         </Grid>
-        <Grid item xs={12} md={2}></Grid>
+        <Grid item xs={12} lg={2}></Grid>
       </Grid>
       <Waves />
       <Bubbles />
