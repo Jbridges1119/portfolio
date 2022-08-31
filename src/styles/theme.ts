@@ -9,6 +9,14 @@ const secondaryColor = "#0F6E83";
 const dangerColor = "#976606";
 
 let theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 1050,
+      lg: 1292,
+      xl: 1536,
+    },}
   // palette: {
   //   primary: {
   //     main: primaryColor,
