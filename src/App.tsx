@@ -11,8 +11,7 @@ import Skills from './components/Skills/Skills'
 import {
   ThemeProvider,
 } from '@mui/material/styles';
-import { Typography } from '@mui/material';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+
 
 function App() {
 
@@ -24,7 +23,7 @@ function App() {
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
       <LandingPage/>
-      <Typography sx={{color: '#81807c' }}><ArrowDownwardIcon sx={{fontSize: 15}}/>Scroll Down<ArrowDownwardIcon sx={{fontSize: 15}}/></Typography>
+     
       <AboutMe/>
       <Skills/>
     </motion.div>
