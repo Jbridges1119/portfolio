@@ -26,6 +26,8 @@ const MainButtons = () => {
           Projects
         </Button>
         <Button 
+        href="https://resume.creddle.io/resume/j5ndksyhq9g"
+        target="_blank"
           sx={{
             zIndex:1,
             color: "#fff",
