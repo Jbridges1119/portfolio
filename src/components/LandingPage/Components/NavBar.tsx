@@ -37,10 +37,10 @@ const NavBar = () => {
       let moveProjects;
       let moveConnect;
       if (latest > 20 ) {
-       moveAbout = { x: "4vw", y: "25vh", position: "fixed" }
-       moveSkills = { x: "4vw", y: "35vh", position: "fixed" }
-       moveProjects = { x: "4vw", y: "45vh", position: "fixed" }
-       moveConnect = { x: "4vw", y: "55vh", position: "fixed" }
+       moveAbout = { x: "3vw", y: "25vh", position: "fixed" }
+       moveSkills = { x: "3vw", y: "35vh", position: "fixed" }
+       moveProjects = { x: "3vw", y: "45vh", position: "fixed" }
+       moveConnect = { x: "3vw", y: "55vh", position: "fixed", color: 'black' }
         
         setAbout(moveAbout);
         setSkills(moveSkills)
@@ -80,6 +80,8 @@ const NavBar = () => {
         ))}
         <ListItem disablePadding>
           <ListItemButton
+            href="https://github.com/Jbridges1119"
+            target="_blank"
             sx={{
               textAlign: "center",
               my: 1,
@@ -92,6 +94,8 @@ const NavBar = () => {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
+         href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
+         target="_blank"
             sx={{
               textAlign: "center",
               my: 1,
@@ -123,19 +127,22 @@ const NavBar = () => {
               mr: 2,
               display: { md: "none" },
               background: "rgba(0,0,0,0.0)",
+              position: 'fixed'
             }}
           >
             <MenuIcon />
           </IconButton>
           <Button
-            href="#text-buttons"
-            sx={{ flexGrow: 1, display: { xs: "none", md: "block" } }}
+            href="https://github.com/Jbridges1119"
+            target="_blank"
+            sx={{ flexGrow: 1, display: { xs: "none", md: "block" }, ml: 8, mt:0.5 }}
           >
             <img src={github} alt={""} loading="lazy" />
           </Button>
           <Button
-            href="#text-buttons"
-            sx={{ flexGrow: 1, display: { xs: "none", md: "block" } }}
+            href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
+            target="_blank"
+            sx={{ flexGrow: 1, display: { xs: "none", md: "block" },mt:0.5 }}
           >
             <img color={"white"} src={linkedin} alt={""} loading="lazy" />
           </Button>
@@ -149,14 +156,16 @@ const NavBar = () => {
             }}
           >
          
-              <motion.div animate={about} transition={{}}>
+              <motion.div animate={about} transition={{type: 'tween',
+}}>
                 <Button
                   sx={{
                     color: "#fff",
                     border: "2px solid white",
                     borderRadius: 15,
                     fontSize: 15,
-                    m: 2,
+                    mt: 2,
+                    mx:1,
                     width: "120px",
                     pt: 1.1,
                     fontWeight: "bold",
@@ -165,14 +174,16 @@ const NavBar = () => {
                   About
                 </Button>
               </motion.div>
-              <motion.div animate={skills} transition={{}}>
+              <motion.div animate={skills} transition={{type: 'tween',
+
+}}>
                 <Button
                   sx={{
                     color: "#fff",
                     border: "2px solid white",
                     borderRadius: 15,
                     fontSize: 15,
-                    m: 2,
+                    mt: 2,mx:1,
                     width: "120px",
                     pt: 1.1,
                     fontWeight: "bold",
@@ -181,14 +192,16 @@ const NavBar = () => {
                   Skills
                 </Button>
               </motion.div>
-              <motion.div animate={projects} transition={{}}>
+              <motion.div animate={projects} transition={{type: 'tween',
+
+}}>
                 <Button
                   sx={{
                     color: "#fff",
                     border: "2px solid white",
                     borderRadius: 15,
                     fontSize: 15,
-                    m: 2,
+                    mt: 2,mx:1,
                     width: "120px",
                     pt: 1.1,
                     fontWeight: "bold",
@@ -197,14 +210,16 @@ const NavBar = () => {
                   Projects
                 </Button>
               </motion.div>
-              <motion.div animate={connect} transition={{}}>
+              <motion.div animate={connect} transition={{type: 'tween',
+
+}}>
                 <Button
                   sx={{
                     color: "#fff",
                     border: "2px solid white",
                     borderRadius: 15,
                     fontSize: 15,
-                    m: 2,
+                    mt: 2,mx:1,
                     width: "120px",
                     pt: 1.1,
                     fontWeight: "bold",
