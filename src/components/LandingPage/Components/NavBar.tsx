@@ -26,12 +26,12 @@ const NavBar = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center',background:  `#379deb`, color:'white ', height: '100vh'}}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center',background: `linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0)`, color:'white ', height: '100vh'}}>
 
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'center', my:1 }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -39,7 +39,7 @@ const NavBar = () => {
       </List>
     </Box>
   );
-
+ 
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav" position="sticky" sx={{background: 'rgba(0,0,0,0.0)', boxShadow: 'none' }}>
@@ -53,6 +53,15 @@ const NavBar = () => {
           >
             <MenuIcon />
           </IconButton>
+          <Box 
+        
+          sx={{ display: { xs: 'none', md: 'flex',  },  }}>
+            {navItems.map((item) => (
+              <Button key={item}  sx={{ color: '#fff', border: '2px solid white', borderRadius: 5, fontSize: 20, m:2, width: '150px', pt:1.2,fontWeight: 'bold',  }}>
+                {item}
+              </Button>
+            ))}
+          </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
