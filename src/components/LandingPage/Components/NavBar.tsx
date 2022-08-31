@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
-
+import '../../../styles/LandingPage/LandingPage.css'
 const drawerWidth = 240;
 const navItems = ["About", "Skills", "Projects", "Connect"];
 
@@ -38,7 +38,7 @@ const NavBar = () => {
       let moveConnect: {} = {};
       if (latest > 60 ) {
      
-        const move = { x:"2.5vw", position:"fixed", backgroundColor: '#a557ff' }
+        const move = { x:"3%", position:"fixed", backgroundColor: '#a557ff' }
        moveAbout = {  y: "25vh", ...move }
        moveSkills = {  y: "35vh", ...move}
        moveProjects = {  y: "45vh", ...move}
@@ -151,17 +151,13 @@ const fix = "fixed"
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
-              
-              width: "100%",
+              position: 'fixed',   
+              right: 0,          
               justifyContent: { md: "flex-end" },
               pr: 8,
             }}
           >
-         
-       
-                <motion.button  animate={about} transition={{type: 'tween',
-}}  
-                  style={{
+          <motion.button animate={about} style={{
                     cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
@@ -170,18 +166,13 @@ const fix = "fixed"
                     marginTop: 15,
                     marginInline:5,
                     width: "120px",
+                    
                     padding: 8,
                     fontWeight: "bold",
                     background:'none',
-                    // position: 'fixed'
-                  }}
-                >
-                 About Me
-                </motion.button>
-             
-                <motion.button animate={skills} transition={{type: 'tween',
-}}
-                   style={{
+                   
+                  }}className="btn-nav">About Me</motion.button>
+          <motion.button animate={skills} style={{
                     cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
@@ -190,17 +181,13 @@ const fix = "fixed"
                     marginTop: 15,
                     marginInline:5,
                     width: "120px",
+                    
                     padding: 8,
                     fontWeight: "bold",
-                    background:'none'
-                  }}
-                >
-                  Skills
-                </motion.button>
-               
-                  <motion.button animate={projects} transition={{type: 'tween',
-}}
-                  style={{
+                    background:'none',
+                   
+                  }}className="btn-nav">Skills</motion.button>
+                   <motion.button animate={projects} style={{
                     cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
@@ -209,17 +196,13 @@ const fix = "fixed"
                     marginTop: 15,
                     marginInline:5,
                     width: "120px",
+                    
                     padding: 8,
                     fontWeight: "bold",
-                    background:'none'
-                  }}
-                >
-                  Projects
-                  </motion.button>
- 
-                 <motion.button animate={connect} transition={{type: 'tween',
-}}
-                  style={{
+                    background:'none',
+                   
+                  }}className="btn-nav">Projects</motion.button>
+                   <motion.button animate={connect} style={{
                     cursor: 'pointer',
                     color: "#fff",
                     border: "2px solid white",
@@ -228,13 +211,14 @@ const fix = "fixed"
                     marginTop: 15,
                     marginInline:5,
                     width: "120px",
+                    
                     padding: 8,
                     fontWeight: "bold",
-                    background:'none'
-                  }}
-                >
-                  Connect
-                  </motion.button>
+                    background:'none',
+                   
+                  }}className="btn-nav">Connect</motion.button>
+        
+      
            
             
           </Box>

@@ -1,58 +1,72 @@
-@import '../variables';
+@import "../variables";
 
 body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
+}
+// .btn-nav {
+//   cursor: "pointer";
+//   color: "#fff";
+//   border: "2px solid white";
+//   border-radius: 25;
+//   font-size: 18;
+//   margin-top: 15;
+//   margin-inline: 5;
+//   width: "120px";
+//   padding: 8;
+//   font-weight: "bold";
+//   background: "none";
+//   position: "fixed";
+// }
+.hero {
+  overflow: hidden;
+  position: relative;
+  height: calc(85vh + 80px);
+  min-height: 200px;
+  background: #ffce54;
+  background: linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0);
+  .w {
+    position: absolute;
+    top: 100%;
+    left: -25vw;
+    right: 0px;
+    background: url(https://i.koya.io/whitewave2.svg);
+    background-position: center;
   }
-  .hero {
-     overflow: hidden;
-     position: relative;
-     height: calc(85vh + 80px);
-     min-height: 200px;
-     background: #ffce54;
-     background: linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0);
-     .w {
-        position: absolute;
-        top: 100%;
-        left: -25vw;
-        right: 0px;
-        background: url(https://i.koya.io/whitewave2.svg);
-        background-position: center;
-     }
-     .wave {
-        height: 200px;
-        transform: translateY(-40px);
-     }
-     .wave2 {
-        height: 240px;
-        transform: translateY(-80px);
-        background-size: 960px 240px;
-        opacity: 0.5;
-        left: -80vw;
-        right: -5vw;
-     }
-     .wave3 {
-        height: 220px;
-        transform: translateY(-120px);
-        background-size: 880px 220px;
-        opacity: 0.33;
-        left: 0vw;
-        right: -20vw;
-     }
-     .wave4 {
-        height: 280px;
-        transform: translateY(-160px);
-        background-size: 1120px 280px;
-        opacity: 0.1;
-        left: 0vw;
-        right: -40vw;
-     }
+  .wave {
+    height: 200px;
+    transform: translateY(-40px);
   }
-  #tsparticles {
-   z-index: -1;
-  
+  .wave2 {
+    height: 240px;
+    transform: translateY(-80px);
+    background-size: 960px 240px;
+    opacity: 0.5;
+    left: -80vw;
+    right: -5vw;
   }
+  .wave3 {
+    height: 220px;
+    transform: translateY(-120px);
+    background-size: 880px 220px;
+    opacity: 0.33;
+    left: 0vw;
+    right: -20vw;
+  }
+  .wave4 {
+    height: 280px;
+    transform: translateY(-160px);
+    background-size: 1120px 280px;
+    opacity: 0.1;
+    left: 0vw;
+    right: -40vw;
+  }
+}
+#tsparticles {
+  z-index: -1;
+}
+
 // span.bounce {
 //   z-index: 10;
 //   display: inline-block;

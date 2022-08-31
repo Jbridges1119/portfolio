@@ -2,10 +2,12 @@ import React from "react";
 //MUI5
 import { Box, Stack, Typography } from "@mui/material";
 import '../../../styles/LandingPage/LandingPage.css'
+import { motion } from "framer-motion";
 const Greetings = () => {
   return (
     <>
       <Stack spacing={4}>
+        <motion.div >
         <Typography
           variant="h2"
           sx={{
@@ -40,7 +42,7 @@ const Greetings = () => {
             zIndex: 1,
             color: "white",
           }}>Jeff Bridges</Typography>
-        </Typography>
+        </Typography></motion.div>
         <Typography
           variant="h3"
           sx={{
