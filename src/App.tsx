@@ -5,6 +5,7 @@ import theme from './styles/theme'
 import { motion } from "framer-motion";
 //Components
 import LandingPage from './components/LandingPage/LandingPage'
+import Skills from './components/Skills/Skills'
 //MUI
 import {
   ThemeProvider,
@@ -23,7 +24,7 @@ function App() {
     exit={{ opacity: 0 }}>
       <LandingPage/>
       <Typography sx={{color: '#81807c' }}><ArrowDownwardIcon sx={{fontSize: 15}}/>Scroll Down<ArrowDownwardIcon sx={{fontSize: 15}}/></Typography>
-      
+      <Skills/>
     </motion.div>
     </ThemeProvider>
   );

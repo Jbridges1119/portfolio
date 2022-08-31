@@ -21,7 +21,8 @@ const Bubbles: React.FC = () => {
     await console.log(container);
   }, []);
   return (
-    <Particles id="tsparticles" 
+    <div id="tsparticles" style={{zIndex: 0, position: 'absolute'}}>
+    <Particles  
     options={{
       "particles": {
         "number": {
@@ -132,7 +133,7 @@ const Bubbles: React.FC = () => {
       },
       "retina_detect": true
     }} 
-    init={particlesInit} loaded={particlesLoaded} />
+    init={particlesInit} loaded={particlesLoaded} /></div>
   )
 }
 

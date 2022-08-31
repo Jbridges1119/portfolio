@@ -15,7 +15,8 @@ import NavBar from "./Components/NavBar";
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="hero" id="tsparticles">
+    <div className="hero" id="tsparticles1">
+      
       <NavBar />
       <Grid
         height={"75%"}
