@@ -1,10 +1,53 @@
-import { Button } from '@mui/material'
-import React from 'react'
+import { Box } from "@mui/material";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 
 const MainButtons = () => {
   return (
-    <div><Button>Projects</Button><Button>Resume</Button>  </div>
-  )
-}
+    <Box>
+      <Stack spacing={4}>
+        <Button
+          sx={{
+            zIndex:1,
+            color: "#fff",
+            border: "4px solid white",
+            borderRadius: 20,
+            fontSize: 25,
+            fontWeight: 'bold',
+            
+            width: "250px",
+            pt: 1.2,
+            background: "none",
 
-export default MainButtons
+        
+          }}
+          variant="contained"
+        >
+          Projects
+        </Button>
+        <Button 
+          sx={{
+            zIndex:1,
+            color: "#fff",
+            border: "4px solid white",
+            borderRadius: 20,
+            fontSize: 25,
+            fontWeight: 'bold',
+            width: "250px",
+            pt: 1.2,
+            background: "none",
+
+            "&:hover": {
+              background: `linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0)`,
+            },
+          }}
+          variant="contained"
+        >
+          Resume
+        </Button>
+      </Stack>
+      </Box>
+  );
+};
+
+export default MainButtons;
