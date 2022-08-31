@@ -9,7 +9,8 @@ import LandingPage from './components/LandingPage/LandingPage'
 import {
   ThemeProvider,
 } from '@mui/material/styles';
-
+import { Typography } from '@mui/material';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
       <LandingPage/>
-      Scroll Down
+      <Typography sx={{color: '#81807c' }}><ArrowDownwardIcon sx={{fontSize: 15}}/>Scroll Down<ArrowDownwardIcon sx={{fontSize: 15}}/></Typography>
+      
     </motion.div>
     </ThemeProvider>
   );
