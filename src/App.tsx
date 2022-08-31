@@ -1,13 +1,14 @@
 import React from 'react';
-//Styles
+//Style
 import './styles/App.css';
+import theme from './styles/theme'
+import { motion } from "framer-motion";
 //Components
 import LandingPage from './components/LandingPage/LandingPage'
 //MUI
 import {
   ThemeProvider,
 } from '@mui/material/styles';
-import theme from './styles/theme'
 
 
 function App() {
@@ -15,10 +16,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <div className="App">
+    <motion.div className="App"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}>
       <LandingPage/>
       Scroll Down
-    </div>
+    </motion.div>
     </ThemeProvider>
   );
 }

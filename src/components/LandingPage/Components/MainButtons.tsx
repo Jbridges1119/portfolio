@@ -4,8 +4,8 @@ import Stack from "@mui/material/Stack";
 
 const MainButtons = () => {
   return (
-    <Box>
-      <Stack spacing={4}>
+    <Box sx={{display: 'flex', justifyContent:'center'}}>
+      <Stack spacing={3}>
         <Button
           sx={{
             zIndex:1,

@@ -1,30 +1,74 @@
-import React from 'react'
+import React from "react";
 //MUI5
-import { Grid, Typography } from '@mui/material'
-
-
+import { Box, Stack, Typography } from "@mui/material";
+import '../../../styles/LandingPage/LandingPage.css'
 const Greetings = () => {
   return (
     <>
-    <Typography variant="h2" sx={{display: "flex",
-        justifyContent: "center",
-        alignContent: "flex-end",
-        color: 'pink'}}>
-  Hello,
-</Typography><Typography variant="h2" sx={{display: "flex",
-        justifyContent: "center",
-        alignContent: "flex-end",
-        color: 'white'}}>
-  I'm Jeff Bridges.
-</Typography>
-<Typography variant="h2" sx={{display: "flex",
-        justifyContent: "center",
-        alignContent: "flex-end",
-        color: 'white'}}>
-  I'm A Web Developer.
-</Typography>
-    </>
-  )
-}
+      <Stack spacing={4}>
+        <Typography
+          variant="h2"
+          sx={{
+            zIndex: 1,
+            color: "white",
+          }}>
+        {/* // <span className="bounce">H</span>
+        // <span className="bounce">e</span>
+        // <span className="bounce">l</span>
+        // <span className="bounce">l</span>
+        // <span className="bounce">o</span>
+        // <span className="bounce">,&nbsp;</span>
+        // <span className="bounce">I</span>
+        // <span className="bounce">'</span>
+        // <span className="bounce">m&nbsp;</span>
+        // <span className="bounce">J</span>
+        // <span className="bounce">e</span>
+        // <span className="bounce">f</span>
+        // <span className="bounce">f&nbsp;</span>
+        // <span className="bounce">B</span>
+        // <span className="bounce">r</span>
+        // <span className="bounce">i</span>
+        // <span className="bounce">d</span>
+        // <span className="bounce">g</span>
+        // <span className="bounce">e</span>
+        // <span className="bounce">s</span> */}
 
-export default Greetings
+        Hello, I'm Jeff Bridges
+        </Typography>
+        <Typography
+          variant="h3"
+          sx={{
+            zIndex: 1,
+            color: "white",
+          }}
+        >
+          {/* <span className="bounce">F</span>
+          <span className="bounce">u</span>
+          <span className="bounce">l</span>
+          <span className="bounce">l</span>
+          <span className="bounce">-</span>
+          <span className="bounce">S</span>
+          <span className="bounce">t</span>
+          <span className="bounce">a</span>
+          <span className="bounce">c</span>
+          <span className="bounce">k&nbsp;</span>
+          <span className="bounce">W</span>
+          <span className="bounce">e</span>
+          <span className="bounce">b&nbsp;</span>
+          <span className="bounce">D</span>
+          <span className="bounce">e</span>
+          <span className="bounce">v</span>
+          <span className="bounce">e</span>
+          <span className="bounce">l</span>
+          <span className="bounce">o</span>
+          <span className="bounce">p</span>
+          <span className="bounce">e</span>
+          <span className="bounce">r</span> */}
+Full-Stack Web Developer
+        </Typography>
+      </Stack>
+    </>
+  );
+};
+
+export default Greetings;

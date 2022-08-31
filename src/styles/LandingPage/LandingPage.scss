@@ -49,3 +49,27 @@ body {
         right: -40vw;
      }
   }
+// span.bounce {
+//   z-index: 10;
+//   display: inline-block;
+//   cursor: default;
+//   transition: animate 0s 0s;
+//   &:hover {
+//     animation: animate 0.6s;
+//     transition: animate 1.2s
+//   }
+// }
+// @keyframes animate {
+//   25%{
+//     transform: scale(1.2,0.6)
+//   }
+//   50%{
+//     transform: scale(0.7,1.2);
+//   }
+//   65%{
+//     transform: scale(1.1,0.8);
+//   }
+//   85%{
+//     transform: scale(0.7,1.2);
+//   }
+// }

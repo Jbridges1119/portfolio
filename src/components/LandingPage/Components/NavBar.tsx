@@ -12,13 +12,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+import {motion} from 'framer-motion'
+import { useScroll } from "framer-motion"
 
 const drawerWidth = 240;
 const navItems = ['About', 'Skills', 'Projects', 'Connect'];
 
 const NavBar = () => {
- 
+  const 
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -55,11 +56,12 @@ const NavBar = () => {
           </IconButton>
           <Box 
         
-          sx={{ display: { xs: 'none', md: 'flex',  },  }}>
+          sx={{ display: { xs: 'none', md: 'flex'  }, width: '100%', justifyContent: {md: 'flex-end'}, pr: 8 }}>
             {navItems.map((item) => (
-              <Button key={item}  sx={{ color: '#fff', border: '2px solid white', borderRadius: 5, fontSize: 20, m:2, width: '150px', pt:1.2,fontWeight: 'bold',  }}>
+              <motion.div>
+              <Button key={item}  sx={{ color: '#fff', border: '2px solid white', borderRadius: 15, fontSize: 15, m:2, width: '120px', pt:1.1,fontWeight: 'bold',  }}>
                 {item}
-              </Button>
+              </Button></motion.div>
             ))}
           </Box>
         </Toolbar>
