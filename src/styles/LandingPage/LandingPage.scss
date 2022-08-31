@@ -3,43 +3,7 @@
 body {
   min-height: 200vh;
   margin: 0;
-  font-family: $font-family;
   overflow-x: hidden;
-  a {
-     color: inherit;
-     text-decoration: none;
-  }
-  .header {
-     z-index: 1000;
-     position: fixed;
-     top: 0px;
-     left: 0px;
-     right: 0px;
-     padding: 10px 20px;
-     background: linear-gradient(
-        100deg,
-        rgba(36, 164, 234, 0),
-        rgba(55, 157, 235, 0) 25%,
-        rgba(183, 107, 240, 0)
-     );
-     transition: background 0.25s ease;
-     .name,
-     .contact {
-        display: inline-block;
-        color: white;
-        font-size: 24px;
-        line-height: 42px;
-        // font-smoothing: antialiased;
-     }
-     .name {
-        font-weight: bold;
-     }
-     .contact {
-        float: right;
-     }
-     &.bg {
-        background: linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0);
-     }
   }
   .hero {
      overflow: hidden;
@@ -85,4 +49,3 @@ body {
         right: -40vw;
      }
   }
-}
