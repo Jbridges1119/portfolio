@@ -1,0 +1,54 @@
+body {
+  min-height: 200vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.hero {
+  overflow: hidden;
+  position: relative;
+  height: calc(85vh + 80px);
+  min-height: 200px;
+  background: #ffce54;
+  background: linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0);
+}
+.hero .w {
+  position: absolute;
+  top: 100%;
+  left: -25vw;
+  right: 0px;
+  background: url(https://i.koya.io/whitewave2.svg);
+  background-position: center;
+}
+.hero .wave {
+  height: 200px;
+  transform: translateY(-40px);
+}
+.hero .wave2 {
+  height: 240px;
+  transform: translateY(-80px);
+  background-size: 960px 240px;
+  opacity: 0.5;
+  left: -80vw;
+  right: -5vw;
+}
+.hero .wave3 {
+  height: 220px;
+  transform: translateY(-120px);
+  background-size: 880px 220px;
+  opacity: 0.33;
+  left: 0vw;
+  right: -20vw;
+}
+.hero .wave4 {
+  height: 280px;
+  transform: translateY(-160px);
+  background-size: 1120px 280px;
+  opacity: 0.1;
+  left: 0vw;
+  right: -40vw;
+}
+
+#tsparticles {
+  z-index: -1;
+}/*# sourceMappingURL=LandingPage.css.map */
