@@ -4,9 +4,9 @@ import './styles/App.css';
 import theme from './styles/theme'
 import { motion } from "framer-motion";
 //Components
-import LandingPage from './components/LandingPage/LandingPage'
-import AboutMe from './components/AboutMe/AboutMe'
-import Skills from './components/Skills/Skills'
+import LandingPage from './sections/01_LandingPage/LandingPage'
+import AboutMe from './sections/02_AboutMe/AboutMe'
+import Skills from './sections/03_Skills/Skills'
 //MUI
 import {
   ThemeProvider,

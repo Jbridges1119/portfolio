@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
+import { useRef } from "react";
 //MUI5
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,11 +14,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 //Style
-import { motion } from "framer-motion";
+import { motion, } from "framer-motion";
 import { useScroll } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
-import "../../../styles/LandingPage/LandingPage.css";
+
 
 const drawerWidth = 240;
 const navItems = ["About", "Skills", "Projects", "Connect"];
@@ -32,24 +33,16 @@ const NavBar = () => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      let moveAbout: {} = {};
-      let moveSkills: {} = {};
-      let moveProjects: {} = {};
-      let moveConnect: {} = {};
       if (latest > 60) {
         const move: {} = {
           x: "32%",
           position: "fixed",
           backgroundColor: "#a557ff",
         };
-        moveAbout = { y: "33vh", ...move };
-        moveSkills = { y: "39vh", ...move };
-        moveProjects = { y: "45vh", ...move };
-        moveConnect = { y: "51vh", ...move };
-        setAbout(moveAbout);
-        setSkills(moveSkills);
-        setProjects(moveProjects);
-        setConnect(moveConnect);
+        setAbout({ y: "33vh", ...move});
+        setSkills({ y: "39vh", ...move });
+        setProjects({ y: "45vh", ...move });
+        setConnect({ y: "51vh", ...move });
       }
       if (latest < 30) {
         setAbout({});
@@ -119,7 +112,7 @@ const NavBar = () => {
       <AppBar
         component="nav"
         position="sticky"
-        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none" }}
+        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none",px:8 }}
       >
         <Toolbar>
           <IconButton
@@ -136,20 +129,34 @@ const NavBar = () => {
           >
             <MenuIcon />
           </IconButton>
+          <motion.div
+          whileHover={{
+            scale: [1, 2, 2, 1, 1],
+            rotate: [0, 0, 270, 270, 0],
+            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }}
+          >
           <Button
             href="https://github.com/Jbridges1119"
             target="_blank"
-            sx={{ display: { xs: "none", md: "block" }, ml: 8, mt: 0.5 }}
+            sx={{ display: { xs: "none", md: "block" }, mt: 0.5 }}
           >
             <img src={github} alt={""} loading="lazy" />
-          </Button>
+          </Button></motion.div>
+          <motion.div
+              whileHover={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, 270, 270, 0],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+              }}
+          >
           <Button
             href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
             target="_blank"
             sx={{ display: { xs: "none", md: "block" }, mt: 0.5 }}
           >
             <img color={"white"} src={linkedin} alt={""} loading="lazy" />
-          </Button>
+          </Button></motion.div>
 
           <Box
             sx={{
@@ -161,6 +168,11 @@ const NavBar = () => {
             }}
           >
             <motion.button
+          
+             whileHover={{scale: 1.05,
+            
+             }}
+             whileTap={{scale: 0.95}}
               animate={about}
               style={{
                 cursor: "pointer",
@@ -175,12 +187,17 @@ const NavBar = () => {
                 padding: 8,
                 fontWeight: "bold",
                 background: "none",
+                
               }}
               className="btn-nav"
             >
               About Me
             </motion.button>
             <motion.button
+            whileHover={{scale: 1.05,
+            
+            }}
+            whileTap={{scale: 0.95}}
               animate={skills}
               style={{
                 cursor: "pointer",
@@ -201,6 +218,10 @@ const NavBar = () => {
               Skills
             </motion.button>
             <motion.button
+               whileHover={{scale: 1.05,
+            
+               }}
+               whileTap={{scale: 0.95}}
               animate={projects}
               style={{
                 cursor: "pointer",
@@ -221,6 +242,10 @@ const NavBar = () => {
               Projects
             </motion.button>
             <motion.button
+               whileHover={{scale: 1.05,
+            
+               }}
+               whileTap={{scale: 0.95}}
               animate={connect}
               style={{
                 cursor: "pointer",

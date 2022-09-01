@@ -4,7 +4,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 
 //styles
-import "../../styles/LandingPage/LandingPage.css";
+import "../../styles/01_LandingPage/LandingPage.css";
 //Particles
 import Bubbles from "./Components/Bubbles";
 //Components

@@ -4,6 +4,7 @@ import React from 'react'
 import { Typography } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Story from './components/Story'
+import Picture from './components/Picture'
 const AboutMe = () => {
   return (
     <Box sx={{  background: `white`, position: 'relative', width:'100%',}}>
@@ -31,7 +32,8 @@ const AboutMe = () => {
             <Grid item xs={12} sm={12} md={5}>
               <Story/>
             </Grid><Grid item xs={0.25} lg={0.75}></Grid>
-            <Grid item xs={12} sm={5.75} md={5}>
+            <Grid item xs={12} sm={12} md={5}>
+              <Picture/>
             </Grid>
           
             </Grid>
