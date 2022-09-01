@@ -3,21 +3,24 @@ import { Box, } from '@mui/system'
 import React from 'react'
 import { Typography } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import Story from './components/Story'
 const AboutMe = () => {
   return (
-    <Box sx={{height: '800px',  background: `white`, position: 'relative', width:'100%',}}>
-      <Typography sx={{ color: "#81807c", fontSize: 20 }}>
+    <Box sx={{  background: `white`, position: 'relative', width:'100%',}}>
+      <Box height={'15vh'}>
+        <button style={{all: 'unset'}}>
+      <Typography sx={{ color: "#81807c", fontSize: 20, cursor:'pointer' }}>
         <ArrowDownwardIcon sx={{ fontSize: 18 }} />
         Scroll Down
         <ArrowDownwardIcon sx={{ fontSize: 18 }} />
-      </Typography>
+      </Typography></button></Box>
        <Grid
           container
           direction="row"
           justifyContent="center"
           alignItems="center"
         >
-          <Grid item md={10} xs={11}>
+          <Grid item md={10} sm={10} xs={10}>
           <Grid
           container
           direction="row"
@@ -25,14 +28,12 @@ const AboutMe = () => {
           alignItems="center"
         >
           
-            <Grid item xs={5}>
-            <Paper elevation={8} sx={{width:'100%',height: '300px',background: `#b76bf0`, opacity: 0.15}}>hellow</Paper></Grid><Grid item xs={0.25}></Grid>
-            <Grid item xs={5}>
-            <Paper elevation={8} sx={{width:'100%',height: '300px',background: `#379deb`, opacity: 0.15}}>hellow</Paper></Grid>
-            <Grid item xs={5}>
-            <Paper elevation={8} sx={{width:'100%',height: '300px',background: `#24a4ea`, opacity: 0.15}}>hellow</Paper></Grid><Grid item xs={0.5}></Grid>
-            <Grid item xs={5}>
-            <Paper elevation={8} sx={{width:'100%',height: '300px',background: `#379deb`, opacity: 0.15}}>hellow</Paper></Grid>
+            <Grid item xs={12} sm={12} md={5}>
+              <Story/>
+            </Grid><Grid item xs={0.25} lg={0.75}></Grid>
+            <Grid item xs={12} sm={5.75} md={5}>
+            </Grid>
+          
             </Grid>
             </Grid></Grid>
     
