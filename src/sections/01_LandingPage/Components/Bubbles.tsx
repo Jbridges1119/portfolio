@@ -21,7 +21,7 @@ const Bubbles: React.FC = () => {
     await console.log(container);
   }, []);
   return (
-    <div id="tsparticles" style={{zIndex: 0, position: 'absolute'}}>
+    <div id="tsparticles" style={{zIndex: 0, position: 'relative',}}>
     <Particles  
     options={{
       "particles": {

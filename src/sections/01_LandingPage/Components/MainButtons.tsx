@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-import '../../../styles/01_LandingPage/MainButtons.css'
+
 const MainButtons = () => {
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
