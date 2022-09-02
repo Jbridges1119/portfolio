@@ -23,14 +23,16 @@
 .hero-bottom {
   overflow: hidden;
   position: relative;
-  height: calc(40vh + 80px);
+  height: calc(300px + 80px);
   min-height: 200px;
   background: #ffce54;
-  z-index: -1;
+  
   background: linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0);
-  .w-bottom {
-    z-index: 1;
+ 
+}
+ .w-bottom {
     position: absolute;
+    z-index: 1;
     top:0%;
     left: -25vw;
     right: 0px;
@@ -69,7 +71,6 @@
     left: 0vw;
     right: -35vw;
   }
-}
 #tsparticles {
   z-index: -1;
 }
