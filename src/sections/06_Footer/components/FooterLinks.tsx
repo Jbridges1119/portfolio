@@ -22,7 +22,7 @@ const FooterLinks = () => {
  
   return (
 
-  <Stack spacing={2} sx={{mt:21}}><motion.div className='wrap-icon' animate='bounce' variants={bouncingArrow}>
+  <Stack spacing={1} sx={{mt:18}}><motion.div className='wrap-icon' animate='bounce' variants={bouncingArrow}>
     <Button >
              
     <UploadIcon sx={{color:'white', height:'50px', width:'50px'}}/></Button></motion.div>
