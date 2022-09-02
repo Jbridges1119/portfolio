@@ -28,10 +28,10 @@ const AboutMe = () => {
           alignItems="center"
         >
           
-            <Grid item xs={12} sm={12} md={5}>
+            <Grid item xs={12} sm={12} md={5} order={{ xs: 3, md: 1 }}>
               <Story/>
             </Grid><Grid item xs={0.25} lg={0.75}></Grid>
-            <Grid item xs={12} sm={12} md={5}>
+            <Grid item xs={12} sm={12} md={5} order={{ xs: 1, md: 3 }}>
               <Picture/>
             </Grid>
           

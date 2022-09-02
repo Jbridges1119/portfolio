@@ -11,7 +11,7 @@ const Story = () => {
             <Typography variant="body1"sx={{ color: "black", textAlign:'left'}}>
             I'd love to hear from you. Whether it's a job opportunity, a project collaboration, or just to chat. Feel free to contact me.</Typography>
             <Divider />
-            <Typography variant="body1" sx={{ color: "black", textAlign:'left', py:3}}><i>~ Don't Try to Be the Best. Just Try To Be 1% Better Everyday.</i></Typography>
+            <Typography variant="body1" sx={{ color: "black", textAlign:'left', py:3}}><i>~ Don't Try To Be The Best. Just Try To Be 1% Better Everyday.</i></Typography>
             </Stack>   
   )
 }
