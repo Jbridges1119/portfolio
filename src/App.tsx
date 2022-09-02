@@ -1,8 +1,8 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 //Style
 import './styles/App.css';
 import theme from './styles/theme'
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform} from "framer-motion";
 //Components
 import LandingPage from './sections/01_LandingPage/LandingPage'
 import AboutMe from './sections/02_AboutMe/AboutMe'
@@ -12,11 +12,14 @@ import Connect from './sections/05_Connect/Connect'
 import Footer from './sections/06_Footer/Footer'
 //MUI
 import {
+  styled,
   ThemeProvider,
 } from '@mui/material/styles';
 
 
 function App() {
+
+
 
 
   return (
@@ -25,8 +28,8 @@ function App() {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
+            
     <LandingPage/>  
-     
       <AboutMe/> 
        <Skills/>
       <Projects/>

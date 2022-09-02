@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import { useRef } from "react";
+//Context hook
+import { usePageLocation } from "../../../hooks/pageContext";
 //MUI5
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -20,11 +21,11 @@ import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 const navItems = ["About", "Skills", "Projects", "Connect"];
 
 const NavBar = () => {
-  const { scrollY } = useScroll();
+  const { currentPercent } = usePageLocation()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [about, setAbout] = useState({});
   const [skills, setSkills] = useState({});
@@ -32,8 +33,10 @@ const NavBar = () => {
   const [connect, setConnect] = useState({});
 
   useEffect(() => {
-    return scrollY.onChange((latest) => {
-      if (latest > 60) {
+    
+    
+  
+      if (currentPercent > 2) {
         const move: {} = {
           x: "32%",
           position: "fixed",
@@ -44,14 +47,14 @@ const NavBar = () => {
         setProjects({ y: "45vh", ...move });
         setConnect({ y: "51vh", ...move });
       }
-      if (latest < 30) {
+      if (currentPercent < 2) {
         setAbout({});
         setSkills({});
         setProjects({});
         setConnect({});
       }
-    });
-  }, []);
+    
+  }, [currentPercent]);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
