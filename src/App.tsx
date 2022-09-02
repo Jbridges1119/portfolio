@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import LandingPage from './sections/01_LandingPage/LandingPage'
 import AboutMe from './sections/02_AboutMe/AboutMe'
 import Skills from './sections/03_Skills/Skills'
-import Footer from './sections/05_Footer/Footer'
+import Footer from './sections/06_Footer/Footer'
 //MUI
 import {
   ThemeProvider,
@@ -23,7 +23,7 @@ function App() {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}>
-      <LandingPage/>
+    <LandingPage/>  
      
       <AboutMe/> 
        <Skills/>
