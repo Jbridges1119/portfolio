@@ -31,7 +31,7 @@ const NavBar = () => {
   const [skills, setSkills] = useState({});
   const [projects, setProjects] = useState({});
   const [connect, setConnect] = useState({});
-
+  const [buttonLocation, setButtonLocation] = useState({})
   useEffect(() => {
     
     

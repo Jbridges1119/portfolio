@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material'
 import { Box, } from '@mui/system'
-
+import bubbles from '../../assets/bubl.webp'
 import TechSkills from './components/TechSkills'
 const AboutMe = () => {
   return (
@@ -24,7 +24,7 @@ const AboutMe = () => {
              <TechSkills/>
             </Grid><Grid item xs={0.25} lg={0.75}></Grid>
             <Grid item xs={12} sm={12} md={5}>
-              Experience
+             
             </Grid>
           
             </Grid>

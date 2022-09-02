@@ -2,7 +2,7 @@ import React from 'react'
 
 const TechSkills = () => {
   return (
-    <div style={{height: '500px'}}>TechSkills</div>
+    <div style={{height: '400px', background:`#E3EAFD` }}>TechSkills</div>
   )
 }
 
