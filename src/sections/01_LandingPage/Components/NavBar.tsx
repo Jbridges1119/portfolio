@@ -311,6 +311,7 @@ const NavBar = () => {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              
             },
           }}
         >
