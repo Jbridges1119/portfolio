@@ -14,11 +14,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 //Style
-import { motion, } from "framer-motion";
+import { motion } from "framer-motion";
 import { useScroll } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
-
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const drawerWidth = 240;
 const navItems = ["About", "Skills", "Projects", "Connect"];
@@ -39,7 +39,7 @@ const NavBar = () => {
           position: "fixed",
           backgroundColor: "#a557ff",
         };
-        setAbout({ y: "33vh", ...move});
+        setAbout({ y: "33vh", ...move });
         setSkills({ y: "39vh", ...move });
         setProjects({ y: "45vh", ...move });
         setConnect({ y: "51vh", ...move });
@@ -103,16 +103,36 @@ const NavBar = () => {
             <img color={"white"} src={linkedin} alt={""} loading="lazy" />
           </ListItemButton>
         </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            href="mailto:Jbridges1119@gmail.com"
+            target="_blank"
+            sx={{
+              textAlign: "center",
+              my: 1,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <MailOutlineIcon
+              sx={{ height: "50px", width: "50px", color: "white" }}
+            />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
-
+  const buttonMotion = {
+    scale: [1, 1.5, 1.5, 1, 1],
+    rotate: [0, 360, 360],
+    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+  };
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar
         component="nav"
         position="sticky"
-        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none",px:8 }}
+        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none" }}
       >
         <Toolbar>
           <IconButton
@@ -129,35 +149,54 @@ const NavBar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <motion.div
-          whileHover={{
-            scale: [1, 2, 2, 1, 1],
-            rotate: [0, 0, 270, 270, 0],
-            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-          }}
-          >
-          <Button
-            href="https://github.com/Jbridges1119"
-            target="_blank"
-            sx={{ display: { xs: "none", md: "block" }, mt: 0.5 }}
-          >
-            <img src={github} alt={""} loading="lazy" />
-          </Button></motion.div>
-          <motion.div
-              whileHover={{
-                scale: [1, 2, 2, 1, 1],
-                rotate: [0, 0, 270, 270, 0],
-                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          <motion.div whileHover={buttonMotion}>
+            <Button
+              href="https://github.com/Jbridges1119"
+              target="_blank"
+              sx={{
+                display: { xs: "none", md: "block" },
+                p: 0,
+                height: "60px",
               }}
-          >
-          <Button
-            href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
-            target="_blank"
-            sx={{ display: { xs: "none", md: "block" }, mt: 0.5 }}
-          >
-            <img color={"white"} src={linkedin} alt={""} loading="lazy" />
-          </Button></motion.div>
-
+            >
+              <img
+                src={github}
+                alt={""}
+                loading="lazy"
+                style={{ height: "60px" }}
+              />
+            </Button>
+          </motion.div>
+          <motion.div whileHover={buttonMotion}>
+            <Button
+              href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
+              target="_blank"
+              sx={{ display: { xs: "none", md: "block" }, pt: 0 }}
+            >
+              <img
+                color={"white"}
+                src={linkedin}
+                alt={""}
+                loading="lazy"
+                style={{ paddingTop: "15px" }}
+              />
+            </Button>
+          </motion.div>
+          <motion.div className="wrap-icon" whileHover={buttonMotion}>
+            <Button
+              href="mailto:Jbridges1119@gmail.com"
+              target="_blank"
+              sx={{
+                display: { xs: "none", md: "flex" },
+                p: 0,
+                height: "60px",
+              }}
+            >
+              <MailOutlineIcon
+                sx={{ height: "50px", width: "50px", color: "white" }}
+              />
+            </Button>
+          </motion.div>
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -168,11 +207,8 @@ const NavBar = () => {
             }}
           >
             <motion.button
-          
-             whileHover={{scale: 1.05,
-            
-             }}
-             whileTap={{scale: 0.95}}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               animate={about}
               style={{
                 cursor: "pointer",
@@ -180,24 +216,21 @@ const NavBar = () => {
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-                marginTop: 15,
-                marginInline: 5,
+
+                margin: 7,
                 width: "120px",
 
                 padding: 8,
                 fontWeight: "bold",
                 background: "none",
-                
               }}
               className="btn-nav"
             >
               About Me
             </motion.button>
             <motion.button
-            whileHover={{scale: 1.05,
-            
-            }}
-            whileTap={{scale: 0.95}}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               animate={skills}
               style={{
                 cursor: "pointer",
@@ -205,8 +238,8 @@ const NavBar = () => {
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-                marginTop: 15,
-                marginInline: 5,
+
+                margin: 7,
                 width: "120px",
 
                 padding: 8,
@@ -218,10 +251,8 @@ const NavBar = () => {
               Skills
             </motion.button>
             <motion.button
-               whileHover={{scale: 1.05,
-            
-               }}
-               whileTap={{scale: 0.95}}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               animate={projects}
               style={{
                 cursor: "pointer",
@@ -229,8 +260,8 @@ const NavBar = () => {
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-                marginTop: 15,
-                marginInline: 5,
+
+                margin: 7,
                 width: "120px",
 
                 padding: 8,
@@ -242,10 +273,8 @@ const NavBar = () => {
               Projects
             </motion.button>
             <motion.button
-               whileHover={{scale: 1.05,
-            
-               }}
-               whileTap={{scale: 0.95}}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               animate={connect}
               style={{
                 cursor: "pointer",
@@ -253,8 +282,8 @@ const NavBar = () => {
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-                marginTop: 15,
-                marginInline: 5,
+
+                margin: 7,
                 width: "120px",
 
                 padding: 8,
