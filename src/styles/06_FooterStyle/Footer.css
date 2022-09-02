@@ -1,7 +1,7 @@
 .hero-bottom {
   overflow: hidden;
   position: relative;
-  height: 380px;
+  height: 330px;
   min-height: 200px;
   background: #ffce54;
   background: linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0);
