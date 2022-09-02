@@ -30,7 +30,8 @@ const Connect = () => {
             elevation={8}
             sx={{
               width: "100%",
-              background: `#E3EAFD`
+              background: `#E3EAFD`,
+              height:'100%'
               // background: `hsla(206, 82%, 57%, 0.15)`,
             }}
           >
@@ -39,14 +40,16 @@ const Connect = () => {
               direction="row"
               justifyContent="center"
               alignItems="center"
+    height={'100%'}
             >
               <Grid item xs={11}  lg={3}>
-                <Stack spacing={3}>
+                <Box display={'flex'} justifyContent={'space-between'} flexDirection={'column'} >
                 <Typography mt={2} color={'#4345E8'}variant="h4">Let's Connect!</Typography>
-                <Typography variant="h6">
-                  I'd love to here from you. If you wannt grab a "remote" coffee
-                  and chat then please leave me a message and say hello!{" "}
-                </Typography></Stack>
+                <Typography variant="h6" >
+                  I'd love to here from you. <br/>
+                  If you want to grab a "remote" coffee
+                  and chat, please feel free to leave me a message and say hello!
+                </Typography></Box>
               </Grid>
               <Grid item xs={12}  lg={0.5}></Grid>
               <Grid item xs={11}  lg={7.5}>
@@ -56,7 +59,7 @@ const Connect = () => {
           </Paper>
         </Grid>
       </Grid>
-      <Box height={"15vh"}></Box>
+      <Box height={"10vh"}></Box>
     </Box>
   );
 };
