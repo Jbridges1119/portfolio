@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import LandingPage from './sections/01_LandingPage/LandingPage'
 import AboutMe from './sections/02_AboutMe/AboutMe'
 import Skills from './sections/03_Skills/Skills'
+import Projects from './sections/04_Projects/Projects'
+import Connect from './sections/05_Connect/Connect'
 import Footer from './sections/06_Footer/Footer'
 //MUI
 import {
@@ -27,6 +29,8 @@ function App() {
      
       <AboutMe/> 
        <Skills/>
+      <Projects/>
+      <Connect/>
       <Footer/>
     </motion.div>
     </ThemeProvider>
