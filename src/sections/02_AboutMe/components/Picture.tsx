@@ -1,11 +1,12 @@
 import React from "react";
 
 //Style
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Thinking from "../../../assets/thinking.png";
 //MUI5
 import { CardMedia, Box } from "@mui/material";
 const Picture = () => {
+
   return (
     <Box
       sx={{
@@ -19,9 +20,12 @@ const Picture = () => {
       }}
     >
       <motion.div
+     initial={{x:250, y: -250, scale: 0.75}}
+     animate={{x:0, y: 0, scale: 1}}
+     transition={{duration: 1.5}}
       //  whileHover={{
         
-      //   rotate: [0, 10, ]
+      //   rotate: 0
 
       // }}
       
