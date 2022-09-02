@@ -1,6 +1,5 @@
-import { Grid, Paper } from '@mui/material'
+import { Grid } from '@mui/material'
 import { Box, } from '@mui/system'
-import React from 'react'
 import { Typography } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Story from './components/Story'

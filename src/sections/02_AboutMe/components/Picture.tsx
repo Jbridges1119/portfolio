@@ -15,12 +15,16 @@ const Picture = () => {
         display: "flex",
         justifyContent: "center",
         alignContent: "center",
+        zIndex:10
       }}
     >
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+      //  whileHover={{
+        
+      //   rotate: [0, 10, ]
+
+      // }}
+      
           // animate={{
           //   scale: [1, 2, 2, 1, 1],
           //   rotate: [0, 0, 270, 270, 0],
