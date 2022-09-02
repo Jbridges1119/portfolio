@@ -77,7 +77,7 @@ const formLabels = ['Name', 'Email']
 const formInputs = formLabels.map(item  => {
   const label = item as keyof FormState;
   return (
-  <TextField
+  <TextField  key={label}
               id={item}
               onChange={updateFormControl}
               label={item}
