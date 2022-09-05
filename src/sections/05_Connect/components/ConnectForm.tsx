@@ -99,7 +99,7 @@ const formInputs = formLabels.map(item  => {
             {formInputs}
         
             <TextField
-              id="message"
+              id="Message"
               onChange={updateFormControl}
               label="Leave a message"
               variant="outlined"
