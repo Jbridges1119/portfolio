@@ -10,7 +10,7 @@ const Picture = () => {
   return (
     <Box
       sx={{
-        width: "100%",
+        
         borderRadius: "20px",
         border: "none",
         display: "flex",
