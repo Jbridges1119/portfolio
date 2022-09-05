@@ -34,7 +34,7 @@ const Backend = () => {
           
             <Grid item xs={12}  md={6}>
         
-      <Typography variant='h2'sx={{ color: "#4345E8", textAlign:'left'}}>Backend</Typography>
+      <Typography variant='h2'sx={{ color: "#4345E8", textAlign:'left',cursor:"default"}}>Backend</Typography>
       </Grid>
       <Grid item xs={12}  md={6}>
       <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
