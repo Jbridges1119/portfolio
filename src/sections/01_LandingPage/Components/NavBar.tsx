@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 //Context hook
 import { usePageLocation } from "../../../hooks/pageContext";
 //MUI5
@@ -30,7 +30,8 @@ const navIcons = [
   },
 ];
 const NavBar = () => {
-  const { currentPercent } = usePageLocation();
+
+  const { currentPercent, aboutSect, skillSect, projectSect, connectSect  } = usePageLocation();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [about, setAbout] = useState({});
   const [skills, setSkills] = useState({});
@@ -42,8 +43,23 @@ const NavBar = () => {
     rotate: [0, 360, 360],
     borderRadius: ["20%", "20%", "50%", "50%", "20%"],
   };
+  
+  const scrollToTopSection = (elementRef: any) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth'
+        })
+  }
+  const scrollToBotSection = (elementRef: any) => {
+    window.scrollTo({
+      top: elementRef.current.offsetBot,
+      behavior: 'smooth'
+        })
+  }
+
   useEffect(() => {
     if (currentPercent > 1) {
+      console.log(currentPercent)
       const move: {} = {
         x: "32%",
         position: "fixed",
@@ -61,6 +77,8 @@ const NavBar = () => {
       setConnect({});
     }
   }, [currentPercent]);
+
+ 
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -80,13 +98,7 @@ const NavBar = () => {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center", my: 1 }}>
-              <ListItemText
-                primary={item}
-                primaryTypographyProps={{
-                  fontSize: "22px",
-                  fontWeight: "bold",
-                }}
-              />
+              <ListItemText primary={item} primaryTypographyProps={{fontSize: '22px', fontWeight: "bold"}}/>
             </ListItemButton>
           </ListItem>
         ))}
@@ -127,7 +139,7 @@ const NavBar = () => {
   );
 
   return (
-    <Box>
+    <Box >
       <AppBar
         component="nav"
         position="sticky"
@@ -148,27 +160,40 @@ const NavBar = () => {
           >
             <MenuIcon />
           </IconButton>
-          {navIcons.map((item) => (
-            <motion.div whileHover={buttonMotion}>
-              <Button
-                href={item.link}
-                target="_blank"
-                sx={{
-                  display: { xs: "none", md: "block" },
-                  p: 0,
-                  height: "60px",
-                }}
-              >
-                <img
-                  src={item.icon}
-                  alt={""}
-                  loading="lazy"
-                  style={{ height: "60px" }}
-                />
-              </Button>
-            </motion.div>
-          ))}
           <motion.div whileHover={buttonMotion}>
+            <Button
+              href="https://github.com/Jbridges1119"
+              target="_blank"
+              sx={{
+                display: { xs: "none", md: "block" },
+                p: 0,
+                height: "60px",
+              }}
+            >
+              <img
+                src={github}
+                alt={""}
+                loading="lazy"
+                style={{ height: "60px" }}
+              />
+            </Button>
+          </motion.div>
+          <motion.div whileHover={buttonMotion}>
+            <Button
+              href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
+              target="_blank"
+              sx={{ display: { xs: "none", md: "block" }, pt: 0 }}
+            >
+              <img
+                color={"white"}
+                src={linkedin}
+                alt={""}
+                loading="lazy"
+                style={{ paddingTop: "15px" }}
+              />
+            </Button>
+          </motion.div>
+          <motion.div  whileHover={buttonMotion}>
             <Button
               href="mailto:Jbridges1119@gmail.com"
               target="_blank"
@@ -189,10 +214,11 @@ const NavBar = () => {
               position: "fixed",
               right: 0,
               justifyContent: { md: "flex-end" },
-              pr: 8,
+              pr: 6,
             }}
           >
             <motion.button
+              onClick={() => scrollToTopSection(aboutSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={about}
@@ -213,9 +239,11 @@ const NavBar = () => {
               About Me
             </motion.button>
             <motion.button
+            onClick={() => scrollToBotSection(skillSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={skills}
+              
               style={{
                 cursor: "pointer",
                 color: "#fff",
@@ -233,6 +261,7 @@ const NavBar = () => {
               Skills
             </motion.button>
             <motion.button
+            onClick={() => scrollToBotSection(projectSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={projects}
@@ -255,6 +284,7 @@ const NavBar = () => {
               Projects
             </motion.button>
             <motion.button
+            onClick={() => scrollToBotSection(connectSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={connect}
