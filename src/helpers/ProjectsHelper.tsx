@@ -52,7 +52,7 @@ everyone is prepared to maximize their time together.`,
       "Storytelling web application where a user posts the beginning of a story and other users are able to leave contributions that can be chosen by the initial author to be added to the original story.",
     gif: cStory,
     buttons: [{ name: "Github", link: "https://github.com/Jbridges1119/TheCompleteStory" }],
-    stack: [HTML, CSS, EX, NODE, PSQL]
+    stack: [JQ, SASS, EX, NODE, PSQL]
   },
   {
     name: "Interview Scheduler",
@@ -70,7 +70,7 @@ everyone is prepared to maximize their time together.`,
     description: "Tweeter is a simple, single-page social media platform where users can leave 140 character posts. Users can also read through their list of tweets in chronological order.",
     gif: tweeter,
     buttons: [{ name: "Github", link: "https://github.com/Jbridges1119/tweeter" }],
-    stack: [JQ, HTML, CSS, Node]
+    stack: [JQ, HTML, SASS, Node]
   },
 
 ];
