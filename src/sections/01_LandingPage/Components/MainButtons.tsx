@@ -1,7 +1,10 @@
 //MUI
 import { Box, Button, Stack } from "@mui/material";
+//Context hook
+import { usePageLocation } from "../../../hooks/pageContext";
 
 const MainButtons = () => {
+  const { currentPercent,projectSect, scrollToSection  } = usePageLocation();
   return (
     <Box
       sx={{
@@ -11,6 +14,7 @@ const MainButtons = () => {
     >
       <Stack spacing={1}>
         <Button
+        onClick={()=> scrollToSection(projectSect)}
           variant="contained"
           sx={{
             zIndex: 1,

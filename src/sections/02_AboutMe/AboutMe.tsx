@@ -5,10 +5,15 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 //Components
 import Story from "./components/Story";
 import Picture from "./components/Picture";
+//Style
+//Context hook
+import { usePageLocation } from "../../hooks/pageContext";
 
-const AboutMe = () => {
+
+const AboutMe: React.FC= () => {
+  const { currentPercent, aboutSect,scrollToSection } = usePageLocation();
   return (
-    <Box
+    <Box ref={aboutSect}
       sx={{
         background: `white`,
         position: "relative",
@@ -17,7 +22,7 @@ const AboutMe = () => {
       }}
     >
       <Box height={"15vh"}>
-        <button style={{ all: "unset" }}>
+        <button style={{ all: "unset" }} onClick={()=> scrollToSection(aboutSect)}>
           <Typography
             sx={{ color: "#81807c", fontSize: 20, cursor: "pointer" }}
           >

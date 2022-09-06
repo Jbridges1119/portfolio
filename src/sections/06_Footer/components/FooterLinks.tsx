@@ -7,8 +7,11 @@ import UploadIcon from "@mui/icons-material/Upload";
 import { motion } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
+//Context hook
+import { usePageLocation } from "../../../hooks/pageContext";
 
 const FooterLinks = () => {
+  const { currentPercent, topSect,scrollToSection } = usePageLocation();
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],
     rotate: [0, 360, 360],
@@ -28,7 +31,7 @@ const FooterLinks = () => {
         animate="bounce"
         variants={bouncingArrow}
       >
-        <Button>
+        <Button onClick={()=> scrollToSection(topSect)}>
           <UploadIcon sx={{ color: "white", height: "50px", width: "50px" }} />
         </Button>
       </motion.div>

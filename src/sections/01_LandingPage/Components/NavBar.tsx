@@ -21,7 +21,7 @@ import linkedin from "../../../assets/linkedin.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const drawerWidth = 200;
-const navItems = ["About", "Skills", "Projects", "Connect"];
+
 const navIcons = [
   { icon: github, link: "https://github.com/Jbridges1119" },
   {
@@ -30,32 +30,22 @@ const navIcons = [
   },
 ];
 const NavBar = () => {
-
-  const { currentPercent, aboutSect, skillSect, projectSect, connectSect  } = usePageLocation();
+  
+  const { currentPercent, aboutSect, skillSect, projectSect, connectSect, scrollToSection, topSect  } = usePageLocation();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  //NavButton location
   const [about, setAbout] = useState({});
   const [skills, setSkills] = useState({});
   const [projects, setProjects] = useState({});
   const [connect, setConnect] = useState({});
-  const [buttonLocation, setButtonLocation] = useState({});
+ 
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],
     rotate: [0, 360, 360],
     borderRadius: ["20%", "20%", "50%", "50%", "20%"],
   };
-  
-  const scrollToTopSection = (elementRef: any) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: 'smooth'
-        })
-  }
-  const scrollToBotSection = (elementRef: any) => {
-    window.scrollTo({
-      top: elementRef.current.offsetBot,
-      behavior: 'smooth'
-        })
-  }
+  const navItems = [{name: 'Home', location: topSect}, {name:"About",location: aboutSect},{ name:"Skills", location: skillSect}, {name:"Projects",location: projectSect}, {name:"Connect", location: connectSect}];
+
 
   useEffect(() => {
     if (currentPercent > 1) {
@@ -96,14 +86,14 @@ const NavBar = () => {
     >
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center", my: 1 }}>
-              <ListItemText primary={item} primaryTypographyProps={{fontSize: '22px', fontWeight: "bold"}}/>
+          <ListItem key={item.name} disablePadding >
+            <ListItemButton onClick={() => scrollToSection(item.location)}  sx={{ textAlign: "center", my: 1 }} >
+              <ListItemText primary={item.name} primaryTypographyProps={{fontSize: '22px', fontWeight: "bold"}}/>
             </ListItemButton>
           </ListItem>
         ))}
         {navIcons.map((item) => (
-          <ListItem disablePadding>
+          <ListItem key={item.link} disablePadding>
             <ListItemButton
               href={item.link}
               target="_blank"
@@ -218,7 +208,7 @@ const NavBar = () => {
             }}
           >
             <motion.button
-              onClick={() => scrollToTopSection(aboutSect)}
+              onClick={() => scrollToSection(aboutSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={about}
@@ -239,7 +229,7 @@ const NavBar = () => {
               About Me
             </motion.button>
             <motion.button
-            onClick={() => scrollToBotSection(skillSect)}
+            onClick={() => scrollToSection(skillSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={skills}
@@ -261,7 +251,7 @@ const NavBar = () => {
               Skills
             </motion.button>
             <motion.button
-            onClick={() => scrollToBotSection(projectSect)}
+            onClick={() => scrollToSection(projectSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={projects}
@@ -284,7 +274,7 @@ const NavBar = () => {
               Projects
             </motion.button>
             <motion.button
-            onClick={() => scrollToBotSection(connectSect)}
+            onClick={() => scrollToSection(connectSect)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={connect}

@@ -8,10 +8,12 @@ import {
   frontendInfoTop,
   frontendInfoBot,
 } from "../../../helpers/SkillsIconHelper";
+import { usePageLocation } from "../../../hooks/pageContext";
 
 const Frontend = () => {
+  const { currentPercent, skillSect } = usePageLocation();
   return (
-    <motion.div
+    <motion.div ref={skillSect}
       whileHover={{ scale: 1.1 }}
       style={{ minHeight: "190px", display: "flex" }}
     >

@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useRef,useState} from 'react';
 //Style
 import './styles/App.css';
 import theme from './styles/theme'
@@ -15,10 +15,11 @@ import {
   styled,
   ThemeProvider,
 } from '@mui/material/styles';
+import { usePageLocation } from './hooks/pageContext';
 
 
 function App() {
-
+  
 
   return (
     <ThemeProvider theme={theme}>
@@ -28,7 +29,7 @@ function App() {
     exit={{ opacity: 0 }}>
         
     <LandingPage/>  
-      <AboutMe/> 
+      <AboutMe /> 
        <Skills/>
       <Projects/>
       <Connect/>

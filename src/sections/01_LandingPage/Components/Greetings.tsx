@@ -1,5 +1,4 @@
 import React from "react";
-//MUI5
 //MUI
 import { Box, Stack, Typography } from "@mui/material";
 //Style

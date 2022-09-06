@@ -22,7 +22,7 @@ const ProjectsCard = () => {
 
     const buttonLinks = project.buttons.map((button: buttonType) => {
       return (
-        <Button
+        <Button key={button.name}
           href={button.link}
           target="_blank"
           sx={{
@@ -43,7 +43,7 @@ const ProjectsCard = () => {
     });
 
     return (
-      <Paper
+      <Paper key={project.name}
         elevation={24}
         sx={{
           width: "100%",

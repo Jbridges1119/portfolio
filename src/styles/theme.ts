@@ -28,6 +28,7 @@ let theme = createTheme({
   //     main: dangerColor,
   //   },
   // },
+  
 });
 
 theme = responsiveFontSizes(theme);

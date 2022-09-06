@@ -14,6 +14,8 @@ import { motion } from "framer-motion";
 import "../../styles/04_ProjectsStyle/Projects.css";
 //Components
 import ProjectsCard from "./components/ProjectsCard";
+//Context hook
+import { usePageLocation } from "../../hooks/pageContext";
 
 //Mobile fix maybe?
 // const attributes = isMobile ? {
@@ -25,8 +27,12 @@ import ProjectsCard from "./components/ProjectsCard";
 // <motion.div {...attributes}> {/* stuff */} </motion.div>
 
 const Projects = () => {
+  const { currentPercent, projectSect } = usePageLocation();
   return (
-    <Box
+    <>
+    <Box height={"15vh"} ref={projectSect}></Box>
+  
+    <Box 
       sx={{
         height: "100%",
         background: `white`,
@@ -35,7 +41,7 @@ const Projects = () => {
         width: "100%",
       }}
     >
-      <Box height={"15vh"}></Box>
+   
 
       <Grid
         container
@@ -56,7 +62,7 @@ const Projects = () => {
           <ProjectsCard />
         </Grid>
       </Grid>
-    </Box>
+    </Box></>
   );
 };
 
