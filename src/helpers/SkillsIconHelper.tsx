@@ -39,10 +39,7 @@ const frontendInfoBot = [
   { icon: CSS, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
   { icon: MUI, link: "https://mui.com/material-ui/getting-started/overview/" },
   { icon: SASS, link: "https://sass-lang.com/documentation/" },
-  {
-    icon: BS,
-    link: "https://getbootstrap.com/docs/4.1/getting-started/introduction/",
-  },
+  { icon: BS, link: "https://getbootstrap.com/docs/4.1/getting-started/introduction/" },
   { icon: Framer, link: "https://www.framer.com/docs/" },
 ];
 //Back-End Info
@@ -56,18 +53,9 @@ const backendInfo = [
 const testingInfo = [
   { icon: MC, link: "https://mochajs.org/api/index.html" },
   { icon: Chai, link: "https://www.chaijs.com/api/" },
-  {
-    icon: ESLint,
-    link: "https://eslint.org/docs/latest/user-guide/getting-started",
-  },
-  {
-    icon: JEST,
-    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1",
-  },
-  {
-    icon: Cypress,
-    link: "https://docs.cypress.io/guides/overview/why-cypress",
-  },
+  { icon: ESLint, link: "https://eslint.org/docs/latest/user-guide/getting-started" },
+  { icon: JEST, link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1" },
+  { icon: Cypress, link: "https://docs.cypress.io/guides/overview/why-cypress" },
 ];
 //Systems Info
 const systemsInfo = [

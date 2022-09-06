@@ -16,11 +16,12 @@ const Frontend = () => {
         direction="row"
         justifyContent="center"
         alignItems="center"
+     
       >
         <Grid item xs={12} md={5}>
           <Typography
             variant="h2"
-            sx={{ color: "#4345E8", textAlign: "left", cursor: "default" }}
+            sx={{ color: "#4345E8", textAlign: "left", cursor: "default",pt: 1 }}
           >
             Front-End
           </Typography>

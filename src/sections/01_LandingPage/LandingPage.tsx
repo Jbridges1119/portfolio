@@ -21,14 +21,14 @@ const LandingPage: React.FC = () => {
         height={"75%"}
         container
         direction="row"
-        justifyContent="center"
+        justifyContent="flex-start"
         alignItems="center"
       >
-        <Grid item xs={12} lg={1}></Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} lg={3}></Grid>
+        <Grid item xs={12} lg={4.25}>
           <Greetings />
         </Grid>
-
+        <Grid item xs={12} lg={0.25}></Grid>
         <Grid item xs={12} lg={2}>
           <MainButtons />
         </Grid>
