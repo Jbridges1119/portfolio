@@ -3,7 +3,11 @@ import { Box, Grid, Typography } from "@mui/material";
 //Syle
 import { motion } from "framer-motion";
 //Front-End Helper
-import { imagesSpreader,frontendInfoTop,frontendInfoBot } from "../../../helpers/SkillsIconHelper";
+import {
+  imagesSpreader,
+  frontendInfoTop,
+  frontendInfoBot,
+} from "../../../helpers/SkillsIconHelper";
 
 const Frontend = () => {
   return (
@@ -16,12 +20,16 @@ const Frontend = () => {
         direction="row"
         justifyContent="center"
         alignItems="center"
-     
       >
         <Grid item xs={12} md={5}>
           <Typography
-            variant="h2"
-            sx={{ color: "#4345E8", textAlign: "left", cursor: "default",pt: 1 }}
+            variant="h3"
+            sx={{
+              color: "#4345E8",
+              textAlign: "left",
+              cursor: "default",
+              pt: 1,
+            }}
           >
             Front-End
           </Typography>

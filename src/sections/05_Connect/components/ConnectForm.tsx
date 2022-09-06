@@ -1,13 +1,16 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import axios from "axios";
+//MUI
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LoadingButton from "@mui/lab/LoadingButton";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CloseIcon from "@mui/icons-material/Close";
-import linkedin from "../../../assets/linkedin.png";
-import { motion } from "framer-motion";
 
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
+//Style
+import { motion } from "framer-motion";
+import linkedin from "../../../assets/linkedin.png";
+
 type FormState = {
   Name: string;
   Email: string;
@@ -28,9 +31,14 @@ const Form = () => {
   const [inputActive, setInputActive] = useState<boolean>(true);
   const submitForm = async (event: FormEvent) => {
     event.preventDefault();
-    if (!formState.Name) return alert('Please enter your name')
-    if (!formState.Email || !formState.Email.includes("@") || !formState.Email.includes(".com")) return alert('Please enter valid email')
-    if (!formState.Message) return alert('Please leave me a message')
+    if (!formState.Name) return alert("Please enter your name");
+    if (
+      !formState.Email ||
+      !formState.Email.includes("@") ||
+      !formState.Email.includes(".com")
+    )
+      return alert("Please enter valid email");
+    if (!formState.Message) return alert("Please leave me a message");
     setSubmitting(true);
     await postSubmission();
   };
@@ -39,14 +47,18 @@ const Form = () => {
     const payload = {
       ...formState,
     };
-    console.log('payload',payload);
-    
+    console.log("payload", payload);
+
     try {
       const result = await axios.post(
         `https://formsubmit.co/ajax/jbridges1119@gmail.com`,
         payload
       );
-      setMessage(["Message Was Sent!", "I'll get back to you as soon as I can.", true])
+      setMessage([
+        "Message Was Sent!",
+        "I'll get back to you as soon as I can.",
+        true,
+      ]);
       setInputActive(false);
       setFormState(initialFormState);
     } catch (error) {
@@ -73,23 +85,23 @@ const Form = () => {
     setFormState(updatedFormState);
   };
 
-const formLabels = ['Name', 'Email'] 
-const formInputs = formLabels.map(item  => {
-  const label = item as keyof FormState;
-  return (
-  <TextField  key={label}
-              id={item}
-              onChange={updateFormControl}
-              label={item}
-              variant="outlined"
-              color="secondary"
-              value={formState[label]}
-              required
-              disabled={submitting}
-            />
-  )
-})
-
+  const formLabels = ["Name", "Email"];
+  const formInputs = formLabels.map((item) => {
+    const label = item as keyof FormState;
+    return (
+      <TextField
+        key={label}
+        id={item}
+        onChange={updateFormControl}
+        label={item}
+        variant="outlined"
+        color="secondary"
+        value={formState[label]}
+        required
+        disabled={submitting}
+      />
+    );
+  });
 
   return (
     <div>
@@ -97,7 +109,7 @@ const formInputs = formLabels.map(item  => {
         <form noValidate autoComplete="off" onSubmit={submitForm}>
           <Stack spacing={2} my={4}>
             {formInputs}
-        
+
             <TextField
               id="Message"
               onChange={updateFormControl}
@@ -109,7 +121,6 @@ const formInputs = formLabels.map(item  => {
               value={formState.Message}
               required
               disabled={submitting}
-           
             />
 
             <LoadingButton
@@ -185,7 +196,7 @@ const formInputs = formLabels.map(item  => {
                       />
                     </Button>
                   </motion.div>
-                </Box>{" "}
+                </Box>
               </>
             )}
             <Typography mt={2} color={"#4345E8"} variant="h4">

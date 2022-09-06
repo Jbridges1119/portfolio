@@ -36,8 +36,6 @@ const LandingPage: React.FC = () => {
       </Grid>
       <Waves />
       <Bubbles />
-
-      
     </div>
   );
 };

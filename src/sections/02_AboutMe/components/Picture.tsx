@@ -5,6 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 import Thinking from "../../../assets/thinking.png";
 //MUI5
 import { CardMedia, Box } from "@mui/material";
+
+
 const Picture = () => {
 
   return (

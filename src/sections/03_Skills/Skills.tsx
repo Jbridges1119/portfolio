@@ -1,11 +1,11 @@
 //MUI
-import {  Grid, Paper, Stack } from "@mui/material";
+import { Grid, Paper, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 //Components
 import RestOfSkills from "./components/02_RestOfSkills";
 import Frontend from "./components/01_Frontend";
 
-const AboutMe = () => {
+const Skills = () => {
   return (
     <Box
       sx={{
@@ -47,4 +47,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default Skills;

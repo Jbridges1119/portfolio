@@ -1,10 +1,5 @@
 //MUI
-import {
-  Box,
-  Divider,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 //Style
 import { motion } from "framer-motion";
 //IconInfo
@@ -42,8 +37,13 @@ const list = skillsTab.map((skill: Skill) => {
         >
           <Grid item xs={12} md={5}>
             <Typography
-              variant="h2"
-              sx={{ color: "#4345E8", textAlign: "left", cursor: "default",pt: 1 }}
+              variant="h3"
+              sx={{
+                color: "#4345E8",
+                textAlign: "left",
+                cursor: "default",
+                pt: 1,
+              }}
             >
               {skill.name}
             </Typography>

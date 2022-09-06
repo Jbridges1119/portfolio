@@ -16,44 +16,50 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 //Style
 import { motion } from "framer-motion";
-import { useScroll } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const drawerWidth = 200;
 const navItems = ["About", "Skills", "Projects", "Connect"];
-
+const navIcons = [
+  { icon: github, link: "https://github.com/Jbridges1119" },
+  {
+    icon: linkedin,
+    link: "https://www.linkedin.com/in/jeff-bridges-bb755a236/",
+  },
+];
 const NavBar = () => {
-  const { currentPercent } = usePageLocation()
+  const { currentPercent } = usePageLocation();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [about, setAbout] = useState({});
   const [skills, setSkills] = useState({});
   const [projects, setProjects] = useState({});
   const [connect, setConnect] = useState({});
-  const [buttonLocation, setButtonLocation] = useState({})
+  const [buttonLocation, setButtonLocation] = useState({});
+  const buttonMotion = {
+    scale: [1, 1.5, 1.5, 1, 1],
+    rotate: [0, 360, 360],
+    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+  };
   useEffect(() => {
-    
-    
-  
-      if (currentPercent > 2) {
-        const move: {} = {
-          x: "32%",
-          position: "fixed",
-          backgroundColor: "#a557ff",
-        };
-        setAbout({ y: "33vh", ...move });
-        setSkills({ y: "39vh", ...move });
-        setProjects({ y: "45vh", ...move });
-        setConnect({ y: "51vh", ...move });
-      }
-      if (currentPercent < 2) {
-        setAbout({});
-        setSkills({});
-        setProjects({});
-        setConnect({});
-      }
-    
+    if (currentPercent > 1) {
+      const move: {} = {
+        x: "32%",
+        position: "fixed",
+        backgroundColor: "#a557ff",
+      };
+      setAbout({ y: "33vh", ...move });
+      setSkills({ y: "39vh", ...move });
+      setProjects({ y: "45vh", ...move });
+      setConnect({ y: "51vh", ...move });
+    }
+    if (currentPercent < 1) {
+      setAbout({});
+      setSkills({});
+      setProjects({});
+      setConnect({});
+    }
   }, [currentPercent]);
 
   const handleDrawerToggle = () => {
@@ -74,38 +80,32 @@ const NavBar = () => {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center", my: 1 }}>
-              <ListItemText primary={item} />
+              <ListItemText
+                primary={item}
+                primaryTypographyProps={{
+                  fontSize: "22px",
+                  fontWeight: "bold",
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
-        <ListItem disablePadding>
-          <ListItemButton
-            href="https://github.com/Jbridges1119"
-            target="_blank"
-            sx={{
-              textAlign: "center",
-              my: 1,
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <img src={github} alt={""} loading="lazy" />{" "}
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton
-            href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
-            target="_blank"
-            sx={{
-              textAlign: "center",
-              my: 1,
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <img color={"white"} src={linkedin} alt={""} loading="lazy" />
-          </ListItemButton>
-        </ListItem>
+        {navIcons.map((item) => (
+          <ListItem disablePadding>
+            <ListItemButton
+              href={item.link}
+              target="_blank"
+              sx={{
+                textAlign: "center",
+                my: 1,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <img src={item.icon} alt={""} loading="lazy" />
+            </ListItemButton>
+          </ListItem>
+        ))}
         <ListItem disablePadding>
           <ListItemButton
             href="mailto:Jbridges1119@gmail.com"
@@ -125,13 +125,9 @@ const NavBar = () => {
       </List>
     </Box>
   );
-  const buttonMotion = {
-    scale: [1, 1.5, 1.5, 1, 1],
-    rotate: [0, 360, 360],
-    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-  };
+
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box>
       <AppBar
         component="nav"
         position="sticky"
@@ -146,46 +142,33 @@ const NavBar = () => {
             sx={{
               mr: 2,
               display: { md: "none" },
-              background: "rgba(0,0,0,0.0)",
+              background: "#24a4ea",
               position: "fixed",
             }}
           >
             <MenuIcon />
           </IconButton>
+          {navIcons.map((item) => (
+            <motion.div whileHover={buttonMotion}>
+              <Button
+                href={item.link}
+                target="_blank"
+                sx={{
+                  display: { xs: "none", md: "block" },
+                  p: 0,
+                  height: "60px",
+                }}
+              >
+                <img
+                  src={item.icon}
+                  alt={""}
+                  loading="lazy"
+                  style={{ height: "60px" }}
+                />
+              </Button>
+            </motion.div>
+          ))}
           <motion.div whileHover={buttonMotion}>
-            <Button
-              href="https://github.com/Jbridges1119"
-              target="_blank"
-              sx={{
-                display: { xs: "none", md: "block" },
-                p: 0,
-                height: "60px",
-              }}
-            >
-              <img
-                src={github}
-                alt={""}
-                loading="lazy"
-                style={{ height: "60px" }}
-              />
-            </Button>
-          </motion.div>
-          <motion.div whileHover={buttonMotion}>
-            <Button
-              href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
-              target="_blank"
-              sx={{ display: { xs: "none", md: "block" }, pt: 0 }}
-            >
-              <img
-                color={"white"}
-                src={linkedin}
-                alt={""}
-                loading="lazy"
-                style={{ paddingTop: "15px" }}
-              />
-            </Button>
-          </motion.div>
-          <motion.div className="wrap-icon" whileHover={buttonMotion}>
             <Button
               href="mailto:Jbridges1119@gmail.com"
               target="_blank"
@@ -219,10 +202,8 @@ const NavBar = () => {
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-
                 margin: 7,
                 width: "120px",
-
                 padding: 8,
                 fontWeight: "bold",
                 background: "none",
@@ -241,10 +222,8 @@ const NavBar = () => {
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-
                 margin: 7,
                 width: "120px",
-
                 padding: 8,
                 fontWeight: "bold",
                 background: "none",
@@ -314,7 +293,6 @@ const NavBar = () => {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              
             },
           }}
         >
