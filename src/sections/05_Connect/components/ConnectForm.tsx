@@ -10,6 +10,9 @@ import CloseIcon from "@mui/icons-material/Close";
 //Style
 import { motion } from "framer-motion";
 import linkedin from "../../../assets/linkedin.png";
+import "../../../styles/05_ConnectStyle/Connect.css";
+//Context hook
+import { usePageLocation } from "../../../hooks/pageContext";
 
 type FormState = {
   Name: string;
@@ -20,6 +23,7 @@ type FormState = {
 type ServiceMessage = [string, string, boolean];
 
 const Form = () => {
+  const { connectIsHovered, setConnectIsHovered } = usePageLocation();
   const initialFormState = {
     Name: "",
     Email: "",
@@ -102,7 +106,7 @@ const Form = () => {
       />
     );
   });
-
+  const submit = "Submit";
   return (
     <div>
       {inputActive ? (
@@ -124,21 +128,53 @@ const Form = () => {
             />
 
             <LoadingButton
+              onMouseOver={() => setConnectIsHovered(true)}
+              onMouseOut={() => setConnectIsHovered(false)}
               type="submit"
               sx={{
                 display: "flex",
                 color: "#fff",
                 border: "2px solid white",
                 borderRadius: 25,
-                fontSize: 18,
+                fontSize: 21,
                 backgroundColor: "#a557ff",
+                textTransform: "none",
+
                 maxWidth: "200px",
                 pt: 1.2,
                 fontWeight: "bold",
+                "&:hover": {
+                  backgroundColor: "purple",
+                },
               }}
               loading={submitting}
             >
-              Submit
+              <div className="submit-animation">
+                <div className="submit-container">
+                  <div className="submitletter-container">
+                    <motion.div
+                      initial={{ y: "0%" }}
+                      animate={{ y: connectIsHovered ? "110%" : "0%" }}
+                      transition={{
+                        duration: connectIsHovered ? 0.5 : 0.3,
+                        ease: [0.7, 0, 0.3, 1],
+                      }}
+                    >
+                      {submit}
+                    </motion.div>
+                    <motion.div
+                      initial={{ y: "110%" }}
+                      animate={{ y: connectIsHovered ? "0%" : "110%" }}
+                      transition={{
+                        duration: connectIsHovered ? 0.5 : 0.3,
+                        ease: [0.7, 0, 0.3, 1],
+                      }}
+                    >
+                      {submit.toUpperCase()}
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
             </LoadingButton>
           </Stack>
         </form>
