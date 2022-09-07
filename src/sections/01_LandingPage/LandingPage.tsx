@@ -13,16 +13,18 @@ import Waves from "./Components/Waves";
 import Greetings from "./Components/Greetings";
 import MainButtons from "./Components/MainButtons";
 import NavBar from "./Components/NavBar";
+import ScrollDown from './Components/ScrollDown'
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
 
 const LandingPage: React.FC = () => {
   const { currentPercent, topSect } = usePageLocation();
   useEffect(() => {
-    
+
 
   })
   return (
+    <>
     <div className="hero" id="tsparticles1" ref={topSect}>
       <NavBar />
       <motion.div className="fill" >
@@ -46,7 +48,10 @@ const LandingPage: React.FC = () => {
       </motion.div>
       <Waves />
       <Bubbles />
+      
     </div>
+    <ScrollDown/>
+    </>
   );
 };
 

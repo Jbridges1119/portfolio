@@ -1,7 +1,5 @@
 //MUI
-import { Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { Grid,Box } from "@mui/material";
 //Components
 import Story from "./components/Story";
 import Picture from "./components/Picture";
@@ -12,7 +10,7 @@ import { usePageLocation } from "../../hooks/pageContext";
 
 
 const AboutMe: React.FC= () => {
-  const { currentPercent, aboutSect,scrollToSection } = usePageLocation();
+  const { currentPercent, aboutSect } = usePageLocation();
   return (
     <Box ref={aboutSect}
       sx={{
@@ -23,15 +21,6 @@ const AboutMe: React.FC= () => {
       }}
     >
       <Box height={"15vh"}>
-        <button style={{ all: "unset" }} onClick={()=> scrollToSection(aboutSect)}>
-          <Typography
-            sx={{ color: "#81807c", fontSize: 20, cursor: "pointer" }}
-          >
-            <ArrowDownwardIcon sx={{ fontSize: 18 }} />
-            Scroll Down
-            <ArrowDownwardIcon sx={{ fontSize: 18 }} />
-          </Typography>
-        </button>
       </Box>
       <Grid
         container
