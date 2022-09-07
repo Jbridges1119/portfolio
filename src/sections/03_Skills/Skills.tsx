@@ -21,7 +21,7 @@ const Skills = () => {
           zIndex: 2,
         }}
       >
-        <Box height={"7.5vh"}></Box>
+        <Box height={"11vh"}/>
         <Grid 
           container
           direction="row"
@@ -49,7 +49,7 @@ const Skills = () => {
             </Paper>
           </Grid>
         </Grid>
-        <Box height={"15vh"}></Box>
+        <Box height={"22vh"}/>
       </Box>
    
   );

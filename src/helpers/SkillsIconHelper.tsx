@@ -75,7 +75,8 @@ const imagesSpreader: Function = (list: any) => {
     return (
       <Box sx={{ p: 1, '&:hover': {
         backgroundColor: '#cad1e3',
-        borderRadius: 2
+        borderRadius: 2,
+       
     },
   }} key={image.link}>
         <a href={image.link} target="_blank" rel="noreferrer">

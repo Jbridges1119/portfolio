@@ -15,7 +15,7 @@ const Frontend = () => {
   return (
     <motion.div ref={skillSect}
       whileHover={{ scale: 1.15 }}
-      style={{ minHeight: "155px", display: "flex" }}
+      style={{ minHeight: "160px", display: "flex" }}
     >
       <Grid
         container

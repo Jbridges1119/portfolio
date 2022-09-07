@@ -45,7 +45,7 @@ const AboutMe: React.FC= () => {
           </Grid>
         </Grid>
       </Grid>
-      <Box height={"15vh"}  ></Box>
+      <Box height={"12vh"}  ></Box>
     </Box>
   );
 };

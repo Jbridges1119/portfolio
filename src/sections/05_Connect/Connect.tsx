@@ -26,17 +26,17 @@ const Connect = () => {
   // },[currentPercent])
 
   return (
-    <>
-      <Box height={"20vh"}></Box>
-      <Box height={"5vh"} ref={connectSect}></Box>
-      <Box
+   
+      
+      
+      <Box ref={connectSect}
         
         sx={{
           background: `white`,
           position: "relative",
           width: "100%",
         }}
-      >
+      ><Box height={"5vh"} />
         <Grid
           container
           direction="row"
@@ -74,9 +74,10 @@ const Connect = () => {
             </motion.div>
           </Grid>
         </Grid>
+        <Box height={"10vh"}/>
       </Box>
-      <Box height={"10vh"}></Box>
-    </>
+      
+   
   );
 };
 

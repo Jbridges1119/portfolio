@@ -30,9 +30,9 @@ const Projects = () => {
   const { currentPercent, projectSect } = usePageLocation();
   return (
     <>
-    <Box height={"7.5vh"} ref={projectSect}></Box>
+    
   
-    <Box 
+    <Box ref={projectSect}
       sx={{
         height: "100%",
         background: `white`,
@@ -41,28 +41,32 @@ const Projects = () => {
         width: "100%",
       }}
     >
+   <Box height={"4vh"} />
    
-
       <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
       >
+        
         <Grid
           item
-          lg={9}
-          md={8.5}
+          lg={8}
+          md={8}
           sm={10}
           xs={10}
           display={"grid"}
-          gridTemplateColumns={{ md: "repeat(2, 1fr)", xs: "1fr" }}
-          gap={8}
+          //If I make another project add tinyapp and set this to xl:'repeat(3, 1fr)
+          gridTemplateColumns={{  md:"repeat(2, 1fr)", xs: "1fr" }}
+          
+          gap={6}
         >
           <ProjectsCard />
         </Grid>
-      </Grid>
-    </Box></>
+      </Grid><Box height={"20vh"} />
+    </Box>
+    </>
   );
 };
 
