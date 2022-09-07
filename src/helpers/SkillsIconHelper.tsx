@@ -73,7 +73,11 @@ type IconInfo = {
 const imagesSpreader: Function = (list: any) => {
   return list.map((image: IconInfo) => {
     return (
-      <Box sx={{ p: 1 }} key={image.link}>
+      <Box sx={{ p: 1, '&:hover': {
+        backgroundColor: '#cad1e3',
+        borderRadius: 2
+    },
+  }} key={image.link}>
         <a href={image.link} target="_blank" rel="noreferrer">
           <CardMedia
             component="img"
