@@ -24,9 +24,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <motion.div className="App"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}>
+    // initial={{ opacity: 0 }}
+    // animate={{ opacity: 1 }}
+    // exit={{ opacity: 0 }}
+    >
         
     <LandingPage/>  
       <AboutMe /> 
