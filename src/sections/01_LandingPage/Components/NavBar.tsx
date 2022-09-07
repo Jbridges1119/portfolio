@@ -30,6 +30,21 @@ const navIcons = [
     link: "https://www.linkedin.com/in/jeff-bridges-bb755a236/",
   },
 ];
+
+type colorType = {
+  home: string;
+  about: string;
+  skills: string;
+  projects: string;
+  connect: string;
+}
+const initialColor = {
+  home: 'none',
+  about: 'none',
+  skills: 'none',
+  projects: 'none',
+  connect: 'none'
+}
 const NavBar = () => {
 
   const { currentPercent, aboutSect, skillSect, projectSect, connectSect, scrollToSection, topSect  } = usePageLocation();
@@ -40,7 +55,7 @@ const NavBar = () => {
   const [skills, setSkills] = useState({});
   const [projects, setProjects] = useState({});
   const [connect, setConnect] = useState({});
-  const [color, setColor] = useState('none')
+  const [color, setColor] = useState(initialColor)
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],
     rotate: [0, 360, 360],
@@ -51,38 +66,55 @@ const NavBar = () => {
 
   useEffect(() => {
     
-    if (currentPercent > 1) {
+    if (currentPercent > 0.1) {
       console.log(currentPercent)
+      const navDown = {
+        home: "#a557ff",
+        about: "#a557ff",
+        skills: "#a557ff",
+        projects: "#a557ff",
+        connect: "#a557ff"
+      }
       const move: {} = {
         x: "32%",
         position: "fixed",
-        backgroundColor: "#a557ff",
+        
       };
       setHome({ y: "27vh", ...move });
       setAbout({ y: "33vh", ...move });
       setSkills({ y: "39vh", ...move });
       setProjects({ y: "45vh", ...move });
       setConnect({ y: "51vh", ...move });
-      
+      setColor(navDown)
 
     }
-    if (currentPercent > 1 && currentPercent <= 18) {
+    if (currentPercent > 0.5 && currentPercent <= 18) {
    
-      setHome((prev) => ({ ...prev, backgroundColor: "purple", scale: 1.1  }));
+      setHome((prev) => ({ ...prev,  scale: 1.2  }));
+      setColor((prev) => ({ ...prev,  home: 'purple'  }))
     }
     if (currentPercent > 18 && currentPercent <= 35) {
-      const move: {} = {
-        x: "32%",
-        position: "fixed",
-        backgroundColor: "purple",
-      };
-      setAbout((prev) => ({ ...prev, backgroundColor: "purple", scale: 1.1  }));
+  
+      setAbout((prev) => ({ ...prev,  scale: 1.2  }));
+      setColor((prev) => ({ ...prev,  about: 'purple'  }))
     }
-    if (currentPercent > 35 && currentPercent < 60) {
+    if (currentPercent > 35 && currentPercent <= 60) {
    
-      setSkills((prev) => ({ ...prev, backgroundColor: "purple", scale: 1.1  }));
+      setSkills((prev) => ({ ...prev,  scale: 1.2  }));
+      setColor((prev) => ({ ...prev,  skills: 'purple'  }))
+    }
+    if (currentPercent > 60 && currentPercent <= 85) {
+   
+      setProjects((prev) => ({ ...prev,  scale: 1.2  }));
+      setColor((prev) => ({ ...prev,  projects: 'purple'  }))
+    }
+    if (currentPercent > 85 && currentPercent <= 100) {
+   
+      setConnect((prev) => ({ ...prev,  scale: 1.2  }));
+      setColor((prev) => ({ ...prev,  connect: 'purple'  }))
     }
     if (currentPercent < 1) {
+      setColor(initialColor)
       setHome({});
       setAbout({});
       setSkills({});
@@ -244,7 +276,7 @@ const NavBar = () => {
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
-                background: "none",
+                background: color.home,
               }}
               className="btn-nav"
             >
@@ -266,7 +298,7 @@ const NavBar = () => {
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
-                background: "none",
+                background: color.about,
               }}
               className="btn-nav"
             >
@@ -288,9 +320,9 @@ const NavBar = () => {
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
-                background: "none",
+                background: color.skills,
               }}
-              className="btn-nav"
+             
             >
               Skills
             </motion.button>
@@ -311,9 +343,9 @@ const NavBar = () => {
 
                 padding: 8,
                 fontWeight: "bold",
-                background: "none",
+                background: color.projects,
               }}
-              className="btn-nav"
+            
             >
               Projects
             </motion.button>
@@ -334,9 +366,9 @@ const NavBar = () => {
 
                 padding: 8,
                 fontWeight: "bold",
-                background: "none",
+                background: color.connect,
               }}
-              className="btn-nav"
+          
             >
               Connect
             </motion.button>

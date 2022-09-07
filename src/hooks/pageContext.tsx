@@ -27,10 +27,11 @@ const connectSect = useRef<HTMLInputElement | null>(null)
   const [currentPercent, setCurrentPercent] = useState<number>(0);
   const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const pathLength = useSpring(scrollYProgress, {
-    stiffness: 400,
-    damping: 90,
-  });
+  // const pathLength = useSpring(scrollYProgress, {
+  //   stiffness: 400,
+  //   damping: 90,
+  // });
+
   //Scroll to event handles
   const scrollToSection = (elementRef: any) => {
     window.scrollTo({

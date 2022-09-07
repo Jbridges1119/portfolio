@@ -13,21 +13,26 @@ import { Box } from "@mui/system";
 import ConnectForm from "./components/ConnectForm";
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
-import { motion, MotionConfig } from "framer-motion";
-import { useEffect, useState } from "react";
 
-const Connect = () => {
+import { useEffect, useState } from "react";
+import { motion, useScroll, useTransform} from 'framer-motion'
+
+type Props = { 
+  speed: number;
+}
+
+const Connect: React.FC<Props> = ({speed})=> {
   const { currentPercent, connectSect } = usePageLocation();
-  // const [connectOpacity, setConnectOpacity] = useState(0)
-  // useEffect(()=> {
-  //  const opac = 1/(91 - currentPercent)
-  //   console.log(opac)
-  //   setConnectOpacity(opac)
-  // },[currentPercent])
+  const {scrollYProgress, scrollY} = useScroll()
+  const yValue = useTransform(scrollYProgress, [0,1], [50,100])
+  const opacity = useTransform(scrollYProgress, [0.82,0.95], [0,1])
+
 
   return (
    
-      
+    <motion.div className="fill" 
+    style={{ opacity}}
+    >
       
       <Box ref={connectSect}
         
@@ -76,7 +81,7 @@ const Connect = () => {
         </Grid>
         <Box height={"10vh"}/>
       </Box>
-      
+      </motion.div>
    
   );
 };

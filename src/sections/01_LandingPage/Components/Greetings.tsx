@@ -2,13 +2,44 @@ import React from "react";
 //MUI
 import { Box, Stack, Typography } from "@mui/material";
 //Style
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const Greetings = () => {
-  return (
+type Props = { 
+  speed: number;
+}
+
+ 
+
+
+const Greetings: React.FC<Props> = ({speed}) => {
+  const timer = () => Math.floor(Math.random() * 10)
+  const scrollAmount = 450;
+  const { scrollYProgress, scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
+  // const yRange = useTransform(scrollY, [0, scrollAmount], [0, 1000 * speed]);
+    const filter = useTransform(
+      scrollY,
+      [0, scrollAmount],
+      ["blur(0px)", "blur(5px)"]
+    );
+
+    const helloText = {
+      offScreen: {  filter: 'blur(10px)', opacity: 0 },
+      onScreen: {
+       
+        // scale: [1,1,1, 1.2,1],
+        opacity: 1,
+        filter: 'blur(00px)',
+        transition: {delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
+      },
+    }; 
     
+    
+  return (
+    <motion.div className="fill" style={{ opacity,  position: 'fixed', y: '-7%', filter }}>
       <Stack spacing={1.5}>
         <Box sx={{ textAlign: { lg: "left", xs: "center" } }}>
+          
           <Typography
             variant="h2"
             sx={{
@@ -17,18 +48,57 @@ const Greetings = () => {
               display: "inline-block",
             }}
           >
-            Hello, I'm&nbsp;
+           {`Hello, I'm`.split("").map((letter, i) =>{
+              return (
+                <motion.span  initial={{  opacity: 0.0 }}
+                animate={{
+          
+                  opacity: 1,
+                  
+                  
+                }}
+                transition={ { type: "spring", bounce: 0.4, duration: 4 }}
+                key={i}>
+              <motion.span 
+              initial={{   filter: `blur(${timer()  }px)` }}
+              animate={{ 
+                filter: 'blur(0px)',
+              }}
+              transition={ {delay: 0.5, type: "spring", bounce: 0.4, duration:3 }}
+              >{letter}</motion.span></motion.span>
+             ) })}&nbsp;
           </Typography>
           <Typography
             variant="h2"
-            sx={{
+            sx={{ 
               fontWeight: "bold",
-              display: "inline-block",
+              display: {xl:"inline-block", lg: 'block', xs: "inline-block"},
               zIndex: 1,
               color: "white",
             }}
           >
-            Jeff Bridges
+            {'Jeff Bridges'.split("").map((letter, i) =>{
+              return (
+                <motion.span  initial={{  opacity: 0.0 }}
+                animate={{
+          
+                  opacity: 1,
+                  
+                  
+                }}
+                transition={ { type: "spring", bounce: 0.4, duration: 4 }}
+                key={i}>
+              <motion.span 
+              initial={{   filter: `blur(${timer() *2 }px)` }}
+              animate={{
+        
+                
+                filter: 'blur(0px)',
+                
+              }}
+              transition={ {delay: 0.5, type: "spring", bounce: 0.4, duration:3 }}
+              >{letter}</motion.span></motion.span>
+             ) })}
           </Typography>
         </Box>
         <Typography
@@ -39,10 +109,14 @@ const Greetings = () => {
             textAlign: { lg: "left", xs: "center" },
           }}
         >
-          Full-Stack Web Developer
+          <motion.div 
+           initial={'offScreen'}
+           animate={'onScreen'}
+           variants={helloText}
+           >  Full-Stack Web Developer</motion.div>
         </Typography>
       </Stack>
-   
+      </motion.div>
   );
 };
 

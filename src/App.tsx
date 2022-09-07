@@ -33,7 +33,7 @@ function App() {
       <About /> 
        <Skills/>
       <Projects/>
-      <Connect/>
+      <Connect speed={0}/>
       <Footer/>
     </motion.div>
     </ThemeProvider>

@@ -35,15 +35,15 @@ const LandingPage: React.FC = () => {
           justifyContent="flex-start"
           alignItems="center"
         >
-          <Grid item xs={12} lg={3}></Grid>
+          <Grid item xs={12} lg={2.5}></Grid>
           <Grid item xs={12} lg={4.25}>
-            <Greetings />
+            <Greetings speed={2}/>
           </Grid>
-          <Grid item xs={0} lg={0.25}></Grid>
-          <Grid item xs={12} lg={2}>
-            <MainButtons />
+          <Grid item xs={0} lg={1}></Grid>
+          <Grid item xs={12} lg={2.5}>
+            <MainButtons speed={2}/>
           </Grid>
-          <Grid item xs={12} lg={2}></Grid>
+          <Grid item xs={12} lg={1.5}></Grid>
         </Grid>
       </motion.div>
       <Waves />
