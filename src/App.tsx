@@ -5,7 +5,7 @@ import theme from './styles/theme'
 import { motion, useScroll, useSpring, useTransform} from "framer-motion";
 //Components
 import LandingPage from './sections/01_LandingPage/LandingPage'
-import AboutMe from './sections/02_About/About'
+import About from './sections/02_About/About'
 import Skills from './sections/03_Skills/Skills'
 import Projects from './sections/04_Projects/Projects'
 import Connect from './sections/05_Connect/Connect'
@@ -17,7 +17,7 @@ import {
 } from '@mui/material/styles';
 import { usePageLocation } from './hooks/pageContext';
 
-import LinkAnimation from './LinkAnimation';
+
 function App() {
   
 
@@ -30,8 +30,7 @@ function App() {
     >
         
     <LandingPage/>  
-      <AboutMe /> 
-      <LinkAnimation/>
+      <About /> 
        <Skills/>
       <Projects/>
       <Connect/>

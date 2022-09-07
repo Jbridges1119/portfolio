@@ -1,11 +1,1 @@
-.submit-animation .submit-container .submitletter-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 5rem;
-  height: 2rem;
-}
-.submit-animation .submit-container .submitletter-container div {
-  position: absolute;
-  pointer-events: none;
-}/*# sourceMappingURL=Connect.css.map */
+/*# sourceMappingURL=Connect.css.map */

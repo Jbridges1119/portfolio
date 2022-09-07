@@ -19,6 +19,7 @@ import { motion } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { Preview } from "@mui/icons-material";
 
 const drawerWidth = 200;
 
@@ -39,7 +40,7 @@ const NavBar = () => {
   const [skills, setSkills] = useState({});
   const [projects, setProjects] = useState({});
   const [connect, setConnect] = useState({});
- 
+  const [color, setColor] = useState('none')
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],
     rotate: [0, 360, 360],
@@ -49,6 +50,7 @@ const NavBar = () => {
 
 
   useEffect(() => {
+    
     if (currentPercent > 1) {
       console.log(currentPercent)
       const move: {} = {
@@ -61,6 +63,24 @@ const NavBar = () => {
       setSkills({ y: "39vh", ...move });
       setProjects({ y: "45vh", ...move });
       setConnect({ y: "51vh", ...move });
+      
+
+    }
+    if (currentPercent > 1 && currentPercent <= 18) {
+   
+      setHome((prev) => ({ ...prev, backgroundColor: "purple", scale: 1.1  }));
+    }
+    if (currentPercent > 18 && currentPercent <= 35) {
+      const move: {} = {
+        x: "32%",
+        position: "fixed",
+        backgroundColor: "purple",
+      };
+      setAbout((prev) => ({ ...prev, backgroundColor: "purple", scale: 1.1  }));
+    }
+    if (currentPercent > 35 && currentPercent < 60) {
+   
+      setSkills((prev) => ({ ...prev, backgroundColor: "purple", scale: 1.1  }));
     }
     if (currentPercent < 1) {
       setHome({});
@@ -236,6 +256,7 @@ const NavBar = () => {
               whileTap={{ scale: 0.95 }}
               animate={about}
               style={{
+                
                 cursor: "pointer",
                 color: "#fff",
                 border: "2px solid white",
@@ -249,7 +270,7 @@ const NavBar = () => {
               }}
               className="btn-nav"
             >
-              About Me
+              About
             </motion.button>
             <motion.button
             onClick={() => scrollToSection(skillSect)}

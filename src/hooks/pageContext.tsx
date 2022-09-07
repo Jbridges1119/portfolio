@@ -9,54 +9,14 @@ interface CurrentPercentType  {
   projectSect: any; 
   connectSect: any;
   scrollToSection: Function;
-  navIsHovered: NavIsHoveredTyped;
-  setNavIsHovered: Function;
-  projectIsHovered: ProjectIsHoveredType;
-  setProjectIsHovered: Function;
-  connectIsHovered: boolean;
-  setConnectIsHovered: Function;
 };
-//Button State Types
-type NavIsHoveredTyped = {
-  home: boolean;
-  about: boolean;
-  skills: boolean;
-  projects: boolean;
-  connect: boolean;
-  mainProjects: boolean;
-  mainResume: boolean;
-}
-const initialNavIsHovered = {
-  home: false,
-  about: false,
-  skills: false,
-  projects: false,
-  connect: false,
-  mainProjects: false,
-  mainResume: false,
-}
-type ProjectIsHoveredType = {
-  P1: {github: boolean, video:boolean, live: boolean};
-  P2: {github: boolean, video:boolean, live: boolean};
-  P3: {github: boolean, video:boolean, live: boolean};
-  P4: {github: boolean, video:boolean, live: boolean};
-}
-const initialProjectIsHovered = {
-  P1:{github: false, video:false, live: false},
-  P2:{github: false, video:false, live: false},
-  P3:{github: false, video:false, live: false},
-  P4:{github: false, video:false, live: false},
-}
+
 interface Props {
   children: React.ReactNode;
 }
 const pageContext = createContext<CurrentPercentType>({} as CurrentPercentType);
 
 const PageLocContext: React.FC<Props> = ({ children }) => {
-  //Button Hover Animation
-  const [navIsHovered, setNavIsHovered] = useState<NavIsHoveredTyped>(initialNavIsHovered);
-  const [projectIsHovered, setProjectIsHovered] = useState(initialProjectIsHovered);
-  const [connectIsHovered, setConnectIsHovered] = useState<boolean>(false);
   //Link buttons
   const topSect = useRef<HTMLInputElement | null>(null)
   const aboutSect = useRef<HTMLInputElement | null>(null)
@@ -88,7 +48,7 @@ const connectSect = useRef<HTMLInputElement | null>(null)
   );
   
   return (
-    <pageContext.Provider value={{ currentPercent, aboutSect, skillSect, projectSect, connectSect,scrollToSection, topSect, navIsHovered, setNavIsHovered, projectIsHovered, setProjectIsHovered, connectIsHovered, setConnectIsHovered }}>
+    <pageContext.Provider value={{ currentPercent, aboutSect, skillSect, projectSect, connectSect,scrollToSection, topSect }}>
       {children}
     </pageContext.Provider>
   );
