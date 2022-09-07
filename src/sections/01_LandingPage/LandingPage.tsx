@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //MUI5
 import { Grid } from "@mui/material";
@@ -18,10 +18,14 @@ import { usePageLocation } from "../../hooks/pageContext";
 
 const LandingPage: React.FC = () => {
   const { currentPercent, topSect } = usePageLocation();
+  useEffect(() => {
+    
+
+  })
   return (
     <div className="hero" id="tsparticles1" ref={topSect}>
       <NavBar />
-      <motion.div className="fill">
+      <motion.div className="fill" >
         <Grid
           height={"75%"}
           container

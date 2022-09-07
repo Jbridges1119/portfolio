@@ -6,14 +6,14 @@ import RestOfSkills from "./components/02_RestOfSkills";
 import Frontend from "./components/01_Frontend";
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
-
 const Skills = () => {
   const { currentPercent, skillSect } = usePageLocation();
   return (
-    <>
-      <Box height={"15vh"}></Box>
-      <Box
-        ref={skillSect}
+    
+      
+     
+      <Box ref={skillSect}
+        
         sx={{
           background: `white`,
           position: "relative",
@@ -21,7 +21,8 @@ const Skills = () => {
           zIndex: 2,
         }}
       >
-        <Grid
+        
+        <Grid 
           container
           direction="row"
           justifyContent="center"
@@ -48,8 +49,9 @@ const Skills = () => {
             </Paper>
           </Grid>
         </Grid>
+        <Box height={"7.5vh"}></Box>
       </Box>
-    </>
+   
   );
 };
 

@@ -13,9 +13,18 @@ import { Box } from "@mui/system";
 import ConnectForm from "./components/ConnectForm";
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
+import { motion, MotionConfig } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Connect = () => {
   const { currentPercent, connectSect } = usePageLocation();
+  // const [connectOpacity, setConnectOpacity] = useState(0)
+  // useEffect(()=> {
+  //  const opac = 1/(91 - currentPercent)
+  //   console.log(opac)
+  //   setConnectOpacity(opac)
+  // },[currentPercent])
+
   return (
     <>
       <Box height={"10vh"}></Box>
@@ -35,14 +44,8 @@ const Connect = () => {
           alignItems="center"
         >
           <Grid item xl={7} lg={8} md={8} xs={10}>
-            <Paper
-              elevation={24}
-              sx={{
-                width: "100%",
-                background: `#E3EAFD`,
-                borderRadius: 5,
-                // background: `hsla(206, 82%, 57%, 0.15)`,
-              }}
+            <motion.div className='fill'
+           
             >
               <Grid
                 container
@@ -68,7 +71,7 @@ const Connect = () => {
                   <ConnectForm />
                 </Grid>
               </Grid>
-            </Paper>
+            </motion.div>
           </Grid>
         </Grid>
       </Box>

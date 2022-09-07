@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Greetings = () => {
   return (
-    <>
+    
       <Stack spacing={1.5}>
         <Box sx={{ textAlign: { lg: "left", xs: "center" } }}>
           <Typography
@@ -42,7 +42,7 @@ const Greetings = () => {
           Full-Stack Web Developer
         </Typography>
       </Stack>
-    </>
+   
   );
 };
 

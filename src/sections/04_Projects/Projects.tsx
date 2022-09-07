@@ -30,7 +30,7 @@ const Projects = () => {
   const { currentPercent, projectSect } = usePageLocation();
   return (
     <>
-    <Box height={"15vh"} ref={projectSect}></Box>
+    <Box height={"7.5vh"} ref={projectSect}></Box>
   
     <Box 
       sx={{

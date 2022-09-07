@@ -6,6 +6,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Story from "./components/Story";
 import Picture from "./components/Picture";
 //Style
+
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
 
@@ -55,6 +56,7 @@ const AboutMe: React.FC= () => {
           </Grid>
         </Grid>
       </Grid>
+      <Box height={"15vh"}  ></Box>
     </Box>
   );
 };
