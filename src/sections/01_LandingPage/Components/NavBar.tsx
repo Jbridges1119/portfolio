@@ -30,10 +30,11 @@ const navIcons = [
   },
 ];
 const NavBar = () => {
-  
+
   const { currentPercent, aboutSect, skillSect, projectSect, connectSect, scrollToSection, topSect  } = usePageLocation();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   //NavButton location
+  const [home, setHome] = useState({});
   const [about, setAbout] = useState({});
   const [skills, setSkills] = useState({});
   const [projects, setProjects] = useState({});
@@ -55,12 +56,14 @@ const NavBar = () => {
         position: "fixed",
         backgroundColor: "#a557ff",
       };
+      setHome({ y: "27vh", ...move });
       setAbout({ y: "33vh", ...move });
       setSkills({ y: "39vh", ...move });
       setProjects({ y: "45vh", ...move });
       setConnect({ y: "51vh", ...move });
     }
     if (currentPercent < 1) {
+      setHome({});
       setAbout({});
       setSkills({});
       setProjects({});
@@ -206,7 +209,27 @@ const NavBar = () => {
               justifyContent: { md: "flex-end" },
               pr: 6,
             }}
-          >
+          >  <motion.button
+              onClick={() => scrollToSection(topSect)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={home}
+              style={{
+                cursor: "pointer",
+                color: "#fff",
+                border: "2px solid white",
+                borderRadius: 25,
+                fontSize: 18,
+                margin: 7,
+                width: "120px",
+                padding: 8,
+                fontWeight: "bold",
+                background: "none",
+              }}
+              className="btn-nav"
+            >
+              Home
+            </motion.button>
             <motion.button
               onClick={() => scrollToSection(aboutSect)}
               whileHover={{ scale: 1.05 }}
