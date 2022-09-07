@@ -69,7 +69,8 @@ everyone is prepared to maximize their time together.`,
     name: "Tweeter",
     description: "Tweeter is a simple, single-page social media platform where users can leave 140 character posts. Users can also read through their list of tweets in chronological order.",
     gif: tweeter,
-    buttons: [{ name: "Github", link: "https://github.com/Jbridges1119/tweeter" }],
+    buttons: [{ name: "Github", link: "https://github.com/Jbridges1119/tweeter" },{ name: "Live", link: "https://tweeter-lhl-project-jbridges.herokuapp.com/" },],
+    
     stack: [JQ, HTML, SASS, Node]
   },
 
