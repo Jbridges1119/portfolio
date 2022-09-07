@@ -1,10 +1,17 @@
 //MUI
 import { Stack, Typography, Divider } from "@mui/material";
 //Style
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform} from 'framer-motion'
 
-const Story = () => {
+type Props = { 
+  speed: number;
+}
+
+const Story: React.FC<Props> = ({speed}) => {
+
+
   return (
+   
     <Stack spacing={2}>
       <motion.div initial={{ width: 0 }} transition={{ duration: 1 }}>
         <Typography variant="h2" sx={{ color: "#4345E8", textAlign: "left" }}>
