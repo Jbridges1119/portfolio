@@ -83,7 +83,7 @@ const imagesSpreader: Function = (list: any) => {
             component="img"
             image={image.icon}
             alt=""
-            sx={{ objectFit: "contain", maxWidth: "80px", maxHeight: "80px" }}
+            sx={{ objectFit: "contain", maxWidth: "70px", maxHeight: "70px" }}
           />
         </a>
       </Box>
