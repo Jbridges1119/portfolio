@@ -27,7 +27,7 @@ const Connect = () => {
 
   return (
     <>
-      <Box height={"10vh"}></Box>
+      <Box height={"20vh"}></Box>
       <Box height={"5vh"} ref={connectSect}></Box>
       <Box
         
