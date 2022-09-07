@@ -14,8 +14,8 @@ const Frontend = () => {
   const { currentPercent, skillSect } = usePageLocation();
   return (
     <motion.div ref={skillSect}
-      whileHover={{ scale: 1.1 }}
-      style={{ minHeight: "190px", display: "flex" }}
+      whileHover={{ scale: 1.15 }}
+      style={{ minHeight: "155px", display: "flex" }}
     >
       <Grid
         container

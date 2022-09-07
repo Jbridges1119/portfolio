@@ -26,8 +26,8 @@ const list = skillsTab.map((skill: Skill) => {
     <div key={skill.name}>
       <Divider />
       <motion.div
-        whileHover={{ scale: 1.1 }}
-        style={{ height: "171px", display: "flex" }}
+        whileHover={{ scale: 1.15 }}
+        style={{ height: "140px", display: "flex" }}
       >
         <Grid
           container
