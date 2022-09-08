@@ -1,5 +1,6 @@
-import { CardMedia } from "@mui/material";
 import React from "react";
+//MUI
+import { CardMedia } from "@mui/material";
 
 type Props = {
   stack: {

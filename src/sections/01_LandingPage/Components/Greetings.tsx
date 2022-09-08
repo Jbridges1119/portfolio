@@ -11,7 +11,7 @@ type Props = {
 const Greetings: React.FC<Props> = ({ speed }) => {
   const timer = () => Math.floor(Math.random() * 10);
   const scrollAmount = 450;
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
   // const yRange = useTransform(scrollY, [0, scrollAmount], [0, 1000 * speed]);
   const filter = useTransform(
@@ -19,7 +19,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
     [0, scrollAmount],
     ["blur(0px)", "blur(5px)"]
   );
-
+  //Framer motion variant
   const bottomText = {
     offScreen: { filter: "blur(10px)", opacity: 0 },
     onScreen: {
@@ -28,7 +28,6 @@ const Greetings: React.FC<Props> = ({ speed }) => {
       transition: { delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
     },
   };
-  
 
   return (
     <motion.div
@@ -86,6 +85,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
           >
             {"Jeff Bridges".split("").map((letter, i) => {
               return (
+                //Cannot make a variant due to variants being one instance set - need repeated instances
                 <motion.span
                   initial={{ opacity: 0.0 }}
                   animate={{

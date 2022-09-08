@@ -6,46 +6,44 @@ import RestOfSkills from "./components/02_RestOfSkills";
 import Frontend from "./components/01_Frontend";
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
-
-import { motion, useScroll, useTransform} from 'framer-motion'
+//Style
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Skills = () => {
-  const { currentPercent, skillSect } = usePageLocation();
-  const {scrollYProgress, scrollY} = useScroll()
-  const yValue = useTransform(scrollYProgress, [0,1], [50,100])
-  const opacity = useTransform(scrollYProgress, [0.26,0.32], [0,1])
+  const { skillSect } = usePageLocation();
+  const { scrollYProgress } = useScroll();
+  // const yValue = useTransform(scrollYProgress, [0,1], [50,100])
+  const opacity = useTransform(scrollYProgress, [0.26, 0.32], [0, 1]);
+  const backgroundCardSX= {
+    width: "100%",
+    background: `#E3EAFD`,
+    my: 3,
+    borderRadius: 5,
+    display: "flex",
+    justifyContent: "center",
+  }
   return (
-    
-      
-     
-      <Box ref={skillSect}
-        
-        sx={{
-          background: `white`,
-          position: "relative",
-          width: "100%",
-          zIndex: 2,
-        }}
+    <Box
+      ref={skillSect}
+      sx={{
+        background: `white`,
+        position: "relative",
+        width: "100%",
+        zIndex: 2,
+      }}
+    >
+      <Box height={"11vh"} />
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
       >
-        <Box height={"11vh"}/>
-        <Grid 
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid item lg={6} md={7} xs={10}>
-            <motion.div style={{ opacity}}> 
+        <Grid item lg={6} md={7} xs={10}>
+          <motion.div style={{ opacity }}>
             <Paper
               elevation={24}
-              sx={{
-                width: "100%",
-                background: `#E3EAFD`,
-                my: 3,
-                borderRadius: 5,
-                display: "flex",
-                justifyContent: "center",
-              }}
+              sx={backgroundCardSX}
             >
               <Grid item xs={10}>
                 <Stack spacing={1} my={3}>
@@ -53,12 +51,12 @@ const Skills = () => {
                   <RestOfSkills />
                 </Stack>
               </Grid>
-            </Paper></motion.div>
-          </Grid>
+            </Paper>
+          </motion.div>
         </Grid>
-        <Box height={"22vh"}/>
-      </Box>
-   
+      </Grid>
+      <Box height={"22vh"} />
+    </Box>
   );
 };
 

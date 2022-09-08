@@ -1,5 +1,7 @@
-import { Button } from "@mui/material";
 import React from "react";
+//MUI
+import { Button } from "@mui/material";
+
 
 type Props = {
   buttons: {
@@ -22,8 +24,7 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
     pt: 0.9,
     fontWeight: "bold",
     textTransform: "none",
-  }
-
+  };
 
   return (
     <>

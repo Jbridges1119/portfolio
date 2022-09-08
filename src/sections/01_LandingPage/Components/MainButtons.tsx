@@ -24,9 +24,9 @@ const mainButtons = {
 
 
 const MainButtons: React.FC<Props> = ({speed}) => {
-  const { currentPercent,projectSect, scrollToSection  } = usePageLocation();
+  const { projectSect, scrollToSection  } = usePageLocation();
   const scrollAmount = 350;
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
   const zIndex = useTransform(scrollY, [0, 200], [100, 0]);
   // const yRange = useTransform(scrollY, [0, scrollAmount], [0, 1000 * speed]);

@@ -1,7 +1,7 @@
 //MUI
 import { Box, Grid, Typography } from "@mui/material";
 //Syle
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 //Front-End Helper
 import {
   imagesSpreader,
@@ -11,7 +11,7 @@ import {
 import { usePageLocation } from "../../../hooks/pageContext";
 
 const Frontend = () => {
-  const { currentPercent, skillSect } = usePageLocation();
+  const { skillSect } = usePageLocation();
 
   return (
     <motion.div ref={skillSect}

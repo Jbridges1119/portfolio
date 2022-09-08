@@ -1,30 +1,36 @@
-import { Box, Typography } from '@mui/material';
-import { usePageLocation } from '../../../hooks/pageContext';
+//MUI
+import { Box, Typography } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-const ScrollDown = () => {
-  const { currentPercent,  aboutSect,scrollToSection } = usePageLocation();
-  return (
-   
-    <Box 
-        
-        sx={{
-          background: `white`,
-          position: "relative",
-          width: "100%",
-          zIndex: 2,
-        }}
-      >
-    <button style={{ all: "unset", position:'relative', zIndex:'100' }} onClick={()=> scrollToSection(aboutSect)}>
-    <Typography
-      sx={{ color: "#81807c", fontSize: 20, cursor: "pointer" }}
-    >
-      <ArrowDownwardIcon sx={{ fontSize: 18 }} />
-      Scroll Down
-      <ArrowDownwardIcon sx={{ fontSize: 18 }} />
-    </Typography>
-  </button>
-  <Box height={"5vh"}/></Box>
-  )
-}
+//Hook
+import { usePageLocation } from "../../../hooks/pageContext";
 
-export default ScrollDown
+const ScrollDown = () => {
+  const { aboutSect, scrollToSection } = usePageLocation();
+  const arrowTextBoxSX = {
+    background: `white`,
+    position: "relative",
+    width: "100%",
+    zIndex: 2,
+  }
+  const buttonTextSX = { color: "#81807c", fontSize: 20, cursor: "pointer" }
+  const arrowSizeSX = { fontSize: 18 }
+  return (
+    <Box
+      sx={arrowTextBoxSX}
+    >
+      <button
+        style={{ all: "unset", position: "relative", zIndex: "100" }}
+        onClick={() => scrollToSection(aboutSect)}
+      >
+        <Typography sx={buttonTextSX}>
+          <ArrowDownwardIcon sx={arrowSizeSX} />
+          Scroll Down
+          <ArrowDownwardIcon sx={arrowSizeSX} />
+        </Typography>
+      </button>
+      <Box height={"5vh"} />
+    </Box>
+  );
+};
+
+export default ScrollDown;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 //Context hook
 import { usePageLocation } from "../../../hooks/pageContext";
 //MUI5
@@ -14,12 +14,11 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 //Style
 import { motion } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import { Preview } from "@mui/icons-material";
 
 const drawerWidth = 200;
 
@@ -37,84 +36,89 @@ type colorType = {
   skills: string;
   projects: string;
   connect: string;
-}
+};
 const initialColor = {
-  home: 'none',
-  about: 'none',
-  skills: 'none',
-  projects: 'none',
-  connect: 'none'
-}
+  home: "none",
+  about: "none",
+  skills: "none",
+  projects: "none",
+  connect: "none",
+};
 const NavBar = () => {
-
-  const { currentPercent, aboutSect, skillSect, projectSect, connectSect, scrollToSection, topSect  } = usePageLocation();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const {
+    currentPercent,
+    aboutSect,
+    skillSect,
+    projectSect,
+    connectSect,
+    scrollToSection,
+    topSect,
+  } = usePageLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
   //NavButton location
   const [home, setHome] = useState({});
   const [about, setAbout] = useState({});
   const [skills, setSkills] = useState({});
   const [projects, setProjects] = useState({});
   const [connect, setConnect] = useState({});
-  const [color, setColor] = useState(initialColor)
-  const [position, setPosition] = useState<string>()
+  const [color, setColor] = useState<colorType>(initialColor);
+
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],
     rotate: [0, 360, 360],
     borderRadius: ["20%", "20%", "50%", "50%", "20%"],
   };
-  const navItems = [{name: 'Home', location: topSect}, {name:"About",location: aboutSect},{ name:"Skills", location: skillSect}, {name:"Projects",location: projectSect}, {name:"Connect", location: connectSect}];
+  const navItems = [
+    { name: "Home", location: topSect },
+    { name: "About", location: aboutSect },
+    { name: "Skills", location: skillSect },
+    { name: "Projects", location: projectSect },
+    { name: "Connect", location: connectSect },
+  ];
 
-  const transition = {
-    type:'tween',
+  const transition = { type: "tween" };
+  const onHover = { scale: 1.1 };
+  const onTap = { scale: 0.95 };
 
-  }
   useEffect(() => {
-    
+    const navDown = {
+      home: "#7b27f6",
+      about: "#7b27f6",
+      skills: "#7b27f6",
+      projects: "#7b27f6",
+      connect: "#7b27f6",
+    };
     if (currentPercent > 0.1) {
-      console.log(currentPercent)
-      const navDown = {
-        home: "#7b27f6",
-        about: "#7b27f6",
-        skills: "#7b27f6",
-        projects: "#7b27f6",
-        connect: "#7b27f6"
-      }
-    
-      setHome({y: "27vh", x: "558px" });
+      // console.log(currentPercent)
+      setHome({ y: "27vh", x: "558px" });
       setAbout({ y: "33vh", x: "428px" });
       setSkills({ y: "39vh", x: "298px" });
-      setProjects({y: "45vh", x: "168px" });
+      setProjects({ y: "45vh", x: "168px" });
       setConnect({ y: "51vh", x: "32%" });
-      setColor(navDown)
-      setPosition('fixed')
+      setColor(navDown);
     }
     if (currentPercent > 0.5 && currentPercent <= 16) {
-   
-      setHome((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  home: '#5802ff'  }))
+      setHome((prev) => ({ ...prev, scale: 1.2 }));
+      setColor((prev) => ({ ...prev, home: "#5802ff" }));
     }
     if (currentPercent > 16 && currentPercent <= 33) {
-  
-      setAbout((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  about: '#5802ff'  }))
+      setAbout((prev) => ({ ...prev, scale: 1.2 }));
+      setColor((prev) => ({ ...prev, about: "#5802ff" }));
     }
     if (currentPercent > 33 && currentPercent <= 54) {
-   
-      setSkills((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  skills: '#5802ff'  }))
+      setSkills((prev) => ({ ...prev, scale: 1.2 }));
+      setColor((prev) => ({ ...prev, skills: "#5802ff" }));
     }
     if (currentPercent > 54 && currentPercent <= 85) {
-   
-      setProjects((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  projects: '#5802ff'  }))
+      setProjects((prev) => ({ ...prev, scale: 1.2 }));
+      setColor((prev) => ({ ...prev, projects: "#5802ff" }));
     }
     if (currentPercent > 85 && currentPercent <= 100) {
-   
-      setConnect((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  connect: '#5802ff'  }))
+      setConnect((prev) => ({ ...prev, scale: 1.2 }));
+      setColor((prev) => ({ ...prev, connect: "#5802ff" }));
     }
     if (currentPercent < 1) {
-      setColor(initialColor)
+      setColor(initialColor);
       setHome({});
       setAbout({});
       setSkills({});
@@ -122,8 +126,6 @@ const NavBar = () => {
       setConnect({});
     }
   }, [currentPercent]);
-
- 
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -141,9 +143,18 @@ const NavBar = () => {
     >
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.name} disablePadding >
-            <ListItemButton onClick={() => scrollToSection(item.location)}  sx={{ textAlign: "center", my: 1 }} >
-              <ListItemText primary={item.name} primaryTypographyProps={{fontSize: '22px', fontWeight: "bold"}}/>
+          <ListItem key={item.name} disablePadding>
+            <ListItemButton
+              onClick={() => scrollToSection(item.location)}
+              sx={{ textAlign: "center", my: 1 }}
+            >
+              <ListItemText
+                primary={item.name}
+                primaryTypographyProps={{
+                  fontSize: "22px",
+                  fontWeight: "bold",
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -185,7 +196,6 @@ const NavBar = () => {
 
   return (
     <Box>
-  
       <AppBar
         component="nav"
         position="sticky"
@@ -239,7 +249,7 @@ const NavBar = () => {
               />
             </Button>
           </motion.div>
-          <motion.div  whileHover={buttonMotion}>
+          <motion.div whileHover={buttonMotion}>
             <Button
               href="mailto:Jbridges1119@gmail.com"
               target="_blank"
@@ -262,129 +272,124 @@ const NavBar = () => {
               justifyContent: { md: "flex-end" },
               pr: 6,
             }}
-          >  <motion.button
+          >
+            {" "}
+            <motion.button
               onClick={() => scrollToSection(topSect)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={onHover}
+              whileTap={onTap}
               animate={home}
               transition={transition}
               style={{
                 cursor: "pointer",
                 color: "#fff",
-                border: 'none',
+                border: "none",
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
-                position: 'fixed',
-                right: '568px',
+                position: "fixed",
+                right: "568px",
                 width: "120px",
-                top: '1vh',
+                top: "1vh",
                 padding: 8,
                 fontWeight: "bold",
                 background: color.home,
               }}
-              className="btn-nav"
             >
               Home
             </motion.button>
             <motion.button
               onClick={() => scrollToSection(aboutSect)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={onHover}
+              whileTap={onTap}
               animate={about}
               transition={transition}
               style={{
-                top: '1vh',
+                top: "1vh",
                 cursor: "pointer",
                 color: "#fff",
-                border: 'none',
+                border: "none",
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
-                position: 'fixed',
-                right: '438px',
+                position: "fixed",
+                right: "438px",
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
                 background: color.about,
               }}
-              className="btn-nav"
             >
               About
             </motion.button>
             <motion.button
-            onClick={() => scrollToSection(skillSect)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection(skillSect)}
+              whileHover={onHover}
+              whileTap={onTap}
               animate={skills}
               transition={transition}
               style={{
-                top: '1vh',
+                top: "1vh",
                 cursor: "pointer",
                 color: "#fff",
-                border: 'none',
+                border: "none",
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
-                position: 'fixed',
-                right: '308px',
+                position: "fixed",
+                right: "308px",
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
                 background: color.skills,
               }}
-             
             >
               Skills
             </motion.button>
             <motion.button
-            onClick={() => scrollToSection(projectSect)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection(projectSect)}
+              whileHover={onHover}
+              whileTap={onTap}
               animate={projects}
               transition={transition}
               style={{
-                top: '1vh',
+                top: "1vh",
                 cursor: "pointer",
                 color: "#fff",
-                border: 'none',
+                border: "none",
                 borderRadius: 25,
                 fontSize: 18,
-                position: 'fixed',
-                right: '178px',
+                position: "fixed",
+                right: "178px",
                 margin: 7,
                 width: "120px",
-
                 padding: 8,
                 fontWeight: "bold",
                 background: color.projects,
               }}
-            
             >
               Projects
             </motion.button>
             <motion.button
-            onClick={() => scrollToSection(connectSect)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection(connectSect)}
+              whileHover={onHover}
+              whileTap={onTap}
               animate={connect}
               transition={transition}
               style={{
-                top: '1vh',
+                top: "1vh",
                 cursor: "pointer",
                 color: "#fff",
-                border: 'none',
+                border: "none",
                 borderRadius: 25,
                 fontSize: 18,
-                position: 'fixed',
+                position: "fixed",
                 margin: 7,
                 width: "120px",
-
                 padding: 8,
                 fontWeight: "bold",
                 background: color.connect,
               }}
-          
             >
               Connect
             </motion.button>
@@ -411,7 +416,6 @@ const NavBar = () => {
           {drawer}
         </Drawer>
       </Box>
-    
     </Box>
   );
 };

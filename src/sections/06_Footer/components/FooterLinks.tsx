@@ -1,5 +1,5 @@
 //MUI
-import { Button, Divider, Grid, Stack, Typography } from "@mui/material";
+import { Button, Divider, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import UploadIcon from "@mui/icons-material/Upload";
@@ -11,7 +11,7 @@ import linkedin from "../../../assets/linkedin.png";
 import { usePageLocation } from "../../../hooks/pageContext";
 
 const FooterLinks = () => {
-  const { currentPercent, topSect,scrollToSection } = usePageLocation();
+  const { topSect, scrollToSection } = usePageLocation();
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],
     rotate: [0, 360, 360],
@@ -31,7 +31,7 @@ const FooterLinks = () => {
         animate="bounce"
         variants={bouncingArrow}
       >
-        <Button onClick={()=> scrollToSection(topSect)}>
+        <Button onClick={() => scrollToSection(topSect)}>
           <UploadIcon sx={{ color: "white", height: "50px", width: "50px" }} />
         </Button>
       </motion.div>
@@ -64,9 +64,8 @@ const FooterLinks = () => {
               sx={{ height: "50px", width: "50px", color: "white" }}
             />
           </Button>
-        </motion.div>{" "}
+        </motion.div>
       </Box>
-
       <Divider />
       <Button
         sx={{ all: "unset", cursor: "pointer" }}

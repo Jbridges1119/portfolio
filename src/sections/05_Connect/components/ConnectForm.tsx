@@ -11,8 +11,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import linkedin from "../../../assets/linkedin.png";
 
-
-
 type FormState = {
   Name: string;
   Email: string;
@@ -22,7 +20,6 @@ type FormState = {
 type ServiceMessage = [string, string, boolean];
 
 const Form = () => {
-
   const initialFormState = {
     Name: "",
     Email: "",
@@ -138,7 +135,7 @@ const Form = () => {
                 maxWidth: "200px",
                 pt: 0.9,
                 fontWeight: "bold",
-                textTransform:'none'
+                textTransform: "none",
               }}
               loading={submitting}
             >
