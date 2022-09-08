@@ -51,16 +51,4 @@ body {
 
 #tsparticles {
   z-index: -1;
-}
-
-.nav-animation .nav-container .navletter-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 5rem;
-  height: 1rem;
-}
-.nav-animation .nav-container .navletter-container div {
-  position: absolute;
-  pointer-events: none;
 }/*# sourceMappingURL=LandingPage.css.map */

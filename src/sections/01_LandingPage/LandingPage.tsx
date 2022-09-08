@@ -26,8 +26,9 @@ const LandingPage: React.FC = () => {
   return (
     <>
     <div className="hero" id="tsparticles1" ref={topSect}>
+    
       <NavBar />
-     
+      
         <Grid
           height={"75%"}
           container

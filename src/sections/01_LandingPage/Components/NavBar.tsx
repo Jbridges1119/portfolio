@@ -56,6 +56,7 @@ const NavBar = () => {
   const [projects, setProjects] = useState({});
   const [connect, setConnect] = useState({});
   const [color, setColor] = useState(initialColor)
+  const [position, setPosition] = useState<string>()
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],
     rotate: [0, 360, 360],
@@ -63,7 +64,10 @@ const NavBar = () => {
   };
   const navItems = [{name: 'Home', location: topSect}, {name:"About",location: aboutSect},{ name:"Skills", location: skillSect}, {name:"Projects",location: projectSect}, {name:"Connect", location: connectSect}];
 
+  const transition = {
+    type:'tween',
 
+  }
   useEffect(() => {
     
     if (currentPercent > 0.1) {
@@ -75,25 +79,21 @@ const NavBar = () => {
         projects: "#a557ff",
         connect: "#a557ff"
       }
-      const move: {} = {
-        x: "32%",
-        position: "fixed",
-        
-      };
-      setHome({ y: "27vh", ...move });
-      setAbout({ y: "33vh", ...move });
-      setSkills({ y: "39vh", ...move });
-      setProjects({ y: "45vh", ...move });
-      setConnect({ y: "51vh", ...move });
+    
+      setHome({y: "27vh", x: "558px" });
+      setAbout({ y: "33vh", x: "428px" });
+      setSkills({ y: "39vh", x: "298px" });
+      setProjects({y: "45vh", x: "168px" });
+      setConnect({ y: "51vh", x: "32%" });
       setColor(navDown)
-
+      setPosition('fixed')
     }
-    if (currentPercent > 0.5 && currentPercent <= 18) {
+    if (currentPercent > 0.5 && currentPercent <= 16) {
    
       setHome((prev) => ({ ...prev,  scale: 1.2  }));
       setColor((prev) => ({ ...prev,  home: 'purple'  }))
     }
-    if (currentPercent > 18 && currentPercent <= 35) {
+    if (currentPercent > 16 && currentPercent <= 35) {
   
       setAbout((prev) => ({ ...prev,  scale: 1.2  }));
       setColor((prev) => ({ ...prev,  about: 'purple'  }))
@@ -184,7 +184,8 @@ const NavBar = () => {
   );
 
   return (
-    <Box >
+    <Box>
+  
       <AppBar
         component="nav"
         position="sticky"
@@ -266,6 +267,7 @@ const NavBar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={home}
+              transition={transition}
               style={{
                 cursor: "pointer",
                 color: "#fff",
@@ -273,7 +275,10 @@ const NavBar = () => {
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
+                position: 'fixed',
+                right: '568px',
                 width: "120px",
+                top: '1vh',
                 padding: 8,
                 fontWeight: "bold",
                 background: color.home,
@@ -287,14 +292,17 @@ const NavBar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={about}
+              transition={transition}
               style={{
-                
+                top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
+                position: 'fixed',
+                right: '438px',
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
@@ -309,14 +317,17 @@ const NavBar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={skills}
-              
+              transition={transition}
               style={{
+                top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
+                position: 'fixed',
+                right: '308px',
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
@@ -331,13 +342,16 @@ const NavBar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={projects}
+              transition={transition}
               style={{
+                top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-
+                position: 'fixed',
+                right: '178px',
                 margin: 7,
                 width: "120px",
 
@@ -354,13 +368,15 @@ const NavBar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               animate={connect}
+              transition={transition}
               style={{
+                top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-
+                position: 'fixed',
                 margin: 7,
                 width: "120px",
 
@@ -395,6 +411,7 @@ const NavBar = () => {
           {drawer}
         </Drawer>
       </Box>
+    
     </Box>
   );
 };
