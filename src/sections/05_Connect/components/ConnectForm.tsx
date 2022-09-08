@@ -133,11 +133,12 @@ const Form = () => {
                 color: "#fff",
                 border: "2px solid white",
                 borderRadius: 25,
-                fontSize: 18,
+                fontSize: 20,
                 backgroundColor: "#7b27f6",
                 maxWidth: "200px",
-                pt: 1.2,
+                pt: 0.9,
                 fontWeight: "bold",
+                textTransform:'none'
               }}
               loading={submitting}
             >
