@@ -9,7 +9,7 @@ type Props = {
 
 const Story: React.FC<Props> = ({speed}) => {
   const {scrollYProgress, scrollY} = useScroll()
-  const yValue = useTransform(scrollYProgress, [0,1], [50,100 * -2])
+  const yValue = useTransform(scrollYProgress, [0,1], [50,100 * speed])
   const opacity = useTransform(scrollYProgress, [0.26,0.32], [0,1])
 
   return (

@@ -93,17 +93,17 @@ const NavBar = () => {
       setHome((prev) => ({ ...prev,  scale: 1.2  }));
       setColor((prev) => ({ ...prev,  home: '#5802ff'  }))
     }
-    if (currentPercent > 16 && currentPercent <= 35) {
+    if (currentPercent > 16 && currentPercent <= 33) {
   
       setAbout((prev) => ({ ...prev,  scale: 1.2  }));
       setColor((prev) => ({ ...prev,  about: '#5802ff'  }))
     }
-    if (currentPercent > 35 && currentPercent <= 60) {
+    if (currentPercent > 33 && currentPercent <= 54) {
    
       setSkills((prev) => ({ ...prev,  scale: 1.2  }));
       setColor((prev) => ({ ...prev,  skills: '#5802ff'  }))
     }
-    if (currentPercent > 60 && currentPercent <= 85) {
+    if (currentPercent > 54 && currentPercent <= 85) {
    
       setProjects((prev) => ({ ...prev,  scale: 1.2  }));
       setColor((prev) => ({ ...prev,  projects: '#5802ff'  }))

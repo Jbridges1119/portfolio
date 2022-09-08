@@ -36,7 +36,7 @@ const AboutMe: React.FC= () => {
             alignItems="center"
           >
             <Grid item xs={12} md={5.75} order={{ xs: 3, md: 1 }}>
-              <Story speed={0}/>
+              <Story speed={-2}/>
             </Grid>
             <Grid item xs={0.25} lg={0.5}></Grid>
             <Grid item xs={12} md={4} order={{ xs: 1, md: 3 }}>
