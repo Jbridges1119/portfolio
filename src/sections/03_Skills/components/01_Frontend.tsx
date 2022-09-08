@@ -1,7 +1,7 @@
 //MUI
 import { Box, Grid, Typography } from "@mui/material";
 //Syle
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 //Front-End Helper
 import {
   imagesSpreader,
@@ -12,6 +12,7 @@ import { usePageLocation } from "../../../hooks/pageContext";
 
 const Frontend = () => {
   const { currentPercent, skillSect } = usePageLocation();
+
   return (
     <motion.div ref={skillSect}
       whileHover={{ scale: 1.15 }}
