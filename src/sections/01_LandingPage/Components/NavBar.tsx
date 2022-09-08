@@ -73,11 +73,11 @@ const NavBar = () => {
     if (currentPercent > 0.1) {
       console.log(currentPercent)
       const navDown = {
-        home: "#a557ff",
-        about: "#a557ff",
-        skills: "#a557ff",
-        projects: "#a557ff",
-        connect: "#a557ff"
+        home: "#7b27f6",
+        about: "#7b27f6",
+        skills: "#7b27f6",
+        projects: "#7b27f6",
+        connect: "#7b27f6"
       }
     
       setHome({y: "27vh", x: "558px" });
@@ -91,27 +91,27 @@ const NavBar = () => {
     if (currentPercent > 0.5 && currentPercent <= 16) {
    
       setHome((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  home: 'purple'  }))
+      setColor((prev) => ({ ...prev,  home: '#5802ff'  }))
     }
     if (currentPercent > 16 && currentPercent <= 35) {
   
       setAbout((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  about: 'purple'  }))
+      setColor((prev) => ({ ...prev,  about: '#5802ff'  }))
     }
     if (currentPercent > 35 && currentPercent <= 60) {
    
       setSkills((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  skills: 'purple'  }))
+      setColor((prev) => ({ ...prev,  skills: '#5802ff'  }))
     }
     if (currentPercent > 60 && currentPercent <= 85) {
    
       setProjects((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  projects: 'purple'  }))
+      setColor((prev) => ({ ...prev,  projects: '#5802ff'  }))
     }
     if (currentPercent > 85 && currentPercent <= 100) {
    
       setConnect((prev) => ({ ...prev,  scale: 1.2  }));
-      setColor((prev) => ({ ...prev,  connect: 'purple'  }))
+      setColor((prev) => ({ ...prev,  connect: '#5802ff'  }))
     }
     if (currentPercent < 1) {
       setColor(initialColor)
@@ -264,14 +264,14 @@ const NavBar = () => {
             }}
           >  <motion.button
               onClick={() => scrollToSection(topSect)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               animate={home}
               transition={transition}
               style={{
                 cursor: "pointer",
                 color: "#fff",
-                border: "2px solid white",
+                border: 'none',
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
@@ -289,7 +289,7 @@ const NavBar = () => {
             </motion.button>
             <motion.button
               onClick={() => scrollToSection(aboutSect)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               animate={about}
               transition={transition}
@@ -297,7 +297,7 @@ const NavBar = () => {
                 top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
-                border: "2px solid white",
+                border: 'none',
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
@@ -314,7 +314,7 @@ const NavBar = () => {
             </motion.button>
             <motion.button
             onClick={() => scrollToSection(skillSect)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               animate={skills}
               transition={transition}
@@ -322,7 +322,7 @@ const NavBar = () => {
                 top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
-                border: "2px solid white",
+                border: 'none',
                 borderRadius: 25,
                 fontSize: 18,
                 margin: 7,
@@ -339,7 +339,7 @@ const NavBar = () => {
             </motion.button>
             <motion.button
             onClick={() => scrollToSection(projectSect)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               animate={projects}
               transition={transition}
@@ -347,7 +347,7 @@ const NavBar = () => {
                 top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
-                border: "2px solid white",
+                border: 'none',
                 borderRadius: 25,
                 fontSize: 18,
                 position: 'fixed',
@@ -365,7 +365,7 @@ const NavBar = () => {
             </motion.button>
             <motion.button
             onClick={() => scrollToSection(connectSect)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               animate={connect}
               transition={transition}
@@ -373,7 +373,7 @@ const NavBar = () => {
                 top: '1vh',
                 cursor: "pointer",
                 color: "#fff",
-                border: "2px solid white",
+                border: 'none',
                 borderRadius: 25,
                 fontSize: 18,
                 position: 'fixed',
