@@ -11,9 +11,14 @@ type Props = {
   speed: number;
 }
 const Picture: React.FC<Props> = ({speed}) => {
-
+  const {scrollYProgress, scrollY} = useScroll()
+  const yValue = useTransform(scrollYProgress, [0,1], [50,100 / -2])
+  const opacity = useTransform(scrollYProgress, [0.26,0.32], [0,1])
 
   return (
+    <motion.div
+    style={{y:yValue}}
+    >
     <Box
       sx={{
         
@@ -37,7 +42,7 @@ const Picture: React.FC<Props> = ({speed}) => {
           }}
         />
      
-    </Box>
+    </Box> </motion.div>
   );
 };
 

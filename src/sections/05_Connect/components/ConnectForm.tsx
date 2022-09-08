@@ -134,7 +134,7 @@ const Form = () => {
                 border: "2px solid white",
                 borderRadius: 25,
                 fontSize: 18,
-                backgroundColor: "#a557ff",
+                backgroundColor: "#7b27f6",
                 maxWidth: "200px",
                 pt: 1.2,
                 fontWeight: "bold",

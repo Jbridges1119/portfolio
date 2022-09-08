@@ -13,7 +13,7 @@ const Skills = () => {
   const { currentPercent, skillSect } = usePageLocation();
   const {scrollYProgress, scrollY} = useScroll()
   const yValue = useTransform(scrollYProgress, [0,1], [50,100])
-  const opacity = useTransform(scrollYProgress, [0.26,0.35], [0,1])
+  const opacity = useTransform(scrollYProgress, [0.26,0.32], [0,1])
   return (
     
       

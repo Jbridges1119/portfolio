@@ -8,12 +8,16 @@ type Props = {
 }
 
 const Story: React.FC<Props> = ({speed}) => {
-
+  const {scrollYProgress, scrollY} = useScroll()
+  const yValue = useTransform(scrollYProgress, [0,1], [50,100 * -2])
+  const opacity = useTransform(scrollYProgress, [0.26,0.32], [0,1])
 
   return (
    
     <Stack spacing={2}>
-      <motion.div initial={{ width: 0 }} transition={{ duration: 1 }}>
+      <motion.div
+      style={{y:yValue}}
+      >
         <Typography variant="h2" sx={{ color: "#4345E8", textAlign: "left" }}>
           Hello!
         </Typography>

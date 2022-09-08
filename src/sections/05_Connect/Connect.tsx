@@ -25,14 +25,12 @@ const Connect: React.FC<Props> = ({speed})=> {
   const { currentPercent, connectSect } = usePageLocation();
   const {scrollYProgress, scrollY} = useScroll()
   const yValue = useTransform(scrollYProgress, [0,1], [50,100])
-  const opacity = useTransform(scrollYProgress, [0.82,0.95], [0,1])
+  const opacity = useTransform(scrollYProgress, [0.82,0.88], [0,1])
 
 
   return (
    
-    <motion.div className="fill" 
-    style={{ opacity}}
-    >
+  
       
       <Box ref={connectSect}
         
@@ -49,9 +47,9 @@ const Connect: React.FC<Props> = ({speed})=> {
           alignItems="center"
         >
           <Grid item xl={7} lg={8} md={8} xs={10}>
-            <motion.div className='fill'
-           
-            >
+          <motion.div className="fill" 
+    style={{ opacity}}
+    >
               <Grid
                 container
                 direction="row"
@@ -81,7 +79,7 @@ const Connect: React.FC<Props> = ({speed})=> {
         </Grid>
         <Box height={"10vh"}/>
       </Box>
-      </motion.div>
+    
    
   );
 };
