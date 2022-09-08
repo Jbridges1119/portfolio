@@ -27,7 +27,7 @@ const LandingPage: React.FC = () => {
     <>
     <div className="hero" id="tsparticles1" ref={topSect}>
       <NavBar />
-      <motion.div className="fill" >
+     
         <Grid
           height={"75%"}
           container
@@ -45,7 +45,7 @@ const LandingPage: React.FC = () => {
           </Grid>
           <Grid item xs={12} lg={1.5}></Grid>
         </Grid>
-      </motion.div>
+    
       <Waves />
       <Bubbles />
       
