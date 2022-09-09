@@ -12,7 +12,6 @@ type Props = {
 const mainButtons = {
   offScreen: { filter: "blur(10px)", opacity: 0 },
   onScreen: {
-    // scale: [1,1,1, 1.2,1],
     opacity: 1,
     filter: "blur(00px)",
     transition: { delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
@@ -26,7 +25,6 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
   const zIndex = useTransform(scrollY, [0, 200], [100, 0]);
-  // const yRange = useTransform(scrollY, [0, scrollAmount], [0, 1000 * speed]);
   const filter = useTransform(
     scrollY,
     [0, scrollAmount],
@@ -71,9 +69,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   fontWeight: "bold",
                   textTransform: "none",
                   width: "220px",
-         
                   background: "none",
-
                   "&:hover": {
                     background: "none",
                   },
@@ -91,7 +87,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   );
                 })}
               </Button>
-            </motion.div>{" "}
+            </motion.div>
             <motion.div
               initial="preHover"
               whileHover="onHover"
@@ -110,9 +106,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   fontWeight: "bold",
                   width: "220px",
                   textTransform: "none",
-              
                   background: "none",
-
                   "&:hover": {
                     background: "none",
                   },

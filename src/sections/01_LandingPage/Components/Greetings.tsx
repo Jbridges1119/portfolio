@@ -13,7 +13,6 @@ const Greetings: React.FC<Props> = ({ speed }) => {
   const scrollAmount = 450;
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
-  // const yRange = useTransform(scrollY, [0, scrollAmount], [0, 1000 * speed]);
   const filter = useTransform(
     scrollY,
     [0, scrollAmount],
@@ -119,7 +118,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
             zIndex: 1,
             color: "white",
             textAlign: { lg: "left", xs: "center" },
-            fontFamily:'DM Sans'
+            fontFamily: "DM Sans",
           }}
         >
           <motion.div

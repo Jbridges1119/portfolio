@@ -20,7 +20,7 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
     display: "flex",
     color: "#fff",
     borderRadius: 25,
-    boxShadow: '0px 1px 3px 1px #424242',
+    boxShadow: "0px 1px 3px 1px #424242",
     fontSize: 16,
     backgroundColor: "#7b27f6",
     width: "100px",
@@ -40,7 +40,12 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
             whileHover="onHover"
             whileTap="onTap"
             variants={buttonAnimate}
-            style={{ maxWidth: "200px", borderRadius: 40, background:'black', marginBottom: '0.4rem' }}
+            style={{
+              maxWidth: "200px",
+              borderRadius: 40,
+              background: "black",
+              marginBottom: "0.4rem",
+            }}
           >
             <Button
               key={button.link}

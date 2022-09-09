@@ -1,5 +1,4 @@
 import { Box, CardMedia } from "@mui/material";
-import { updateBundle } from "typescript";
 //Front-end icons
 import BS from "../assets/01_Front/BS.png";
 import CSS from "../assets/01_Front/CSS.png";
@@ -27,7 +26,7 @@ import GITH from "../assets/04_Systems/GITH.png";
 import GITP from "../assets/04_Systems/GITP.png";
 import NPM from "../assets/04_Systems/NPM.png";
 import VSCode from "../assets/04_Systems/VSCode.png";
-import UBUN from '../assets/04_Systems/ubuntu.png'
+import UBUN from "../assets/04_Systems/ubuntu.png";
 //Front-End Info
 const frontendInfoTop = [
   { icon: JS, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
@@ -40,7 +39,10 @@ const frontendInfoBot = [
   { icon: CSS, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
   { icon: MUI, link: "https://mui.com/material-ui/getting-started/overview/" },
   { icon: SASS, link: "https://sass-lang.com/documentation/" },
-  { icon: BS, link: "https://getbootstrap.com/docs/4.1/getting-started/introduction/" },
+  {
+    icon: BS,
+    link: "https://getbootstrap.com/docs/4.1/getting-started/introduction/",
+  },
   { icon: Framer, link: "https://www.framer.com/docs/" },
 ];
 //Back-End Info
@@ -54,9 +56,18 @@ const backendInfo = [
 const testingInfo = [
   { icon: MC, link: "https://mochajs.org/api/index.html" },
   { icon: Chai, link: "https://www.chaijs.com/api/" },
-  { icon: ESLint, link: "https://eslint.org/docs/latest/user-guide/getting-started" },
-  { icon: JEST, link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1" },
-  { icon: Cypress, link: "https://docs.cypress.io/guides/overview/why-cypress" },
+  {
+    icon: ESLint,
+    link: "https://eslint.org/docs/latest/user-guide/getting-started",
+  },
+  {
+    icon: JEST,
+    link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1",
+  },
+  {
+    icon: Cypress,
+    link: "https://docs.cypress.io/guides/overview/why-cypress",
+  },
 ];
 //Systems Info
 const systemsInfo = [
@@ -64,7 +75,7 @@ const systemsInfo = [
   { icon: GITP, link: "https://git-scm.com/doc" },
   { icon: NPM, link: "https://docs.npmjs.com/about-npm" },
   { icon: VSCode, link: "https://code.visualstudio.com/docs" },
-  { icon: UBUN, link:"https://ubuntu.com/"}
+  { icon: UBUN, link: "https://ubuntu.com/" },
 ];
 
 type IconInfo = {
@@ -73,13 +84,18 @@ type IconInfo = {
 };
 
 const imagesSpreader: Function = (list: any) => {
-  return list.map((image: IconInfo,) => {
+  return list.map((image: IconInfo) => {
     return (
-      <Box sx={{ p: 1, '&:hover': {
-        backgroundColor: '#cad1e3',
-        borderRadius: 2,
-    },
-  }} key={image.link}>
+      <Box
+        sx={{
+          p: 1,
+          "&:hover": {
+            backgroundColor: "#cad1e3",
+            borderRadius: 2,
+          },
+        }}
+        key={image.link}
+      >
         <a href={image.link} target="_blank" rel="noreferrer">
           <CardMedia
             component="img"

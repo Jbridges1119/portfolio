@@ -43,7 +43,7 @@ const list = skillsTab.map((skill: Skill) => {
                 textAlign: "left",
                 cursor: "default",
                 pt: 1,
-                fontWeight: 'bold'
+                fontWeight: "bold",
               }}
             >
               {skill.name}
@@ -66,7 +66,7 @@ const list = skillsTab.map((skill: Skill) => {
   );
 });
 
-const RestOfSkills = () => {
+const RestOfSkills: React.FC = () => {
   return <>{list}</>;
 };
 

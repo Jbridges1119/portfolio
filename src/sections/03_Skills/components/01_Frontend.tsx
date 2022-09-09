@@ -8,13 +8,10 @@ import {
   frontendInfoTop,
   frontendInfoBot,
 } from "../../../helpers/SkillsIconHelper";
-import { usePageLocation } from "../../../hooks/pageContext";
 
-const Frontend = () => {
-  const { skillSect } = usePageLocation();
-
+const Frontend: React.FC = () => {
   return (
-    <motion.div ref={skillSect}
+    <motion.div
       whileHover={{ scale: 1.15 }}
       style={{ minHeight: "160px", display: "flex" }}
     >
@@ -32,7 +29,7 @@ const Frontend = () => {
               textAlign: "left",
               cursor: "default",
               pt: 1,
-              fontWeight: 'bold'
+              fontWeight: "bold",
             }}
           >
             Front-End

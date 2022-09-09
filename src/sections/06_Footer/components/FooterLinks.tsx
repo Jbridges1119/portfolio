@@ -10,7 +10,7 @@ import linkedin from "../../../assets/linkedin.png";
 //Context hook
 import { usePageLocation } from "../../../hooks/pageContext";
 
-const FooterLinks = () => {
+const FooterLinks: React.FC = () => {
   const { topSect, scrollToSection } = usePageLocation();
   const buttonMotion = {
     scale: [1, 1.5, 1.5, 1, 1],

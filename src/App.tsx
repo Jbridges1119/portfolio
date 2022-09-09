@@ -1,6 +1,7 @@
 //Style
 import "./styles/App.css";
 import theme from "./styles/theme";
+import { motion } from "framer-motion";
 //Components
 import LandingPage from "./sections/01_LandingPage/LandingPage";
 import About from "./sections/02_About/About";
@@ -9,18 +10,15 @@ import Projects from "./sections/04_Projects/Projects";
 import Connect from "./sections/05_Connect/Connect";
 import Footer from "./sections/06_Footer/Footer";
 //MUI
-import {  ThemeProvider } from "@mui/material/styles";
-import { motion } from "framer-motion";
+import { ThemeProvider } from "@mui/material/styles";
 
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <motion.div
-        className="App"
-      >
+      <motion.div className="App">
         <LandingPage />
-        <About speed={-4}/>
+        <About speed={-4} />
         <Skills />
         <Projects />
         <Connect speed={-4} />

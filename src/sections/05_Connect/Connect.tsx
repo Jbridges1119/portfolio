@@ -15,7 +15,7 @@ type Props = {
 const Connect: React.FC<Props> = ({ speed }) => {
   const { connectSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
-  const yValue = useTransform(scrollYProgress, [0,1], [100 * speed,10])
+  const yValue = useTransform(scrollYProgress, [0, 1], [100 * speed, 10]);
   const opacity = useTransform(scrollYProgress, [0.82, 0.88], [0, 1]);
 
   return (

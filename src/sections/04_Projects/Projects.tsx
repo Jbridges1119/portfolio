@@ -1,7 +1,6 @@
 //MUI
 import { Grid, Box } from "@mui/material";
 //Style
-import { useScroll } from "framer-motion";
 import "../../styles/04_ProjectsStyle/Projects.css";
 //Components
 import ProjectsCard from "./components/ProjectsCard";
@@ -44,7 +43,11 @@ const Projects: React.FC = () => {
             xs={10}
             display={"grid"}
             //If I make another project add tinyapp and set this to xl:'repeat(3, 1fr)'
-            gridTemplateColumns={{xl:'repeat(2, 1fr)', md: "repeat(2, 1fr)", xs: "1fr" }}
+            gridTemplateColumns={{
+              xl: "repeat(2, 1fr)",
+              md: "repeat(2, 1fr)",
+              xs: "1fr",
+            }}
             // gridTemplateRows={{xl:'repeat(3, 1fr)', md: "repeat(2, 1fr)", xs: "1fr" }}
             gap={6}
           >

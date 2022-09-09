@@ -45,7 +45,7 @@ const initialColor = {
   projects: "none",
   connect: "none",
 };
-const NavBar = () => {
+const NavBar: React.FC = () => {
   const {
     currentPercent,
     aboutSect,
@@ -56,7 +56,7 @@ const NavBar = () => {
     topSect,
   } = usePageLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  //NavButton location
+  //NavButton location - set this into an object later
   const [home, setHome] = useState({});
   const [about, setAbout] = useState({});
   const [skills, setSkills] = useState({});
@@ -272,6 +272,7 @@ const NavBar = () => {
               pr: 6,
             }}
           >
+            {/* Map these buttons later */}
             <motion.button
               onClick={() => scrollToSection(topSect)}
               whileHover={onHover}

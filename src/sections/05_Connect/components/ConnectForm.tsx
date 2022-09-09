@@ -6,10 +6,10 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LoadingButton from "@mui/lab/LoadingButton";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CloseIcon from "@mui/icons-material/Close";
-
 //Style
 import { motion } from "framer-motion";
 import linkedin from "../../../assets/linkedin.png";
+//Context Hook
 import { usePageLocation } from "../../../hooks/pageContext";
 
 type FormState = {
@@ -20,7 +20,7 @@ type FormState = {
 
 type ServiceMessage = [string, string, boolean];
 
-const Form = () => {
+const Form: React.FC = () => {
   const { buttonAnimate, letterAnimate } = usePageLocation();
   const initialFormState = {
     Name: "",
@@ -79,7 +79,6 @@ const Form = () => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target;
-
     //id as keyof FormState; allows access for use in updated FormState
     const formKey = id as keyof FormState;
     const updatedFormState = { ...formState };
@@ -140,7 +139,6 @@ const Form = () => {
                   fontSize: 20,
                   backgroundColor: "#7b27f6",
                   width: "200px",
-               
                   fontWeight: "bold",
                   textTransform: "none",
                   ":hover": {

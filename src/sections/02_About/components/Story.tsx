@@ -8,14 +8,16 @@ type Props = {
 };
 
 const Story: React.FC<Props> = ({ speed }) => {
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
   const yValue = useTransform(scrollYProgress, [0, 1], [50, 100 * speed]);
-  // const opacity = useTransform(scrollYProgress, [0.26, 0.32], [0, 1]);
-  const textBodySX = { color: "black", textAlign: "left" }
+  const textBodySX = { color: "black", textAlign: "left" };
   return (
     <Stack spacing={2}>
       <motion.div style={{ y: yValue }}>
-        <Typography variant="h2" sx={{ color: "#4345E8", textAlign: "left",fontWeight: 'bold' }}>
+        <Typography
+          variant="h2"
+          sx={{ color: "#4345E8", textAlign: "left", fontWeight: "bold" }}
+        >
           Hello!
         </Typography>
       </motion.div>
@@ -35,10 +37,7 @@ const Story: React.FC<Props> = ({ speed }) => {
         collaboration, or just to chat. Please feel free to contact me.
       </Typography>
       <Divider />
-      <Typography
-        variant="body1"
-        sx={{ ...textBodySX, py: 3 }}
-      >
+      <Typography variant="body1" sx={{ ...textBodySX, py: 3 }}>
         <i>~ Don't Try To Be The Best. Just Try To Be 1% Better Everyday.</i>
       </Typography>
     </Stack>

@@ -27,10 +27,9 @@ import NPM from "../assets/04_Systems/NPM.png";
 import VSCode from "../assets/04_Systems/VSCode.png";
 //Gifs
 import bgn from "../assets/projects/bgn.gif";
-import cStory from '../assets/projects/TheCompleteStory.gif'
-import tweeter from '../assets/projects/Tweeter.gif'
-import interview from '../assets/projects/interview.gif'
-
+import cStory from "../assets/projects/TheCompleteStory.gif";
+import tweeter from "../assets/projects/Tweeter.gif";
+import interview from "../assets/projects/interview.gif";
 
 const projectsInfo = [
   {
@@ -41,18 +40,32 @@ game collections, scheduling events and making sure
 everyone is prepared to maximize their time together.`,
     gif: bgn,
     buttons: [
-      { name: "GitHub", link: "https://github.com/Jbridges1119/boredGameNyte#readme" },
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/boredGameNyte#readme",
+      },
       { name: "Video", link: "https://youtu.be/ge31-cPi2Do" },
     ],
-    stack: [{name:RT}, {name:EX}, {name:NODE}, {name:PSQL}]
+    stack: [{ name: RT }, { name: EX }, { name: NODE }, { name: PSQL }],
   },
   {
     name: "The Complete Story",
     description:
       "Storytelling web application where a user posts the beginning of a story and other users are able to leave contributions that can be chosen by the initial author to be added to the original story.",
     gif: cStory,
-    buttons: [{ name: "GitHub", link: "https://github.com/Jbridges1119/TheCompleteStory#readme" }],
-    stack: [{name:JQ}, {name:SASS}, {name:EX}, {name:NODE}, {name:PSQL}]
+    buttons: [
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/TheCompleteStory#readme",
+      },
+    ],
+    stack: [
+      { name: JQ },
+      { name: SASS },
+      { name: EX },
+      { name: NODE },
+      { name: PSQL },
+    ],
   },
   {
     name: "Interview Scheduler",
@@ -60,20 +73,35 @@ everyone is prepared to maximize their time together.`,
       "A single-page web app to help a user create, edit, and track, an hour long interview with one of 5 interviewers, between the hours of 12 PM - 5 PM, Monday-Friday.",
     gif: interview,
     buttons: [
-      { name: "GitHub", link: "https://github.com/Jbridges1119/scheduler#readme" },
-      { name: "Live", link: "https://interview-scheduler-jbridges.netlify.app/" },
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/scheduler#readme",
+      },
+      {
+        name: "Live",
+        link: "https://interview-scheduler-jbridges.netlify.app/",
+      },
     ],
-    stack: [{name:RT}, {name:EX}, {name:NODE}, {name:PSQL}]
+    stack: [{ name: RT }, { name: EX }, { name: NODE }, { name: PSQL }],
   },
   {
     name: "Tweeter",
-    description: "Tweeter is a simple, single-page social media platform where users can leave 140 character posts. Users can also read through their list of tweets in chronological order.",
+    description:
+      "Tweeter is a simple, single-page social media platform where users can leave 140 character posts. Users can also read through their list of tweets in chronological order.",
     gif: tweeter,
-    buttons: [{ name: "GitHub", link: "https://github.com/Jbridges1119/tweeter#readme" },{ name: "Live", link: "https://tweeter-lhl-project-jbridges.herokuapp.com/" },],
-    
-    stack: [{name:JQ}, {name:EX}, {name:SASS}, {name:NODE}]
-  },
+    buttons: [
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/tweeter#readme",
+      },
+      {
+        name: "Live",
+        link: "https://tweeter-lhl-project-jbridges.herokuapp.com/",
+      },
+    ],
 
+    stack: [{ name: JQ }, { name: EX }, { name: SASS }, { name: NODE }],
+  },
 ];
 
 export { projectsInfo };

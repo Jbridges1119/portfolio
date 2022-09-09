@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  font-family: 'PT Serif';
+  font-family: "PT Serif";
 }
 .hero {
   overflow: hidden;
@@ -12,7 +12,7 @@ body {
   height: calc(85vh + 80px);
   min-height: 200px;
   background: #ffce54;
-  
+
   background: linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0);
   .w {
     position: absolute;
@@ -54,5 +54,3 @@ body {
 #tsparticles {
   z-index: -1;
 }
-
-

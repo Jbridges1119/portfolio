@@ -1,38 +1,38 @@
 import { createContext, useState, useEffect, useContext, useRef } from "react";
+//Style
 import { useScroll, useTransform } from "framer-motion";
 
 interface CurrentPercentType {
-  topSect: React.MutableRefObject<HTMLInputElement | null>
+  topSect: React.MutableRefObject<HTMLInputElement | null>;
   currentPercent: number;
- aboutSect: React.MutableRefObject<HTMLInputElement | null>
-  skillSect: React.MutableRefObject<HTMLInputElement | null>
-  projectSect: React.MutableRefObject<HTMLInputElement | null>
-  connectSect: React.MutableRefObject<HTMLInputElement | null>
+  aboutSect: React.MutableRefObject<HTMLInputElement | null>;
+  skillSect: React.MutableRefObject<HTMLInputElement | null>;
+  projectSect: React.MutableRefObject<HTMLInputElement | null>;
+  connectSect: React.MutableRefObject<HTMLInputElement | null>;
   scrollToSection: Function;
   buttonAnimate: {
     preHover: {
-        y: number;
+      y: number;
     };
     onHover: {
-        // y: string;
-        transition: {
-            staggerChildren: number;
-        };
+      transition: {
+        staggerChildren: number;
+      };
     };
     onTap: {
-        y: number;
-    }
+      y: number;
+    };
   };
   letterAnimate: {
     preHover: {
-        y: number;
-        scale: number;
+      y: number;
+      scale: number;
     };
     onHover: {
-        scale: number;
-        y: string;
+      scale: number;
+      y: string;
     };
-};
+  };
 }
 
 interface Props {
@@ -52,7 +52,6 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
   const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
-
   //Scroll to event handles
   const scrollToSection = (elementRef: any) => {
     window.scrollTo({
@@ -65,7 +64,6 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
     () =>
       yRange.onChange((v) => {
         setCurrentPercent(Math.trunc(v));
-       
       }),
     [yRange]
   );
@@ -81,7 +79,6 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
   const buttonAnimate = {
     preHover: { y: 0 },
     onHover: {
-     
       transition: {
         staggerChildren: 0.05,
       },
@@ -90,7 +87,7 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
       y: 0,
     },
   };
-//End of Button Animation
+  //End of Button Animation
   return (
     <pageContext.Provider
       value={{
@@ -100,7 +97,9 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
         projectSect,
         connectSect,
         scrollToSection,
-        topSect, buttonAnimate, letterAnimate
+        topSect,
+        buttonAnimate,
+        letterAnimate,
       }}
     >
       {children}

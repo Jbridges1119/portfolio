@@ -9,19 +9,18 @@ import { usePageLocation } from "../../hooks/pageContext";
 //Style
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const Skills = () => {
+const Skills: React.FC = () => {
   const { skillSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
-  // const yValue = useTransform(scrollYProgress, [0,1], [50,100])
-  const opacity = useTransform(scrollYProgress, [0.25, 0.30], [0, 1]);
-  const backgroundCardSX= {
+  const opacity = useTransform(scrollYProgress, [0.25, 0.3], [0, 1]);
+  const backgroundCardSX = {
     width: "100%",
     background: `#E3EAFD`,
     my: 3,
     borderRadius: 5,
     display: "flex",
     justifyContent: "center",
-  }
+  };
   return (
     <Box
       ref={skillSect}
@@ -41,10 +40,7 @@ const Skills = () => {
       >
         <Grid item lg={6} md={7} xs={10}>
           <motion.div style={{ opacity }}>
-            <Paper
-              elevation={24}
-              sx={backgroundCardSX}
-            >
+            <Paper elevation={24} sx={backgroundCardSX}>
               <Grid item xs={10}>
                 <Stack spacing={1} my={3}>
                   <Frontend />
