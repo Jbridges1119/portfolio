@@ -9,8 +9,6 @@ interface CurrentPercentType {
   projectSect: any;
   connectSect: any;
   scrollToSection: Function;
-  scrollYProgress: {};
-  scrollY: {};
 }
 
 interface Props {
@@ -27,7 +25,7 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
   const connectSect = useRef<HTMLInputElement | null>(null);
   //Page scroll percent
   const [currentPercent, setCurrentPercent] = useState<number>(0);
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
 
@@ -56,7 +54,7 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
         projectSect,
         connectSect,
         scrollToSection,
-        topSect, scrollYProgress, scrollY
+        topSect, 
       }}
     >
       {children}
