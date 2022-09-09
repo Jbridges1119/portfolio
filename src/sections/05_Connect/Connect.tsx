@@ -44,14 +44,13 @@ const Connect: React.FC<Props> = ({ speed }) => {
             >
               <Grid item xs={11} lg={3}>
                 <Stack spacing={2}>
-                  <Typography mt={4} color={"#4345E8"} variant="h3">
+                  <Typography mt={4} color={"#4345E8"} fontWeight={'bold'} variant="h3">
                     Let's Connect!
                   </Typography>
                   <Divider />
-                  <Typography variant="h6">
+                  <Typography variant="body1" >
                     I'd love to here from you! <br />
-                    If you want to grab a "remote" coffee and chat, please feel
-                    free to leave me a message and say hello.
+                    If you want to grab a "remote" coffee and chat, please feel free to say hello and leave me a message .
                   </Typography>
                 </Stack>
               </Grid>

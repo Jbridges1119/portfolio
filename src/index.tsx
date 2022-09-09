@@ -5,13 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AnimatePresence } from "framer-motion";
 import Provider from './hooks/pageContext'
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <Provider>
-    <AnimatePresence exitBeforeEnter={true}>
+    <AnimatePresence >
     <App />
     </AnimatePresence>
     </Provider>

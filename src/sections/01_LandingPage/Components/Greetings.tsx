@@ -119,6 +119,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
             zIndex: 1,
             color: "white",
             textAlign: { lg: "left", xs: "center" },
+            fontFamily:'DM Sans'
           }}
         >
           <motion.div

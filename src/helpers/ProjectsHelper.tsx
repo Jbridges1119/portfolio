@@ -36,7 +36,7 @@ const projectsInfo = [
   {
     name: "Bored?GameNyte!",
     description: `A web application for board game and game
-night enthusiasts, to help facilitate the organizing of
+night enthusiasts, to help organize of
 game collections, scheduling events and making sure
 everyone is prepared to maximize their time together.`,
     gif: bgn,
@@ -71,7 +71,7 @@ everyone is prepared to maximize their time together.`,
     gif: tweeter,
     buttons: [{ name: "GitHub", link: "https://github.com/Jbridges1119/tweeter#readme" },{ name: "Live", link: "https://tweeter-lhl-project-jbridges.herokuapp.com/" },],
     
-    stack: [{name:JQ}, {name:HTML}, {name:SASS}, {name:NODE}]
+    stack: [{name:JQ}, {name:EX}, {name:SASS}, {name:NODE}]
   },
 
 ];

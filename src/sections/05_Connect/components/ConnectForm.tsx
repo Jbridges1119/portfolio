@@ -136,6 +136,9 @@ const Form = () => {
                 pt: 0.9,
                 fontWeight: "bold",
                 textTransform: "none",
+                ':hover':{
+                  bgcolor:"#5802ff"
+                }
               }}
               loading={submitting}
             >

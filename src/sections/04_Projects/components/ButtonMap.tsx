@@ -23,7 +23,10 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
     width: "100px",
     pt: 0.9,
     fontWeight: "bold",
-    textTransform: "none",
+    mb:1,
+    ':hover':{
+      bgcolor:"#5802ff"
+    }
   };
 
   return (

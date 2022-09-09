@@ -43,6 +43,7 @@ const list = skillsTab.map((skill: Skill) => {
                 textAlign: "left",
                 cursor: "default",
                 pt: 1,
+                fontWeight: 'bold'
               }}
             >
               {skill.name}

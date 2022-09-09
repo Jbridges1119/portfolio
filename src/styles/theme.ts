@@ -4,9 +4,9 @@ import {
 } from '@mui/material/styles';
 
 
-const primaryColor = "#0A3943";
-const secondaryColor = "#0F6E83";
-const dangerColor = "#976606";
+const primaryColor = "#5802ff";
+const secondaryColor = "#5802ff";
+
 
 let theme = createTheme({
   breakpoints: {
@@ -16,19 +16,38 @@ let theme = createTheme({
       md: 1050,
       lg: 1292,
       xl: 1536,
-    },}
-  // palette: {
-  //   primary: {
-  //     main: primaryColor,
-  //   },
-  //   secondary: {
-  //     main: secondaryColor,
-  //   },
-  //   error: {
-  //     main: dangerColor,
-  //   },
-  // },
+    },},
+  palette: {
+    primary: {
+      main: primaryColor,
+      dark: "#5802ff"
+    },
+    secondary: {
+      main: secondaryColor,
+    },
+    action: {
+      hoverOpacity: 0
+    }
+  },
   
+  typography:{
+  fontFamily: 'PT Serif',
+  button: {
+    textTransform: 'none',
+    fontFamily:' DM Sans',
+    letterSpacing: '0.04em'
+  },
+  h4:{
+    letterSpacing:"0.01em"
+  },
+  h6:{
+    fontFamily: 'DM Sans'
+  },
+  body1: {
+    fontFamily: 'DM Sans',
+    fontSize: '1.1rem'
+  }
+  }
 });
 
 theme = responsiveFontSizes(theme);

@@ -32,6 +32,7 @@ const Frontend = () => {
               textAlign: "left",
               cursor: "default",
               pt: 1,
+              fontWeight: 'bold'
             }}
           >
             Front-End

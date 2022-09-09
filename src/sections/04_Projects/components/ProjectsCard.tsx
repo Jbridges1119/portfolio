@@ -81,8 +81,8 @@ const ProjectsCard: React.FC = () => {
               alignItems="center"
             >
               <Grid item xs={11}>
-                <Stack spacing={0}>
-                  <Typography variant="h4" color={"#4345E8"}>
+                <Stack spacing={2}>
+                  <Typography variant="h4" color={"#4345E8"} fontWeight={'bold'}>
                     {project.name}
                   </Typography>
                   <Typography variant="body1">{project.description}</Typography>
