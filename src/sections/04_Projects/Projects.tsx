@@ -10,7 +10,7 @@ import { usePageLocation } from "../../hooks/pageContext";
 
 const Projects: React.FC = () => {
   const { projectSect } = usePageLocation();
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
   // const yValue = useTransform(
   //   scrollYProgress,
   //   [0, 0.5, 1],
@@ -30,7 +30,6 @@ const Projects: React.FC = () => {
         }}
       >
         <Box height={"4vh"} />
-        {/* <motion.div style={{ opacity }}> */}
         <Grid
           container
           direction="row"
@@ -44,14 +43,14 @@ const Projects: React.FC = () => {
             sm={10}
             xs={10}
             display={"grid"}
-            //If I make another project add tinyapp and set this to xl:'repeat(3, 1fr)
-            gridTemplateColumns={{ md: "repeat(2, 1fr)", xs: "1fr" }}
+            //If I make another project add tinyapp and set this to xl:'repeat(3, 1fr)'
+            gridTemplateColumns={{xl:'repeat(2, 1fr)', md: "repeat(2, 1fr)", xs: "1fr" }}
+            // gridTemplateRows={{xl:'repeat(3, 1fr)', md: "repeat(2, 1fr)", xs: "1fr" }}
             gap={6}
           >
             <ProjectsCard />
           </Grid>
         </Grid>
-        {/* </motion.div> */}
         <Box height={"15vh"} />
       </Box>
     </>

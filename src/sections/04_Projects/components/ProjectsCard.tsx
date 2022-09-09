@@ -28,6 +28,7 @@ const ProjectsCard: React.FC = () => {
     m: 2,
     width: "90%",
     position: "relative",
+    
   };
   const hoverHeader = { color: "white", fontWeight: "bold", mt: 1 };
   const hoverButton = {

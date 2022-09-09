@@ -71,7 +71,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   fontWeight: "bold",
                   textTransform: "none",
                   width: "220px",
-                  pt: 0.8,
+         
                   background: "none",
 
                   "&:hover": {
@@ -110,7 +110,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   fontWeight: "bold",
                   width: "220px",
                   textTransform: "none",
-                  pt: 0.8,
+              
                   background: "none",
 
                   "&:hover": {
