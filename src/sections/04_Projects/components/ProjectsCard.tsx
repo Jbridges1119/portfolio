@@ -95,6 +95,10 @@ const ProjectsCard: React.FC = () => {
                     {project.name}
                   </Typography>
                   <Typography variant="body1">{project.description}</Typography>
+
+                  <Box className="center-all" sx={{ display: { sm: "none" } }}>
+                    <IconMap stack={project.stack} />
+                  </Box>
                   <Box
                     display={"flex"}
                     justifyContent={"space-around"}
