@@ -18,27 +18,9 @@ const mainButtons = {
     transition: { delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
   },
 };
-const letterAnimate = {
-  preHover: { y: 0, scale: 1 },
-  onHover: {
-    scale: 1.3,
-    y: "-2px",
-  },
-};
-const buttonAnimate = {
-  preHover: { y: 0 },
-  onHover: {
-    y: "-1px",
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-  onTap: {
-    y: 0,
-  },
-};
+
 const MainButtons: React.FC<Props> = ({ speed }) => {
-  const { projectSect, scrollToSection } = usePageLocation();
+  const { projectSect, scrollToSection,buttonAnimate, letterAnimate } = usePageLocation();
   const scrollAmount = 350;
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
@@ -98,7 +80,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
               >
                 {"Projects".split("").map((letter, i) => {
                   return (
-                    <motion.span key={i} variants={letterAnimate}>
+                    <motion.span key={i} style={{paddingInline: '0.07em'}} variants={letterAnimate}>
                       {letter}
                     </motion.span>
                   );
@@ -134,7 +116,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
               >
                 {"Resume".split("").map((letter, i) => {
                   return (
-                    <motion.span key={i} variants={letterAnimate}>
+                    <motion.span key={i} style={{paddingInline: '0.08em'}} variants={letterAnimate}>
                       {letter}
                     </motion.span>
                   );

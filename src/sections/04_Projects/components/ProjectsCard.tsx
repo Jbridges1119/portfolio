@@ -39,7 +39,7 @@ const ProjectsCard: React.FC = () => {
     pt: 0.9,
     textTransform: "none",
   };
-  const buttonText = { fontColor: "white", fontWeight: "bold", px: 2 };
+  const buttonText = { fontColor: "white", fontWeight: "bold", px: 2, fontFamily: 'DM Sans' };
   
   return (
     <>

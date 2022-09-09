@@ -10,6 +10,7 @@ import CloseIcon from "@mui/icons-material/Close";
 //Style
 import { motion } from "framer-motion";
 import linkedin from "../../../assets/linkedin.png";
+import { usePageLocation } from "../../../hooks/pageContext";
 
 type FormState = {
   Name: string;
@@ -20,6 +21,7 @@ type FormState = {
 type ServiceMessage = [string, string, boolean];
 
 const Form = () => {
+  const { buttonAnimate, letterAnimate } = usePageLocation();
   const initialFormState = {
     Name: "",
     Email: "",
@@ -109,7 +111,6 @@ const Form = () => {
         <form noValidate autoComplete="off" onSubmit={submitForm}>
           <Stack spacing={2} my={4}>
             {formInputs}
-
             <TextField
               id="Message"
               onChange={updateFormControl}
@@ -122,7 +123,13 @@ const Form = () => {
               required
               disabled={submitting}
             />
-
+<motion.div 
+ initial="preHover"
+ whileHover="onHover"
+ whileTap="onTap"
+ variants={buttonAnimate}
+ style={{maxWidth: '200px',  borderRadius: 400}}
+>
             <LoadingButton
               type="submit"
               sx={{
@@ -132,7 +139,7 @@ const Form = () => {
                 borderRadius: 25,
                 fontSize: 20,
                 backgroundColor: "#7b27f6",
-                maxWidth: "200px",
+                width: "200px",
                 pt: 0.9,
                 fontWeight: "bold",
                 textTransform: "none",
@@ -142,8 +149,14 @@ const Form = () => {
               }}
               loading={submitting}
             >
-              Submit
-            </LoadingButton>
+              {"Submit".split("").map((letter, i) => {
+                  return (
+                    <motion.span key={i} style={{paddingInline: '0.07em'}} variants={letterAnimate}>
+                      {letter}
+                    </motion.span>
+                  );
+                })}
+            </LoadingButton></motion.div>
           </Stack>
         </form>
       ) : (
