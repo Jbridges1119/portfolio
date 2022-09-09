@@ -13,7 +13,7 @@ const Skills = () => {
   const { skillSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
   // const yValue = useTransform(scrollYProgress, [0,1], [50,100])
-  const opacity = useTransform(scrollYProgress, [0.26, 0.32], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0.25, 0.30], [0, 1]);
   const backgroundCardSX= {
     width: "100%",
     background: `#E3EAFD`,

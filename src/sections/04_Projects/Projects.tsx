@@ -8,15 +8,6 @@ import ProjectsCard from "./components/ProjectsCard";
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
 
-//Mobile fix maybe?
-// const attributes = isMobile ? {
-//   drag: "x",
-//   dragConstraints: { left: 0, right: 0 },
-//   animate: { x: myVariable },
-//   onDragEnd: myFunction
-// } : { onMouseOver, onMouseLeave };
-// <motion.div {...attributes}> {/* stuff */} </motion.div>
-
 const Projects: React.FC = () => {
   const { projectSect } = usePageLocation();
   const { scrollYProgress } = useScroll();

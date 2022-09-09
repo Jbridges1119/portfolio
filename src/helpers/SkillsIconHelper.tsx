@@ -71,7 +71,7 @@ type IconInfo = {
 };
 
 const imagesSpreader: Function = (list: any) => {
-  return list.map((image: IconInfo) => {
+  return list.map((image: IconInfo,) => {
     return (
       <Box sx={{ p: 1, '&:hover': {
         backgroundColor: '#cad1e3',

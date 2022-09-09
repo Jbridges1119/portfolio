@@ -15,7 +15,7 @@ type Props = {
 const Connect: React.FC<Props> = ({ speed }) => {
   const { connectSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
-  // const yValue = useTransform(scrollYProgress, [0,1], [50,100])
+  const yValue = useTransform(scrollYProgress, [0,1], [100 * speed,10])
   const opacity = useTransform(scrollYProgress, [0.82, 0.88], [0, 1]);
 
   return (
@@ -35,7 +35,7 @@ const Connect: React.FC<Props> = ({ speed }) => {
         alignItems="center"
       >
         <Grid item xl={7} lg={8} md={8} xs={10}>
-          <motion.div className="fill" style={{ opacity }}>
+          <motion.div className="fill" style={{ opacity, y: yValue }}>
             <Grid
               container
               direction="row"
@@ -44,13 +44,19 @@ const Connect: React.FC<Props> = ({ speed }) => {
             >
               <Grid item xs={11} lg={3}>
                 <Stack spacing={2}>
-                  <Typography mt={4} color={"#4345E8"} fontWeight={'bold'} variant="h3">
+                  <Typography
+                    mt={4}
+                    color={"#4345E8"}
+                    fontWeight={"bold"}
+                    variant="h3"
+                  >
                     Let's Connect!
                   </Typography>
                   <Divider />
-                  <Typography variant="body1" >
+                  <Typography variant="body1">
                     I'd love to here from you! <br />
-                    If you want to grab a "remote" coffee and chat, please feel free to say hello and leave me a message .
+                    If you want to grab a "remote" coffee and chat, please feel
+                    free to say hello and leave me a message .
                   </Typography>
                 </Stack>
               </Grid>

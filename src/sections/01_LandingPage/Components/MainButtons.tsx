@@ -20,7 +20,8 @@ const mainButtons = {
 };
 
 const MainButtons: React.FC<Props> = ({ speed }) => {
-  const { projectSect, scrollToSection,buttonAnimate, letterAnimate } = usePageLocation();
+  const { projectSect, scrollToSection, buttonAnimate, letterAnimate } =
+    usePageLocation();
   const scrollAmount = 350;
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
@@ -80,7 +81,11 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
               >
                 {"Projects".split("").map((letter, i) => {
                   return (
-                    <motion.span key={i} style={{paddingInline: '0.07em'}} variants={letterAnimate}>
+                    <motion.span
+                      key={i}
+                      style={{ paddingInline: "0.07em" }}
+                      variants={letterAnimate}
+                    >
                       {letter}
                     </motion.span>
                   );
@@ -116,7 +121,11 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
               >
                 {"Resume".split("").map((letter, i) => {
                   return (
-                    <motion.span key={i} style={{paddingInline: '0.08em'}} variants={letterAnimate}>
+                    <motion.span
+                      key={i}
+                      style={{ paddingInline: "0.08em" }}
+                      variants={letterAnimate}
+                    >
                       {letter}
                     </motion.span>
                   );

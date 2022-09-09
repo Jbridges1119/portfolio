@@ -123,40 +123,45 @@ const Form = () => {
               required
               disabled={submitting}
             />
-<motion.div 
- initial="preHover"
- whileHover="onHover"
- whileTap="onTap"
- variants={buttonAnimate}
- style={{maxWidth: '200px',  borderRadius: 400}}
->
-            <LoadingButton
-              type="submit"
-              sx={{
-                display: "flex",
-                color: "#fff",
-                border: "2px solid white",
-                borderRadius: 25,
-                fontSize: 20,
-                backgroundColor: "#7b27f6",
-                width: "200px",
-                pt: 0.9,
-                fontWeight: "bold",
-                textTransform: "none",
-                ':hover':{
-                  bgcolor:"#5802ff"
-                }
-              }}
-              loading={submitting}
+            <motion.div
+              initial="preHover"
+              whileHover="onHover"
+              whileTap="onTap"
+              variants={buttonAnimate}
+              style={{ maxWidth: "200px", borderRadius: 400 }}
             >
-              {"Submit".split("").map((letter, i) => {
+              <LoadingButton
+                type="submit"
+                sx={{
+                  display: "flex",
+                  color: "#fff",
+                  border: "2px solid white",
+                  borderRadius: 25,
+                  fontSize: 20,
+                  backgroundColor: "#7b27f6",
+                  width: "200px",
+                  pt: 0.9,
+                  fontWeight: "bold",
+                  textTransform: "none",
+                  ":hover": {
+                    bgcolor: "#5802ff",
+                  },
+                }}
+                loading={submitting}
+              >
+                {"Submit".split("").map((letter, i) => {
                   return (
-                    <motion.span key={i} style={{paddingInline: '0.07em'}} variants={letterAnimate}>
+                    <motion.span
+                      key={i}
+                      style={{ paddingInline: "0.07em" }}
+                      variants={letterAnimate}
+                    >
                       {letter}
                     </motion.span>
                   );
                 })}
-            </LoadingButton></motion.div>
+              </LoadingButton>
+            </motion.div>
           </Stack>
         </form>
       ) : (

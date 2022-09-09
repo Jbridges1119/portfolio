@@ -4,7 +4,6 @@ import { Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { usePageLocation } from "../../../hooks/pageContext";
 
-
 type Props = {
   buttons: {
     name: string;
@@ -21,42 +20,49 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
     display: "flex",
     color: "#fff",
     borderRadius: 25,
+    boxShadow: '0px 1px 4px 0px black',
     fontSize: 16,
     backgroundColor: "#7b27f6",
     width: "100px",
     pt: 0.9,
     fontWeight: "bold",
-    mb:1,
-    ':hover':{
-      bgcolor:"#5802ff"
-    }
+    mb: 1,
+    ":hover": {
+      bgcolor: "#5802ff",
+    },
   };
 
   return (
     <>
-      {buttons.map((button: buttonType) => {
+      {buttons.map((button: buttonType, i) => {
         return (
-          <motion.div 
- initial="preHover"
- whileHover="onHover"
- whileTap="onTap"
- variants={buttonAnimate}
- style={{maxWidth: '200px',  borderRadius: 400}}
->
-          <Button
-            key={button.link}
-            href={button.link}
-            target="_blank"
-            sx={buttonSx}
+          <motion.div
+            key={i}
+            initial="preHover"
+            whileHover="onHover"
+            whileTap="onTap"
+            variants={buttonAnimate}
+            style={{ maxWidth: "200px", borderRadius: 400 }}
           >
-            {button.name.split("").map((letter, i) => {
-                  return (
-                    <motion.span key={i} style={{paddingInline: '0.07em'}} variants={letterAnimate}>
-                      {letter}
-                    </motion.span>
-                  );
-                })}
-          </Button></motion.div>
+            <Button
+              key={button.link}
+              href={button.link}
+              target="_blank"
+              sx={buttonSx}
+            >
+              {button.name.split("").map((letter, i) => {
+                return (
+                  <motion.span
+                    key={i}
+                    style={{ paddingInline: "0.07em" }}
+                    variants={letterAnimate}
+                  >
+                    {letter}
+                  </motion.span>
+                );
+              })}
+            </Button>
+          </motion.div>
         );
       })}
     </>

@@ -39,8 +39,13 @@ const ProjectsCard: React.FC = () => {
     pt: 0.9,
     textTransform: "none",
   };
-  const buttonText = { fontColor: "white", fontWeight: "bold", px: 2, fontFamily: 'DM Sans' };
-  
+  const buttonText = {
+    fontColor: "white",
+    fontWeight: "bold",
+    px: 2,
+    fontFamily: "DM Sans",
+  };
+
   return (
     <>
       {projectsInfo.map((project) => {
@@ -82,7 +87,11 @@ const ProjectsCard: React.FC = () => {
             >
               <Grid item xs={11}>
                 <Stack spacing={2}>
-                  <Typography variant="h4" color={"#4345E8"} fontWeight={'bold'}>
+                  <Typography
+                    variant="h4"
+                    color={"#4345E8"}
+                    fontWeight={"bold"}
+                  >
                     {project.name}
                   </Typography>
                   <Typography variant="body1">{project.description}</Typography>

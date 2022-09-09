@@ -60,11 +60,12 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
       behavior: "smooth",
     });
   };
-  //Watcher for nav button transition
+  // Watcher for nav button transition
   useEffect(
     () =>
       yRange.onChange((v) => {
         setCurrentPercent(Math.trunc(v));
+       
       }),
     [yRange]
   );
