@@ -1,7 +1,7 @@
 import React from "react";
 //Style
 import { motion, useScroll, useTransform } from "framer-motion";
-import Thinking from "../../../assets/thinking.png";
+import Thinking from "../../../assets/thinking1.png";
 //MUI5
 import { CardMedia, Box } from "@mui/material";
 
