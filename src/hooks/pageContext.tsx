@@ -2,13 +2,37 @@ import { createContext, useState, useEffect, useContext, useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
 
 interface CurrentPercentType {
-  topSect: any;
+  topSect: React.MutableRefObject<HTMLInputElement | null>
   currentPercent: number;
-  aboutSect: any;
-  skillSect: any;
-  projectSect: any;
-  connectSect: any;
+ aboutSect: React.MutableRefObject<HTMLInputElement | null>
+  skillSect: React.MutableRefObject<HTMLInputElement | null>
+  projectSect: React.MutableRefObject<HTMLInputElement | null>
+  connectSect: React.MutableRefObject<HTMLInputElement | null>
   scrollToSection: Function;
+  buttonAnimate: {
+    preHover: {
+        y: number;
+    };
+    onHover: {
+        // y: string;
+        transition: {
+            staggerChildren: number;
+        };
+    };
+    onTap: {
+        y: number;
+    }
+  };
+  letterAnimate: {
+    preHover: {
+        y: number;
+        scale: number;
+    };
+    onHover: {
+        scale: number;
+        y: string;
+    };
+};
 }
 
 interface Props {
@@ -45,6 +69,27 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
     [yRange]
   );
 
+  //Button Animation
+  const letterAnimate = {
+    preHover: { y: 0, scale: 1.2 },
+    onHover: {
+      scale: 1.4,
+      y: "-2px",
+    },
+  };
+  const buttonAnimate = {
+    preHover: { y: 0 },
+    onHover: {
+     
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+    onTap: {
+      y: 0,
+    },
+  };
+//End of Button Animation
   return (
     <pageContext.Provider
       value={{
@@ -54,7 +99,7 @@ const PageLocContext: React.FC<Props> = ({ children }) => {
         projectSect,
         connectSect,
         scrollToSection,
-        topSect, 
+        topSect, buttonAnimate, letterAnimate
       }}
     >
       {children}
