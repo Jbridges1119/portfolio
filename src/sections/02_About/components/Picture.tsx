@@ -9,8 +9,8 @@ type Props = {
   speed: number;
 };
 const Picture: React.FC<Props> = ({ speed }) => {
-  const { scrollYProgress, scrollY } = useScroll();
-  const yValue = useTransform(scrollYProgress, [0, 1], [50, 100 / -2]);
+  const { scrollYProgress } = useScroll();
+  const yValue = useTransform(scrollYProgress, [0, 1], [50, 100 / speed]);
   // const opacity = useTransform(scrollYProgress, [0.26,0.32], [0,1])
   const pictureBoxSX = {
     borderRadius: "20px",
@@ -34,7 +34,7 @@ const Picture: React.FC<Props> = ({ speed }) => {
           alt=""
           sx={aboutPictureSX}
         />
-      </Box>{" "}
+      </Box>
     </motion.div>
   );
 };

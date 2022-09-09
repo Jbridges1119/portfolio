@@ -8,8 +8,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
 
-const AboutMe: React.FC = () => {
+type Props = {
+  speed: number;
+};
+
+const AboutMe: React.FC<Props> = ({speed}) => {
   const { aboutSect } = usePageLocation();
+  const { scrollYProgress } = useScroll();
+  const yValue = useTransform(scrollYProgress, [0,1], [0, 100 * -6])
   return (
     <Box
       ref={aboutSect}
@@ -20,7 +26,7 @@ const AboutMe: React.FC = () => {
         zIndex: 3,
       }}
     >
-      <Box height={"15vh"}></Box>
+      <Box height={"30vh"}></Box>
       <Grid
         container
         direction="row"
@@ -28,6 +34,9 @@ const AboutMe: React.FC = () => {
         alignItems="center"
       >
         <Grid item xs={10}>
+        <motion.div className="fill" style={{  
+          y: yValue 
+          }}>
           <Grid
             container
             direction="row"
@@ -42,9 +51,10 @@ const AboutMe: React.FC = () => {
               <Picture speed={-3} />
             </Grid>
           </Grid>
+          </motion.div>
         </Grid>
       </Grid>
-      <Box height={"12vh"}></Box>
+      
     </Box>
   );
 };
