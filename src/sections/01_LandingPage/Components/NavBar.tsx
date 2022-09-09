@@ -19,6 +19,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { motion } from "framer-motion";
 import github from "../../../assets/github.png";
 import linkedin from "../../../assets/linkedin.png";
+import "../../../styles/01_LandingPageStyle/LandingPage.css";
 
 const drawerWidth = 200;
 
@@ -76,10 +77,6 @@ const NavBar = () => {
     { name: "Connect", location: connectSect },
   ];
 
-  const transition = { type: "tween" };
-  const onHover = { scale: 1.1 };
-  const onTap = { scale: 0.95 };
-
   useEffect(() => {
     const navDown = {
       home: "#7b27f6",
@@ -90,18 +87,18 @@ const NavBar = () => {
     };
     if (currentPercent > 0.1) {
       // console.log(currentPercent)
-      setHome({ y: "27vh", x: "558px" });
+      setHome({ y: "26vh", x: "558px" });
       setAbout({ y: "33vh", x: "428px" });
-      setSkills({ y: "39vh", x: "298px" });
-      setProjects({ y: "45vh", x: "168px" });
-      setConnect({ y: "51vh", x: "32%" });
+      setSkills({ y: "40vh", x: "298px" });
+      setProjects({ y: "47vh", x: "168px" });
+      setConnect({ y: "54vh", x: "32%" });
       setColor(navDown);
     }
-    if (currentPercent > 0.5 && currentPercent <= 16) {
+    if (currentPercent > 0.5 && currentPercent <= 14) {
       setHome((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, home: "#5802ff" }));
     }
-    if (currentPercent > 16 && currentPercent <= 33) {
+    if (currentPercent > 14 && currentPercent <= 33) {
       setAbout((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, about: "#5802ff" }));
     }
@@ -126,7 +123,9 @@ const NavBar = () => {
       setConnect({});
     }
   }, [currentPercent]);
-
+  const transition = { type: "tween" };
+  const onHover = { scale: 1.2 };
+  const onTap = { scale: 0.95 };
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -273,7 +272,6 @@ const NavBar = () => {
               pr: 6,
             }}
           >
-            {" "}
             <motion.button
               onClick={() => scrollToSection(topSect)}
               whileHover={onHover}
@@ -294,6 +292,8 @@ const NavBar = () => {
                 padding: 8,
                 fontWeight: "bold",
                 background: color.home,
+                letterSpacing: "0.04em",
+                fontFamily: "DM Sans",
               }}
             >
               Home
@@ -318,6 +318,8 @@ const NavBar = () => {
                 padding: 8,
                 fontWeight: "bold",
                 background: color.about,
+                letterSpacing: "0.04em",
+                fontFamily: "DM Sans",
               }}
             >
               About
@@ -337,11 +339,13 @@ const NavBar = () => {
                 fontSize: 18,
                 margin: 7,
                 position: "fixed",
-                right: "308px",
                 width: "120px",
                 padding: 8,
                 fontWeight: "bold",
+                right: "308px",
                 background: color.skills,
+                letterSpacing: "0.04em",
+                fontFamily: "DM Sans",
               }}
             >
               Skills
@@ -366,6 +370,8 @@ const NavBar = () => {
                 padding: 8,
                 fontWeight: "bold",
                 background: color.projects,
+                letterSpacing: "0.04em",
+                fontFamily: "DM Sans",
               }}
             >
               Projects
@@ -389,6 +395,8 @@ const NavBar = () => {
                 padding: 8,
                 fontWeight: "bold",
                 background: color.connect,
+                letterSpacing: "0.04em",
+                fontFamily: "DM Sans",
               }}
             >
               Connect
