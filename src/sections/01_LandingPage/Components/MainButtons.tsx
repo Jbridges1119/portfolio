@@ -2,102 +2,149 @@
 import { Box, Button, Stack } from "@mui/material";
 //Context hook
 import { usePageLocation } from "../../../hooks/pageContext";
-
 //Style
 import { motion, useScroll, useTransform } from "framer-motion";
-import EastIcon from '@mui/icons-material/East';
-import CallMadeIcon from '@mui/icons-material/CallMade';
-type Props = { 
+
+type Props = {
   speed: number;
-}
+};
 
 const mainButtons = {
-  offScreen: {  filter: 'blur(10px)', opacity: 0 },
+  offScreen: { filter: "blur(10px)", opacity: 0 },
   onScreen: {
-   
     // scale: [1,1,1, 1.2,1],
     opacity: 1,
-    filter: 'blur(00px)',
-    transition:{delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
+    filter: "blur(00px)",
+    transition: { delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
   },
-}; 
-
-
-const MainButtons: React.FC<Props> = ({speed}) => {
-  const { projectSect, scrollToSection  } = usePageLocation();
+};
+const letterAnimate = {
+  preHover: { y: 0, scale: 1 },
+  onHover: {
+    scale: 1.3,
+    y: "-2px",
+  },
+};
+const buttonAnimate = {
+  preHover: { y: 0 },
+  onHover: {
+    y: "-1px",
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+  onTap: {
+    y: 0,
+  },
+};
+const MainButtons: React.FC<Props> = ({ speed }) => {
+  const { projectSect, scrollToSection } = usePageLocation();
   const scrollAmount = 350;
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
   const zIndex = useTransform(scrollY, [0, 200], [100, 0]);
   // const yRange = useTransform(scrollY, [0, scrollAmount], [0, 1000 * speed]);
-    const filter = useTransform(
-      scrollY,
-      [0, scrollAmount],
-      ["blur(0px)", "blur(10px)"]
-    );
+  const filter = useTransform(
+    scrollY,
+    [0, scrollAmount],
+    ["blur(0px)", "blur(10px)"]
+  );
   return (
-    <motion.div className="fill" style={{ opacity,  position: 'fixed', y: '-7%', filter, zIndex }}
- 
-    ><motion.div className="fill" 
-    initial={'offScreen'}
-    animate={'onScreen'}
-    variants={mainButtons}
+    <motion.div
+      className="fill"
+      style={{ opacity, position: "fixed", y: "-6%", filter, zIndex }}
     >
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: { lg: "flex-start", xs: "center" },
-      }}
-    > 
-      <Stack spacing={1}>
-        <Button
-        onClick={()=> scrollToSection(projectSect)}
-          variant="contained"
+      <motion.div
+        className="fill"
+        initial={"offScreen"}
+        animate={"onScreen"}
+        variants={mainButtons}
+      >
+        <Box
           sx={{
-            display:'flex',
-            justifyContent:'center',
-            alignItems:'center',
-            zIndex: 1,
-            color: "#fff",
-            border: "4px solid white",
-            borderRadius: 20,
-            fontSize: 22,
-            fontWeight: "bold",
-            width: "220px",
-            pt: 1.2,
-            background: "none",
-
-            "&:hover": {
-              background: `linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0)`,
-            },
+            display: "flex",
+            justifyContent: { lg: "flex-start", xs: "center" },
           }}
         >
-          Projects <motion.div style={{display:'flex', justifyContent:'center'}}><CallMadeIcon sx={{width: '20px'}}/></motion.div >
-        </Button>
-        <Button
-          href="https://resume.creddle.io/resume/j5ndksyhq9g"
-          target="_blank"
-          sx={{
-            zIndex: 1,
-            color: "#fff",
-            border: "4px solid white",
-            borderRadius: 20,
-            fontSize: 22,
-            fontWeight: "bold",
-            width: "220px",
-            pt: 1.2,
-            background: "none",
+          <Stack spacing={1}>
+            <motion.div
+              initial="preHover"
+              whileHover="onHover"
+              whileTap="onTap"
+              variants={buttonAnimate}
+            >
+              <Button
+                onClick={() => scrollToSection(projectSect)}
+                variant="contained"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  zIndex: 1,
+                  color: "#fff",
+                  border: "4px solid white",
+                  borderRadius: 20,
+                  fontSize: 24,
+                  fontWeight: "bold",
+                  textTransform: "none",
+                  width: "220px",
+                  pt: 0.8,
+                  background: "none",
 
-            "&:hover": {
-              background: `linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0)`,
-            },
-          }}
-          variant="contained"
-        >
-          Resume
-        </Button>
-      </Stack>
-    </Box></motion.div></motion.div>
+                  "&:hover": {
+                    background: "none",
+                  },
+                }}
+              >
+                {"Projects".split("").map((letter, i) => {
+                  return (
+                    <motion.span key={i} variants={letterAnimate}>
+                      {letter}
+                    </motion.span>
+                  );
+                })}
+              </Button>
+            </motion.div>{" "}
+            <motion.div
+              initial="preHover"
+              whileHover="onHover"
+              whileTap="onTap"
+              variants={buttonAnimate}
+            >
+              <Button
+                href="https://resume.creddle.io/resume/j5ndksyhq9g"
+                target="_blank"
+                sx={{
+                  zIndex: 1,
+                  color: "#fff",
+                  border: "4px solid white",
+                  borderRadius: 20,
+                  fontSize: 24,
+                  fontWeight: "bold",
+                  width: "220px",
+                  textTransform: "none",
+                  pt: 0.8,
+                  background: "none",
+
+                  "&:hover": {
+                    background: "none",
+                  },
+                }}
+                variant="contained"
+              >
+                {"Resume".split("").map((letter, i) => {
+                  return (
+                    <motion.span key={i} variants={letterAnimate}>
+                      {letter}
+                    </motion.span>
+                  );
+                })}
+              </Button>
+            </motion.div>
+          </Stack>
+        </Box>
+      </motion.div>
+    </motion.div>
   );
 };
 
