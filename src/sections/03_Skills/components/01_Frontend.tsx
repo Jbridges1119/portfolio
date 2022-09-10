@@ -1,5 +1,5 @@
 //MUI
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 //Syle
 import { motion } from "framer-motion";
 //Front-End Helper
@@ -10,7 +10,21 @@ import {
 } from "../../../helpers/SkillsIconHelper";
 
 const Frontend: React.FC = () => {
-  return (
+  return (<Stack>
+    <Typography
+  variant="h1"
+  sx={{
+    color: "#4345E8",
+    textAlign: "center",
+    cursor: "default",
+    mb:1,
+    fontWeight: "bold",
+    display: {md: 'none'}
+  }}
+>
+  Skills
+</Typography>
+<Divider sx={{ display: {md: 'none'}}}/>
     <motion.div
       whileHover={{ scale: 1.15 }}
       style={{ minHeight: "160px", display: "flex" }}
@@ -58,7 +72,7 @@ const Frontend: React.FC = () => {
           </Box>
         </Grid>
       </Grid>
-    </motion.div>
+    </motion.div></Stack>
   );
 };
 

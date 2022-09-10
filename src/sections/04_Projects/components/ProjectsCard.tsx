@@ -7,6 +7,7 @@ import {
   Stack,
   Typography,
   Box,
+  Divider,
 } from "@mui/material";
 //Helper
 import { projectsInfo } from "../../../helpers/ProjectsHelper";
@@ -51,6 +52,20 @@ const ProjectsCard: React.FC = () => {
       {projectsInfo.map((project) => {
         return (
           <Paper key={project.name} elevation={24} sx={cardBackground}>
+            {project.name === "Bored?GameNyte!" && <Typography
+  variant="h1"
+  sx={{
+    color: "#4345E8",
+    textAlign: "center",
+    cursor: "default",
+    my:1,
+    fontWeight: "bold",
+    display: {md: 'none'}
+  }}
+>
+  Projects
+</Typography>}
+
             <Box className="container" sx={gifBackground}>
               <CardMedia
                 className="project-gif"
