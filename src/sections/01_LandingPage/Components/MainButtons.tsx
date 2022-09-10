@@ -46,7 +46,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
           sx={{
             display: "flex",
             justifyContent: { lg: "flex-start", xs: "center" },
-           
+            mt: {lg:0, sm:-2, xs:-1},
           }}
         >
           <Stack spacing={1}>
@@ -72,7 +72,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   textTransform: "none",
                   width: "220px",
                   background: "none",
-                  mt: {lg:0, xs:1},
+                 
                   "&:hover": {
                     background: "none",
                   },
