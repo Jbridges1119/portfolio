@@ -31,10 +31,10 @@ const Greetings: React.FC<Props> = ({ speed }) => {
   return (
     <motion.div
       className="fill"
-      style={{ opacity, position: "fixed", y: "-7%", filter }}
+      style={{ opacity, position: "fixed", y: "-10%", filter }}
     >
       <Stack spacing={1.5}>
-        <Box sx={{ textAlign: { lg: "left", xs: "center" }, mx: {xs: 2, lg: 0} }}>
+        <Box sx={{ textAlign: { lg: "left", xs: "center" },   mt: {lg:0, sm:-8, xs:-4},}}>
           <Typography
             variant="h2"
             sx={{

@@ -10,12 +10,12 @@ const ScrollDown: React.FC = () => {
     background: `white`,
     position: "relative",
     width: "100%",
-    zIndex: 2,
+    zIndex: 10,
   };
   const buttonTextSX = { color: "#81807c", fontSize: 20, cursor: "pointer" };
   const arrowSizeSX = { fontSize: 18 };
   return (
-    <Box sx={arrowTextBoxSX}>
+    <Box sx={arrowTextBoxSX} >
       <button
         style={{ all: "unset", position: "relative", zIndex: "100" }}
         onClick={() => scrollToSection(aboutSect)}

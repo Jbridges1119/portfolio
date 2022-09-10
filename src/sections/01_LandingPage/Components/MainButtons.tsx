@@ -24,7 +24,8 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
   const scrollAmount = 350;
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
-  const zIndex = useTransform(scrollY, [0, 200], [100, 0]);
+  const zIndex = useTransform(scrollY, [0, 150], [100, 0]);
+  
   const filter = useTransform(
     scrollY,
     [0, scrollAmount],
@@ -33,7 +34,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
   return (
     <motion.div
       className="fill"
-      style={{ opacity, position: "fixed", y: "-6%", filter, zIndex }}
+      style={{ opacity, position: "fixed", y: "-10%", filter, zIndex }}
     >
       <motion.div
         className="fill"
@@ -45,6 +46,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
           sx={{
             display: "flex",
             justifyContent: { lg: "flex-start", xs: "center" },
+           
           }}
         >
           <Stack spacing={1}>
@@ -70,6 +72,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   textTransform: "none",
                   width: "220px",
                   background: "none",
+                  mt: {lg:0, xs:1},
                   "&:hover": {
                     background: "none",
                   },
@@ -107,6 +110,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
                   width: "220px",
                   textTransform: "none",
                   background: "none",
+                  
                   "&:hover": {
                     background: "none",
                   },
