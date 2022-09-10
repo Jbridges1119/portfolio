@@ -26,7 +26,7 @@ const AboutMe: React.FC<Props> = ({ speed }) => {
         zIndex: 3,
       }}
     >
-      <Box height={"30vh"}></Box>
+      <Box sx={{height: {md:'20vh', xs: '5vh'}}}></Box>
       <Grid
         container
         direction="row"

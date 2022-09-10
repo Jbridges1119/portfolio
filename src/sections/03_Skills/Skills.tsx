@@ -12,7 +12,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const Skills: React.FC = () => {
   const { skillSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0.25, 0.3], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0.26, 0.3], [0, 1]);
   const backgroundCardSX = {
     width: "100%",
     background: `#E3EAFD`,
@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
         zIndex: 2,
       }}
     >
-      <Box height={"11vh"} />
+      <Box sx={{height: {lg:'11vh', xs:'3vh'}}} />
       <Grid
         container
         direction="row"

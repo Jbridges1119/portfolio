@@ -34,7 +34,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
       style={{ opacity, position: "fixed", y: "-7%", filter }}
     >
       <Stack spacing={1.5}>
-        <Box sx={{ textAlign: { lg: "left", xs: "center" } }}>
+        <Box sx={{ textAlign: { lg: "left", xs: "center" }, mx: {xs: 2, lg: 0} }}>
           <Typography
             variant="h2"
             sx={{
