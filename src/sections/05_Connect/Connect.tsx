@@ -46,7 +46,7 @@ const Connect: React.FC<Props> = ({ speed }) => {
                 <Stack spacing={2}>
                   <Typography
                     mt={4}
-                    color={"#4345E8"}
+                    color={"#0F0D78"}
                     fontWeight={"bold"}
                     variant="h3"
                   >

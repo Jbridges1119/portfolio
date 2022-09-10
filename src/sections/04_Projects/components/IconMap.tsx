@@ -21,7 +21,7 @@ const IconMap: React.FC<Props> = ({ stack }) => {
             component="img"
             image={icon.name}
             alt=""
-            sx={{ maxHeight: "50px", objectFit: "contain" }}
+            sx={{ maxHeight: "50px", objectFit: "contain",display: {xs:'none', sm:'block'}, }}
           />
         );
       })}

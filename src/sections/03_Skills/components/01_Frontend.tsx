@@ -14,7 +14,7 @@ const Frontend: React.FC = () => {
     <Typography
   variant="h1"
   sx={{
-    color: "#4345E8",
+    color: "#0F0D78",
     textAlign: "center",
     cursor: "default",
     mb:1,
@@ -39,7 +39,7 @@ const Frontend: React.FC = () => {
           <Typography
             variant="h3"
             sx={{
-              color: "#4345E8",
+              color: "#0F0D78",
               textAlign: "left",
               cursor: "default",
               pt: 1,

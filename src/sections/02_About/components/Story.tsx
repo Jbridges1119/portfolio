@@ -16,7 +16,7 @@ const Story: React.FC<Props> = ({ speed }) => {
       <motion.div style={{ y: yValue }}>
         <Typography
           variant="h2"
-          sx={{ color: "#4345E8", textAlign: "left", fontWeight: "bold" }}
+          sx={{ color: "#0F0D78", textAlign: "left", fontWeight: "bold" }}
         >
           Hello!
         </Typography>

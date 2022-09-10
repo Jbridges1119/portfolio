@@ -19,6 +19,7 @@ const ProjectsCard: React.FC = () => {
   const cardBackground = {
     width: "100%",
     background: `#E3EAFD`,
+    // background: ` #24a4ea1F`,
     borderRadius: 5,
     display: "flex",
     flexDirection: "column",
@@ -30,7 +31,7 @@ const ProjectsCard: React.FC = () => {
     width: "90%",
     position: "relative",
   };
-  const hoverHeader = { color: "white", fontWeight: "bold", mt: 1 };
+  const hoverHeader = { color: "white", fontWeight: "bold", mt: 1,display: {xs:'none', sm:'block'}, };
   const hoverButton = {
     color: "#fff",
     borderRadius: 25,
@@ -51,11 +52,11 @@ const ProjectsCard: React.FC = () => {
     <>
       {projectsInfo.map((project) => {
         return (
-          <Paper key={project.name} elevation={24} sx={cardBackground}>
+          <Paper key={project.name} elevation={16} sx={cardBackground}>
             {project.name === "Bored?GameNyte!" && <Typography
   variant="h1"
   sx={{
-    color: "#4345E8",
+    color: "#0F0D78",
     textAlign: "center",
     cursor: "default",
     my:1,
@@ -104,7 +105,7 @@ const ProjectsCard: React.FC = () => {
                 <Stack spacing={2}>
                   <Typography
                     variant="h4"
-                    color={"#4345E8"}
+                    color={"#0F0D78"}
                     fontWeight={"bold"}
                   >
                     {project.name}

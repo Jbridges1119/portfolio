@@ -15,18 +15,21 @@ type Props = {
 const AboutMe: React.FC<Props> = ({ speed }) => {
   const { aboutSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
-  const yValue = useTransform(scrollYProgress, [0, 1], [0, 100 * -6]);
+  // const yValue = useTransform(scrollYProgress, [0, 0.5], [0, 0]);
   return (
-    <Box
-      ref={aboutSect}
+    <Box ref={aboutSect}
+      
       sx={{
         background: `white`,
         position: "relative",
         width: "100%",
         zIndex: 3,
+        minHeight:{lg:'90vh'},
+        display:'flex',
+        justifyContent:'center'
       }}
     >
-      <Box sx={{height: {md:'20vh', xs: '5vh'}}}></Box>
+      {/* <Box sx={{height: {md:'20vh', xs: '5vh'}}}></Box> */}
       <Grid
         container
         direction="row"
@@ -36,9 +39,9 @@ const AboutMe: React.FC<Props> = ({ speed }) => {
         <Grid item xs={10}>
           <motion.div
             className="fill"
-            style={{
-              y: yValue,
-            }}
+            // style={{
+            //   y: yValue,
+            // }}
           >
             <Grid
               container

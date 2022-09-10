@@ -12,10 +12,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const Skills: React.FC = () => {
   const { skillSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0.26, 0.3], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0.26, 0.3], [1, 1]);
+ 
   const backgroundCardSX = {
     width: "100%",
     background: `#E3EAFD`,
+    // background: `linear-gradient(90deg, #24a4ea1F  ,#fff,#fff)`,
     my: 3,
     borderRadius: 5,
     display: "flex",
@@ -28,10 +30,15 @@ const Skills: React.FC = () => {
         background: `white`,
         position: "relative",
         width: "100%",
-        zIndex: 2,
+        zIndex: 3,
+       
+        minHeight:{md:'100vh'},
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center'
       }}
     >
-      <Box sx={{height: {lg:'11vh', xs:'3vh'}}} />
+      {/* <Box sx={{height: {lg:'0', xs:'3vh'}}} /> */}
       <Grid
         container
         direction="row"
@@ -40,7 +47,7 @@ const Skills: React.FC = () => {
       >
         <Grid item lg={6} md={7} xs={10}>
           <motion.div style={{ opacity }}>
-            <Paper elevation={24} sx={backgroundCardSX}>
+            <Paper elevation={16} sx={backgroundCardSX}>
               <Grid item xs={10}>
                 <Stack spacing={1} my={3}>
                   <Frontend />

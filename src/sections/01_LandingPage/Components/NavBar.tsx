@@ -134,6 +134,7 @@ const NavBar: React.FC = () => {
     <Box
       onClick={handleDrawerToggle}
       sx={{
+       
         textAlign: "center",
         background: `linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0)`,
         color: "white ",
@@ -197,8 +198,9 @@ const NavBar: React.FC = () => {
     <Box>
       <AppBar
         component="nav"
-        position="sticky"
-        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none" }}
+        position="relative"
+       
+        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none", zIndex:100 }}
       >
         <Toolbar>
           <IconButton
@@ -415,7 +417,7 @@ const NavBar: React.FC = () => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", md: "none" },
+            display: { xs: "fixed", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
