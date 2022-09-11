@@ -78,7 +78,7 @@ const ProjectsCard: React.FC = () => {
                 <Typography variant="h3" sx={hoverHeader}>
                   Built With
                 </Typography>
-                <Box className="center-all">
+                <Box className="center-all" sx={{ display: {xs:'none', sm:'flex'} }}>
                   <IconMap stack={project.stack} />
                 </Box>
                 <div>
@@ -112,7 +112,7 @@ const ProjectsCard: React.FC = () => {
                   </Typography>
                   <Typography variant="body1">{project.description}</Typography>
 
-                  <Box className="center-all" sx={{ display: { sm: "none" } }}>
+                  <Box className="center-all" sx={{ display: { md: "none" } }}>
                     <IconMap stack={project.stack} />
                   </Box>
                   <Box
