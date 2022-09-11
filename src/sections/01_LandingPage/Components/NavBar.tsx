@@ -134,11 +134,9 @@ const NavBar: React.FC = () => {
     <Box
       onClick={handleDrawerToggle}
       sx={{
-       
         textAlign: "center",
         background: `linear-gradient(100deg, #24a4ea, #379deb 25%, #b76bf0)`,
         color: "white ",
-        height: "100vh",
       }}
     >
       <List>
@@ -199,8 +197,7 @@ const NavBar: React.FC = () => {
       <AppBar
         component="nav"
         position="relative"
-       
-        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none", zIndex:100 }}
+        sx={{ background: "rgba(0,0,0,0.0)", boxShadow: "none", zIndex: 100 }}
       >
         <Toolbar>
           <IconButton
@@ -418,9 +415,11 @@ const NavBar: React.FC = () => {
           }}
           sx={{
             display: { xs: "fixed", md: "none" },
+            height: "100%",
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "#00000085",
             },
           }}
         >
