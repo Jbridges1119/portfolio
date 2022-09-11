@@ -46,7 +46,7 @@ everyone is prepared to maximize their time together.`,
       },
       { name: "Video", link: "https://youtu.be/ge31-cPi2Do" },
     ],
-    stack: [{ name: RT }, { name: EX }, { name: NODE }, { name: PSQL }],
+    stack: [{ name: RT }, { name: EX }, { name: NODE }, { name: PSQL },{ name: MUI }],
   },
   {
     name: "The Complete Story",
