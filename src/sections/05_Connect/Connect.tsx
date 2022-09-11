@@ -56,7 +56,7 @@ const Connect: React.FC<Props> = ({ speed }) => {
                   <Typography variant="body1">
                     I'd love to here from you! <br />
                     If you want to grab a "remote" coffee and chat, please feel
-                    free to say hello and leave me a message .
+                    free to say hello and leave me a message.
                   </Typography>
                 </Stack>
               </Grid>
