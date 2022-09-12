@@ -23,7 +23,7 @@ const Story: React.FC<Props> = ({ speed }) => {
       </motion.div>
       <Divider />
       <Typography variant="body1" sx={textBodySX}>
-        My Name is Jeff Bridges and I'm a passionate Full-Stack Developer. I
+        My name is Jeff Bridges and I'm a passionate Full-Stack Developer. I
         pivoted from being a Certified HVAC/R Technician due to always having an
         interest in problem solving and bringing ideas to life. With Web
         Development, I can nurture my creativity through a new medium and I'm
