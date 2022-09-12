@@ -34,9 +34,8 @@ import interview from "../assets/projects/interview.gif";
 const projectsInfo = [
   {
     name: "Bored?GameNyte!",
-    description: `A web application for board game and game
-night enthusiasts, to help organize of
-game collections, scheduling events and making sure
+    description: `A web application for boardgame and game
+night enthusiasts, to help organize game collections, scheduling events and making sure
 everyone is prepared to maximize their time together.`,
     gif: bgn,
     buttons: [
@@ -51,7 +50,7 @@ everyone is prepared to maximize their time together.`,
   {
     name: "The Complete Story",
     description:
-      "Storytelling web application where a user posts the beginning of a story and other users are able to leave contributions that can be chosen by the initial author to be added to the original story.",
+      "A storytelling web application, where a user posts the beginning of a story and other users are able to leave contributions that can be chosen to be added to the original story by the story author.",
     gif: cStory,
     buttons: [
       {
