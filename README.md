@@ -4,9 +4,10 @@
 ![LandingPage](https://github.com/Jbridges1119/portfolio/blob/master/src/assets/LandingPage.png?raw=true)
 
 ## Built With
-- React.js
+- React
 - TypeScript
 - MUI
+- SASS
 
 
 ## Dependencies
