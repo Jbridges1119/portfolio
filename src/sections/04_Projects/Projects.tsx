@@ -1,14 +1,17 @@
 //MUI
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 //Style
 import "../../styles/04_ProjectsStyle/Projects.css";
 //Components
 import ProjectsCard from "./components/ProjectsCard";
 //Context hook
 import { usePageLocation } from "../../hooks/pageContext";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Projects: React.FC = () => {
   const { projectSect } = usePageLocation();
+  const { scrollYProgress } = useScroll();
+  const yValue = useTransform(scrollYProgress, [0, 1], [100, 50 * -2]);
   // const { scrollYProgress } = useScroll();
   // const yValue = useTransform(
   //   scrollYProgress,
@@ -29,6 +32,13 @@ const Projects: React.FC = () => {
         }}
       >
         <Box height={"4vh"} />
+        <motion.div style={{ y: yValue }}>
+      <Typography
+    variant="h1"
+    sx={{ color: "#0F0D78", textAlign: "center", fontWeight: "bold", display: {xs:'none', md:'inline-block'} }}
+  >
+    Projects!
+  </Typography></motion.div>
         <Grid
           container
           direction="row"

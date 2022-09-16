@@ -24,7 +24,7 @@ const AboutMe: React.FC<Props> = ({ speed }) => {
         position: "relative",
         width: "100%",
         zIndex: 3,
-        minHeight:{lg:'90vh'},
+        minHeight:{lg:'100vh'},
         display:'flex',
         justifyContent:'center'
       }}

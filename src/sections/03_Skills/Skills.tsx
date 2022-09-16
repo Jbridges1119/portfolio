@@ -1,5 +1,5 @@
 //MUI
-import { Grid, Paper, Stack } from "@mui/material";
+import { Grid, Paper, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 //Components
 import RestOfSkills from "./components/02_RestOfSkills";
@@ -12,6 +12,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const Skills: React.FC = () => {
   const { skillSect } = usePageLocation();
   const { scrollYProgress } = useScroll();
+  const yValue = useTransform(scrollYProgress, [0, 1], [100, 50 * -2]);
   const opacity = useTransform(scrollYProgress, [0.26, 0.3], [1, 1]);
  
   const backgroundCardSX = {
@@ -31,20 +32,26 @@ const Skills: React.FC = () => {
         position: "relative",
         width: "100%",
         zIndex: 3,
-       
+       flexDirection:'column',
         minHeight:{md:'100vh'},
         display:'flex',
         justifyContent:'center',
         alignItems:'center'
       }}
     >
-      {/* <Box sx={{height: {lg:'0', xs:'3vh'}}} /> */}
+      <motion.div style={{ y: yValue }}>
+      <Typography
+    variant="h1"
+    sx={{ color: "#0F0D78", textAlign: "center", fontWeight: "bold", display: {xs:'none', md:'inline-block'} }}
+  >
+    Skills!
+  </Typography></motion.div>
       <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-      >
+      > 
         <Grid item lg={6} md={7} xs={10}>
           <motion.div style={{ opacity }}>
             <Paper elevation={16} sx={backgroundCardSX}>

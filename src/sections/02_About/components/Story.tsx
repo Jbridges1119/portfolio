@@ -15,7 +15,7 @@ const Story: React.FC<Props> = ({ speed }) => {
     <Stack spacing={2}>
       <motion.div style={{ y: yValue }}>
         <Typography
-          variant="h2"
+          variant="h1"
           sx={{ color: "#0F0D78", textAlign: "left", fontWeight: "bold" }}
         >
           Hello!
@@ -30,7 +30,7 @@ const Story: React.FC<Props> = ({ speed }) => {
         excited to build intuitive, responsive, and efficient web applications.
         I graduated from Lighthouse Labs Bootcamp in August 2022 and am looking
         to build upon the experiences I gained there. Currently I'm learning
-        Typescript and refining the skills already learned.{" "}
+        C# and refining the skills already learned so that I can begin work on my next project!
       </Typography>
       <Typography variant="body1" sx={textBodySX}>
         I'd love to hear from you. Whether it's a job opportunity, a project
