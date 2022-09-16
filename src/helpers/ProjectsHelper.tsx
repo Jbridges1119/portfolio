@@ -50,7 +50,7 @@ everyone is prepared to maximize their time together.`,
   {
     name: "The Complete Story",
     description:
-      "A storytelling web application, where a user posts the beginning of a story and other users are able to leave contributions that can be chosen to be added to the original story by the story author.",
+      "A storytelling web application, where a user posts the beginning of a story and other users are able to leave contributions that can be chosen to be added by the initial story author.",
     gif: cStory,
     buttons: [
       {
