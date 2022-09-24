@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
             display={"grid"}
             //If I make another project add tinyapp and set this to xl:'repeat(3, 1fr)'
             gridTemplateColumns={{
-              xl: "repeat(2, 1fr)",
+              xl: "repeat(3, 1fr)",
               md: "repeat(2, 1fr)",
               xs: "1fr",
             }}

@@ -31,14 +31,19 @@ const ProjectsCard: React.FC = () => {
     width: "90%",
     position: "relative",
   };
-  const hoverHeader = { color: "white", fontWeight: "bold", mt: 1,display: {xs:'none', sm:'block'}, };
+  const hoverHeader = {
+    color: "white",
+    fontWeight: "bold",
+    // my: 1,
+    display: { xs: "none", sm: "block" },
+  };
   const hoverButton = {
     color: "#fff",
     borderRadius: 25,
-    fontSize: 14,
+    // fontSize: 14,
     border: "3px solid white",
-    my: 1,
-    pt: 0.9,
+    // my: 1,
+    pt: 0.7,
     textTransform: "none",
   };
   const buttonText = {
@@ -53,19 +58,21 @@ const ProjectsCard: React.FC = () => {
       {projectsInfo.map((project) => {
         return (
           <Paper key={project.name} elevation={16} sx={cardBackground}>
-            {project.name === "Bored?GameNyte!" && <Typography
-  variant="h1"
-  sx={{
-    color: "#0F0D78",
-    textAlign: "center",
-    cursor: "default",
-    my:1,
-    fontWeight: "bold",
-    display: {md: 'none'}
-  }}
->
-  Projects
-</Typography>}
+            {project.name === "Bored?GameNyte!" && (
+              <Typography
+                variant="h1"
+                sx={{
+                  color: "#0F0D78",
+                  textAlign: "center",
+                  cursor: "default",
+                  my: 1,
+                  fontWeight: "bold",
+                  display: { md: "none" },
+                }}
+              >
+                Projects
+              </Typography>
+            )}
 
             <Box className="container" sx={gifBackground}>
               <CardMedia
@@ -74,11 +81,14 @@ const ProjectsCard: React.FC = () => {
                 image={project.gif}
                 alt=""
               />
-              <Box className="wrapper-info">
-                <Typography variant="h3" sx={hoverHeader}>
-                  Built With
+              <Box className="wrapper-info" sx={{display:'flex', justifyContent:'space-around', alignItems:'center'}}>
+                <Typography variant="h4" sx={hoverHeader}>
+                  Built With:
                 </Typography>
-                <Box className="center-all" sx={{ display: {xs:'none', sm:'flex'} }}>
+                <Box
+                  className="center-all"
+                  sx={{ display: { xs: "none", sm: "flex" }, width:'80%' }}
+                >
                   <IconMap stack={project.stack} />
                 </Box>
                 <div>
@@ -87,7 +97,7 @@ const ProjectsCard: React.FC = () => {
                     target={"_blank"}
                     sx={hoverButton}
                   >
-                    <Typography variant="h5" sx={buttonText}>
+                    <Typography variant="h6" sx={buttonText}>
                       More Info
                     </Typography>
                   </Button>
@@ -100,9 +110,10 @@ const ProjectsCard: React.FC = () => {
               direction="row"
               justifyContent="center"
               alignItems="center"
+              height={'100%'}
             >
-              <Grid item xs={11}>
-                <Stack spacing={2}>
+              <Grid item xs={11} height={'100%'}>
+                <Box sx={{display:'flex', flexDirection:'column', alignItems:'space-between',justifyContent:'space-between', height:'100%'}}>
                   <Typography
                     variant="h4"
                     color={"#0F0D78"}
@@ -110,7 +121,7 @@ const ProjectsCard: React.FC = () => {
                   >
                     {project.name}
                   </Typography>
-                  <Typography variant="body1">{project.description}</Typography>
+                  <Typography variant="body2" py={1}>{project.description}</Typography>
 
                   <Box className="center-all" sx={{ display: { md: "none" } }}>
                     <IconMap stack={project.stack} />
@@ -122,7 +133,7 @@ const ProjectsCard: React.FC = () => {
                   >
                     <ButtonMap buttons={project.buttons} />
                   </Box>
-                </Stack>
+                </Box>
               </Grid>
             </Grid>
           </Paper>

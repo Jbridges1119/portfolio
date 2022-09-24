@@ -30,12 +30,13 @@ import bgn from "../assets/projects/bgn.gif";
 import cStory from "../assets/projects/TheCompleteStory.gif";
 import tweeter from "../assets/projects/Tweeter.gif";
 import interview from "../assets/projects/interview.gif";
-
+import jungle from "../assets/projects/Jungle.gif"
+import tinyapp from "../assets/projects/tinyapp.gif"
 const projectsInfo = [
   {
     name: "Bored?GameNyte!",
-    description: `A web application for boardgame and game
-night enthusiasts, to help organize game collections, scheduling events and making sure
+    description: `For board game and game
+night enthusiasts, to help organize game collections, schedule events and make sure
 everyone is prepared to maximize their time together.`,
     gif: bgn,
     buttons: [
@@ -84,6 +85,19 @@ everyone is prepared to maximize their time together.`,
     stack: [{ name: RT }, { name: EX }, { name: NODE }, { name: PSQL }],
   },
   {
+    name: "Welcome To The Jungle",
+    description:
+      "A mini e-commerce application built with Ruby on Rails 6.1, Active Record and Rspec for testing. Users can browse products, add to cart and checks-out with stripe payment system.",
+    gif: jungle,
+    buttons: [
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/Welcome-To-The-Jungles#readme",
+      },
+    ],
+    stack: [{ name: Ruby }, { name: Rails }, { name: BS }, { name: PSQL }],
+  },
+  {
     name: "Tweeter",
     description:
       "Tweeter is a single-page social media platform where users can leave 140 character posts. Users can also read through their list of tweets in chronological order.",
@@ -100,6 +114,24 @@ everyone is prepared to maximize their time together.`,
     ],
 
     stack: [{ name: JQ }, { name: EX }, { name: SASS }, { name: NODE }],
+  },
+  {
+    name: "TinyApp",
+    description:
+      "Create new short URL's that will be stored on your personal list. Only you will have access to editing and deleting your created links but everyone can share your tiny links!",
+    gif: tinyapp,
+    buttons: [
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/tinyapp#readme",
+      },
+      {
+        name: "Live",
+        link: "https://tinyapp-lhl-jbridges.herokuapp.com/",
+      },
+    ],
+
+    stack: [{ name: JS }, { name: EX }, { name: BS }, { name: NODE }],
   },
 ];
 
