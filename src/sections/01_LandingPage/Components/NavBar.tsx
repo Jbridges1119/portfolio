@@ -76,7 +76,7 @@ const NavBar: React.FC = () => {
     { name: "Projects", location: projectSect },
     { name: "Connect", location: connectSect },
   ];
-
+console.log(currentPercent)
   useEffect(() => {
     const navDown = {
       home: "#7b27f6",
@@ -98,15 +98,15 @@ const NavBar: React.FC = () => {
       setHome((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, home: "#5802ff" }));
     }
-    if (currentPercent > 14 && currentPercent <= 33) {
+    if (currentPercent > 14 && currentPercent <= 36) {
       setAbout((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, about: "#5802ff" }));
     }
-    if (currentPercent > 33 && currentPercent <= 54) {
+    if (currentPercent > 36 && currentPercent <= 60) {
       setSkills((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, skills: "#5802ff" }));
     }
-    if (currentPercent > 54 && currentPercent <= 85) {
+    if (currentPercent > 60 && currentPercent <= 85) {
       setProjects((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, projects: "#5802ff" }));
     }
