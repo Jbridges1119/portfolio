@@ -44,6 +44,10 @@ let theme = createTheme({
       fontFamily: "DM Sans",
       fontSize: "1.1rem",
     },
+    body2: {
+      fontFamily: "DM Sans",
+      fontSize: "1.1rem",
+    }
   },
 });
 
