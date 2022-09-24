@@ -23,8 +23,9 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
     boxShadow: "0px 1px 3px 1px #424242",
     fontSize: 16,
     backgroundColor: "#7b27f6",
-    width: "100px",
+    // width: "100px",
     fontWeight: "bold",
+    px:2,
     ":hover": {
       bgcolor: "#5802ff",
     },
@@ -57,7 +58,7 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
                 return (
                   <motion.span
                     key={i}
-                    style={{ paddingInline: "0.07em" }}
+                    style={{ paddingInline: "0.075em" }}
                     variants={letterAnimate}
                   >
                     {letter}
