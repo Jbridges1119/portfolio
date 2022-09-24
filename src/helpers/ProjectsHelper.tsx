@@ -9,6 +9,7 @@ import MUI from "../assets/01_Front/mui.png";
 import RT from "../assets/01_Front/REACT.png";
 import Ruby from "../assets/01_Front/Ruby.png";
 import SASS from "../assets/01_Front/SASS.png";
+import TSJS from '../assets/01_Front/tsjs.png';
 //Back-end icons
 import EX from "../assets/02_Back/EX.png";
 import NODE from "../assets/02_Back/NODE.png";
@@ -32,6 +33,7 @@ import tweeter from "../assets/projects/Tweeter.gif";
 import interview from "../assets/projects/interview.gif";
 import jungle from "../assets/projects/Jungle.gif"
 import tinyapp from "../assets/projects/tinyapp.gif"
+import piano from "../assets/projects/piano.gif";
 const projectsInfo = [
   {
     name: "Bored?GameNyte!",
@@ -116,7 +118,7 @@ everyone is prepared to maximize their time together.`,
     stack: [{ name: JQ }, { name: EX }, { name: SASS }, { name: NODE }],
   },
   {
-    name: "TinyApp",
+    name: "Tiny App",
     description:
       "Create new short URL's that will be stored on your personal list. Only you will have access to editing and deleting your created links but everyone can share your tiny links!",
     gif: tinyapp,
@@ -132,6 +134,24 @@ everyone is prepared to maximize their time together.`,
     ],
 
     stack: [{ name: JS }, { name: EX }, { name: BS }, { name: NODE }],
+  },
+  {
+    name: "Piano Beats",
+    description:
+      "Piano Beats is a web app allowing the user to play the piano on one octave from their browser. Users can adjust the volume up or down to their liking.",
+    gif: piano,
+    buttons: [
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/pianoBeats#readme",
+      },
+      {
+        name: "Deployed",
+        link: "https://pianobeats.jbridges1119.net/",
+      },
+    ],
+
+    stack: [{ name: TSJS }, { name: RT }, { name: CSS }, { name: NODE }],
   },
 ];
 

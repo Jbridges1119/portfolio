@@ -102,11 +102,11 @@ console.log(currentPercent)
       setAbout((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, about: "#5802ff" }));
     }
-    if (currentPercent > 36 && currentPercent <= 60) {
+    if (currentPercent > 36 && currentPercent <= 58) {
       setSkills((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, skills: "#5802ff" }));
     }
-    if (currentPercent > 60 && currentPercent <= 85) {
+    if (currentPercent > 58 && currentPercent <= 85) {
       setProjects((prev) => ({ ...prev, scale: 1.2 }));
       setColor((prev) => ({ ...prev, projects: "#5802ff" }));
     }
