@@ -161,6 +161,7 @@ console.log(currentPercent)
             <ListItemButton
               href={item.link}
               target="_blank"
+              rel="noreferrer noopener"
               sx={{
                 textAlign: "center",
                 my: 1,
@@ -176,6 +177,7 @@ console.log(currentPercent)
           <ListItemButton
             href="mailto:Jbridges1119@gmail.com"
             target="_blank"
+            rel="noreferrer noopener"
             sx={{
               textAlign: "center",
               my: 1,

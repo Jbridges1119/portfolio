@@ -100,6 +100,7 @@ const MainButtons: React.FC<Props> = ({ speed }) => {
               <Button
                 href="https://resume.creddle.io/resume/j5ndksyhq9g"
                 target="_blank"
+                rel="noreferrer noopener"
                 sx={{
                   zIndex: 1,
                   color: "#fff",

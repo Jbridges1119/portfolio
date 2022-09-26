@@ -41,7 +41,7 @@ const FooterLinks: React.FC = () => {
           whileHover={buttonMotion}
           style={{ marginInline: 2 }}
         >
-          <Button href="https://github.com/Jbridges1119" target="_blank">
+          <Button href="https://github.com/Jbridges1119" target="_blank" rel="noreferrer noopener">
             <img
               src={github}
               alt={""}
@@ -54,6 +54,7 @@ const FooterLinks: React.FC = () => {
           <Button
             href="https://www.linkedin.com/in/jeff-bridges-bb755a236/"
             target="_blank"
+            rel="noreferrer noopener"
           >
             <img color={"white"} src={linkedin} alt={""} loading="lazy" />
           </Button>
@@ -71,6 +72,7 @@ const FooterLinks: React.FC = () => {
         sx={{ all: "unset", cursor: "pointer" }}
         href="https://github.com/Jbridges1119/portfolio"
         target="_blank"
+        rel="noreferrer noopener"
       >
         <Typography variant="body2" color={"white"}>
           Designed and Built By Jeff Bridges

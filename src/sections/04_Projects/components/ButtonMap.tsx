@@ -52,6 +52,7 @@ const ButtonMap: React.FC<Props> = ({ buttons }) => {
               key={button.link}
               href={button.link}
               target="_blank"
+              rel="noreferrer noopener"
               sx={buttonSx}
             >
               {button.name.split("").map((letter, i) => {

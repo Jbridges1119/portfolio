@@ -34,11 +34,12 @@ import interview from "../assets/projects/interview.gif";
 import jungle from "../assets/projects/Jungle.gif"
 import tinyapp from "../assets/projects/tinyapp.gif"
 import piano from "../assets/projects/piano.gif";
+import camair from '../assets/projects/camair.gif'
 const projectsInfo = [
   {
-    name: "Cam Air Website",
-    description: `Website I built about my last employer which has information about the company with a working contact form.`,
-    gif: bgn,
+    name: "Cam Air Ref & Htg",
+    description: `Cam Air was my previous employer. I built this from the ground up as a small project to further develop my front-end skills. This site has all the information about the company and services with a working contact form and map.`,
+    gif: camair,
     buttons: [
       {
         name: "GitHub",
