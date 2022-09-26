@@ -36,6 +36,19 @@ import tinyapp from "../assets/projects/tinyapp.gif"
 import piano from "../assets/projects/piano.gif";
 const projectsInfo = [
   {
+    name: "Cam Air Website",
+    description: `Website I built about my last employer which has information about the company with a working contact form.`,
+    gif: bgn,
+    buttons: [
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/cam-air#readme",
+      },
+      { name: "Deployed", link: "https://camair.jbridges1119.net/", },
+    ],
+    stack: [{ name: RT }, { name: TSJS }, { name: NODE },{ name: MUI }],
+  },
+  {
     name: "Bored?GameNyte!",
     description: `For board game and game
 night enthusiasts, to help organize game collections, schedule events and make sure
