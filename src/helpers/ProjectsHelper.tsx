@@ -37,8 +37,8 @@ import piano from "../assets/projects/piano.gif";
 import camair from '../assets/projects/camair.gif'
 const projectsInfo = [
   {
-    name: "Cam Air Ref & Htg",
-    description: `Cam Air was my previous employer. I built this from the ground up as a small project to further develop my front-end skills. This site has all the information about the company and services with a working contact form and map.`,
+    name: "Cam Air",
+    description: `Cam Air was my previous employer. I built this from the ground up as a small project to further develop my front-end skills. This site provides their customers with up-to-date information on the services that Cam Air can provide and the companies history and culture.`,
     gif: camair,
     buttons: [
       {
@@ -47,7 +47,7 @@ const projectsInfo = [
       },
       { name: "Deployed", link: "https://camair.jbridges1119.net/", },
     ],
-    stack: [{ name: RT }, { name: TSJS }, { name: NODE },{ name: MUI }],
+    stack: [{ name: RT }, { name: TSJS },{ name: MUI }],
   },
   {
     name: "Bored?GameNyte!",
@@ -165,7 +165,7 @@ everyone is prepared to maximize their time together.`,
       },
     ],
 
-    stack: [{ name: TSJS }, { name: RT }, { name: CSS }, { name: NODE }],
+    stack: [{ name: TSJS }, { name: RT }, { name: CSS }],
   },
 ];
 
