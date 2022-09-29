@@ -58,7 +58,7 @@ const ProjectsCard: React.FC = () => {
       {projectsInfo.map((project) => {
         return (
           <Paper key={project.name} elevation={16} sx={cardBackground}>
-            {project.name === "Bored?GameNyte!" && (
+            {project.name === "Cam Air" && (
               <Typography
                 variant="h1"
                 sx={{
