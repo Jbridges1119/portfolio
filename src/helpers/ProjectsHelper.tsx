@@ -111,7 +111,7 @@ everyone is prepared to maximize their time together.`,
         link: "https://github.com/Jbridges1119/Welcome-To-The-Jungles#readme",
       },
     ],
-    stack: [{ name: Ruby }, { name: Rails }, { name: BS }, { name: PSQL }],
+    stack: [{ name: Ruby }, { name: Rails }, { name: BS }],
   },
   {
     name: "Tweeter",
