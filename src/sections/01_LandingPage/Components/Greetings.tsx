@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //MUI
 import { Box, Stack, Typography } from "@mui/material";
 //Style
@@ -10,6 +10,7 @@ type Props = {
 
 const Greetings: React.FC<Props> = ({ speed }) => {
   const timer = () => Math.floor(Math.random() * 10);
+  let delay = 0
   const scrollAmount = 450;
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, scrollAmount], [1, 0]);
@@ -24,7 +25,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
     onScreen: {
       opacity: 1,
       filter: "blur(00px)",
-      transition: { delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
+      transition: { delay: 1.5, type: "spring", bounce: 0.4, duration: 3 },
     },
   };
 
@@ -44,6 +45,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
             }}
           >
             {`Hello, I'm`.split("").map((letter, i) => {
+              delay += 0.05
               return (
                 //Cannot make a variant due to variants being one instance set - need repeated instances
                 <motion.span
@@ -51,13 +53,13 @@ const Greetings: React.FC<Props> = ({ speed }) => {
                   animate={{
                     opacity: 1,
                   }}
-                  transition={{ type: "spring", bounce: 0.4, duration: 4 }}
+                  transition={{delay:delay , type: "spring", bounce: 0.4, duration: 4 }}
                   key={i}
                 >
                   <motion.span
-                    initial={{ filter: `blur(${timer()}px)` }}
+                    initial={{ filter: `blur(10px)`}}
                     animate={{
-                      filter: "blur(0px)",
+                      filter: "blur(0px)"
                     }}
                     transition={{
                       delay: 0.5,
@@ -83,6 +85,7 @@ const Greetings: React.FC<Props> = ({ speed }) => {
             }}
           >
             {"Jeff Bridges".split("").map((letter, i) => {
+              delay += 0.05
               return (
                 //Cannot make a variant due to variants being one instance set - need repeated instances
                 <motion.span
@@ -90,13 +93,13 @@ const Greetings: React.FC<Props> = ({ speed }) => {
                   animate={{
                     opacity: 1,
                   }}
-                  transition={{ type: "spring", bounce: 0.4, duration: 4 }}
+                  transition={{delay:delay, type: "spring", bounce: 0.4, duration: 4 }}
                   key={i}
                 >
                   <motion.span
-                    initial={{ filter: `blur(${timer() * 2}px)` }}
+                    initial={{ filter: `blur(${timer()}px)`, opacity:0 }}
                     animate={{
-                      filter: "blur(0px)",
+                      filter: "blur(0px)",opacity:1
                     }}
                     transition={{
                       delay: 0.5,

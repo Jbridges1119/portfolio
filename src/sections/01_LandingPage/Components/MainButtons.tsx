@@ -14,7 +14,7 @@ const mainButtons = {
   onScreen: {
     opacity: 1,
     filter: "blur(00px)",
-    transition: { delay: 1.25, type: "spring", bounce: 0.4, duration: 3 },
+    transition: { delay: 1.5, type: "spring", bounce: 0.4, duration: 3 },
   },
 };
 
