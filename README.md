@@ -3,6 +3,11 @@
 ## Check out my portfolio and leave a message!
 ![LandingPage](https://github.com/Jbridges1119/portfolio/blob/master/src/assets/LandingPage.png?raw=true)
 
+## Learning Outcome
+I wanted to design and develop my own portfolio to practice **TypeScript**, **MUI** and **Framer Motion**. With this project I was able to dip my toes into TypeScript and learn how to work with **typed hooks, functions, and props**. I also learned a lot about **responsive design** using MUI and found practicing the **flex** and **grid** system while developing this site quite helpful. I briefly used Framer-Motion on my final project at Lighthouse Labs and wanted to learn more about it. With Framer-Motion I was able to have dynamic nav-links that relocate while scrolling down and test out **parallax-scrolling**. 
+
+I'm hoping to come back to this project once I've gained more experience with front end and add/improve to this project.
+
 ## Built With
 - React
 - TypeScript
