@@ -52,7 +52,7 @@ const projectsInfo = [
   {
     name: "My Portfolio",
     description:
-      "A portfolio site I developed for displaying relevant information such as Projects, Resume, Skills and an about me. Also includes a contact form and network links for connecting.",
+      "A portfolio site I developed for displaying relevant information such as Projects, Resume, Skills and an About me section. Also includes a contact form and network links for connecting.",
     gif: portfolio,
     buttons: [
       {
