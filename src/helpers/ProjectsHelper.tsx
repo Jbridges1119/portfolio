@@ -33,7 +33,7 @@ import tweeter from "../assets/projects/Tweeter.gif";
 import interview from "../assets/projects/interview.gif";
 import jungle from "../assets/projects/Jungle.gif"
 import tinyapp from "../assets/projects/tinyapp.gif"
-import piano from "../assets/projects/piano.gif";
+import portfolio from "../assets/projects/portfolio.gif";
 import camair from '../assets/projects/camair.gif'
 const projectsInfo = [
   {
@@ -48,6 +48,24 @@ const projectsInfo = [
       { name: "Deployed", link: "https://camair.jbridges1119.net/", },
     ],
     stack: [{ name: RT }, { name: TSJS },{ name: MUI }],
+  },
+  {
+    name: "My Portfolio",
+    description:
+      "A portfolio site I developed for displaying relevant information such as Projects, Resume, Skills and an about me. Also includes a contact form and network links for connecting.",
+    gif: portfolio,
+    buttons: [
+      {
+        name: "GitHub",
+        link: "https://github.com/Jbridges1119/portfolio#readme",
+      },
+      {
+        name: "Deployed",
+        link: "https://www.jbridges1119.net/",
+      },
+    ],
+
+    stack: [{ name: TSJS }, { name: RT }, { name: MUI }, { name: Framer }],
   },
   {
     name: "Bored?GameNyte!",
@@ -149,24 +167,7 @@ everyone is prepared to maximize their time together.`,
 
     stack: [{ name: JS }, { name: EX }, { name: BS }, { name: NODE }],
   },
-  {
-    name: "Piano Beats",
-    description:
-      "Piano Beats is a web app allowing the user to play the piano on one octave from their browser. Users can adjust the volume up or down to their liking.",
-    gif: piano,
-    buttons: [
-      {
-        name: "GitHub",
-        link: "https://github.com/Jbridges1119/pianoBeats#readme",
-      },
-      {
-        name: "Deployed",
-        link: "https://pianobeats.jbridges1119.net/",
-      },
-    ],
 
-    stack: [{ name: TSJS }, { name: RT }, { name: CSS }],
-  },
 ];
 
 export { projectsInfo };
