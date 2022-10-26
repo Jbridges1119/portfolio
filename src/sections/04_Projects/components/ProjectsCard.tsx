@@ -57,7 +57,7 @@ const ProjectsCard: React.FC = () => {
     <>
       {projectsInfo.map((project) => {
         return (
-          <Paper key={project.name} elevation={16} sx={cardBackground}>
+          <Paper key={project.name} className="container" elevation={16} sx={cardBackground}>
             {project.name === "Cam Air" && (
               <Typography
                 variant="h1"
@@ -73,21 +73,21 @@ const ProjectsCard: React.FC = () => {
                 Projects
               </Typography>
             )}
-
-            <Box className="container" sx={gifBackground}>
+            {/*Mouse hover effect located in project.scss file*/}
+            <Box  sx={gifBackground}>
               <CardMedia
                 className="project-gif"
                 component="img"
                 image={project.gif}
                 alt=""
               />
-              <Box className="wrapper-info" sx={{display:'flex', justifyContent:'space-around', alignItems:'center'}}>
+              <Box className="wrapper-info" >
                 <Typography variant="h4" sx={hoverHeader}>
                   Built With:
                 </Typography>
                 <Box
                   className="center-all"
-                  sx={{ display: { xs: "none", sm: "flex" }, width:'80%' }}
+                  sx={{ display: { xs: "none", sm: "flex" } }}
                 >
                   <IconMap stack={project.stack} />
                 </Box>
