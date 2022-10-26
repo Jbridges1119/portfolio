@@ -24,13 +24,13 @@
   flex-direction: column;
   justify-content: space-around;
   align-content: space-around;
-
-  .project-tool {
-    object-fit: contain;
-    max-width: 70px;
-    max-height: 70px;
-    margin-inline: 3%;
-  }
+  align-items: center;
+  // .project-tool {
+  //   object-fit: contain;
+  //   max-width: 70px;
+  //   max-height: 70px;
+  //   margin-inline: 3%;
+  // }
 }
 
 .container:hover .project-gif {
