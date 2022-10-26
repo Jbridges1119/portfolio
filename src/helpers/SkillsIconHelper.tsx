@@ -1,14 +1,16 @@
 import { Box, CardMedia } from "@mui/material";
+//Languages
+import TS from "../assets/01_Front/TS.png"
+import JS from "../assets/01_Front/JS.png";
+import Ruby from "../assets/01_Front/Ruby.png";
+import HTML from "../assets/01_Front/HTML5.png";
+import CSS from "../assets/01_Front/CSS.png";
 //Front-end icons
 import BS from "../assets/01_Front/BS.png";
-import CSS from "../assets/01_Front/CSS.png";
 import Framer from "../assets/01_Front/framer-motion.webp";
-import HTML from "../assets/01_Front/HTML5.png";
 import JQ from "../assets/01_Front/JQ.png";
-import JS from "../assets/01_Front/JS.png";
 import MUI from "../assets/01_Front/mui.png";
 import RT from "../assets/01_Front/REACT.png";
-import Ruby from "../assets/01_Front/Ruby.png";
 import SASS from "../assets/01_Front/SASS.png";
 import TSJS from '../assets/01_Front/tsjs.png';
 //Back-end icons
@@ -28,18 +30,22 @@ import GITP from "../assets/04_Systems/GITP.png";
 import NPM from "../assets/04_Systems/NPM.png";
 import VSCode from "../assets/04_Systems/VSCode.png";
 import UBUN from "../assets/04_Systems/ubuntu.png";
-//Front-End Info
-const frontendInfoTop = [
-  { icon: TSJS, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+//Languages
+const languages = [
+  { icon: JS, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { icon: TS, link: "https://www.typescriptlang.org/docs/" },
   { icon: HTML, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  { icon: RT, link: "https://reactjs.org/docs/getting-started.html" },
-  { icon: JQ, link: "https://api.jquery.com/" },
+  { icon: CSS, link: "https://developer.mozilla.org/en-US/docs/Web/CSS"  },
   { icon: Ruby, link: "https://ruby-doc.org/" },
 ];
-const frontendInfoBot = [
-  { icon: CSS, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-  { icon: MUI, link: "https://mui.com/material-ui/getting-started/overview/" },
+//Front-End Info
+const frontendInfoTop = [
+  { icon: RT, link: "https://reactjs.org/docs/getting-started.html" },
+  { icon: JQ, link: "https://api.jquery.com/" },
   { icon: SASS, link: "https://sass-lang.com/documentation/" },
+];
+const frontendInfoBot = [
+  { icon: MUI, link: "https://mui.com/material-ui/getting-started/overview/" },
   {
     icon: BS,
     link: "https://getbootstrap.com/docs/4.1/getting-started/introduction/",
@@ -117,4 +123,6 @@ export {
   backendInfo,
   testingInfo,
   systemsInfo,
+  languages
+
 };
