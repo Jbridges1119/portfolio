@@ -76,7 +76,7 @@ const NavBar: React.FC = () => {
     { name: "Projects", location: projectSect },
     { name: "Connect", location: connectSect },
   ];
-console.log(currentPercent)
+
   useEffect(() => {
     const navDown = {
       home: "#7b27f6",
