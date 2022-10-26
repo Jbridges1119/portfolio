@@ -87,7 +87,7 @@ const ProjectsCard: React.FC = () => {
                 </Typography>
                 <Box
                   className="center-all"
-                  sx={{ display: { xs: "none", sm: "flex" } }}
+                  sx={{ display: { xs: "none", sm: "flex" }}}
                 >
                   <IconMap stack={project.stack} />
                 </Box>
@@ -113,7 +113,7 @@ const ProjectsCard: React.FC = () => {
               height={'100%'}
             >
               <Grid item xs={11} height={'100%'}>
-                <Box sx={{display:'flex', flexDirection:'column', alignItems:'space-between',justifyContent:'space-between', height:'100%'}}>
+                <Box sx={{display:'flex', flexDirection:'column', alignItems:'space-between',justifyContent:'space-around', height:'100%'}}>
                   <Typography
                     variant="h4"
                     color={"#0F0D78"}
@@ -123,7 +123,7 @@ const ProjectsCard: React.FC = () => {
                   </Typography>
                   <Typography variant="body2" py={1}>{project.description}</Typography>
 
-                  <Box className="center-all" sx={{ display: { md: "none" } }}>
+                  <Box className="center-all" sx={{ display: { sm: "none" } }}>
                     <IconMap stack={project.stack} />
                   </Box>
                   <Box
