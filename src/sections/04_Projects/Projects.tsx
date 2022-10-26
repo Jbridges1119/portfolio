@@ -35,7 +35,9 @@ const Projects: React.FC = () => {
         <motion.div style={{ y: yValue }}>
       <Typography
     variant="h1"
-    sx={{ color: "#0F0D78", textAlign: "center", fontWeight: "bold", display: {xs:'none', md:'inline-block'} }}
+    sx={{ color: "#0F0D78", textAlign: "center", fontWeight: "bold", mb: {xs:5, sm:5 ,md:2, lg:0}
+    // display: {xs:'none', md:'inline-block'} 
+  }}
   >
     Projects!
   </Typography></motion.div>

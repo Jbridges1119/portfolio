@@ -58,7 +58,7 @@ const ProjectsCard: React.FC = () => {
       {projectsInfo.map((project) => {
         return (
           <Paper key={project.name} className="container" elevation={16} sx={cardBackground}>
-            {project.name === "Cam Air" && (
+            {/* {project.name === "Cam Air" && (
               <Typography
                 variant="h1"
                 sx={{
@@ -72,7 +72,7 @@ const ProjectsCard: React.FC = () => {
               >
                 Projects
               </Typography>
-            )}
+            )} */}
             {/*Mouse hover effect located in project.scss file*/}
             <Box  sx={gifBackground}>
               <CardMedia
