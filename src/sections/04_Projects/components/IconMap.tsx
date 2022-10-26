@@ -17,11 +17,11 @@ const IconMap: React.FC<Props> = ({ stack }) => {
         return (
           <CardMedia
             key={icon.name}
-            className="project-tool"
+            // className="project-tool"
             component="img"
             image={icon.name}
             alt=""
-            sx={{ maxHeight: "50px", objectFit: "contain" }}
+            sx={{ maxWidth: "50px", objectFit: "contain", mx:0.5 }}
           />
         );
       })}
