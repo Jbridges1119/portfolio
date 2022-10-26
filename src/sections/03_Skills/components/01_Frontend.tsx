@@ -1,6 +1,6 @@
 //MUI
 import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
-//Syle
+//Style
 import { motion } from "framer-motion";
 //Front-End Helper
 import {
@@ -11,7 +11,7 @@ import {
 
 const Frontend: React.FC = () => {
   return (<Stack>
-    <Typography
+    {/* <Typography
   variant="h1"
   sx={{
     color: "#0F0D78",
@@ -23,8 +23,8 @@ const Frontend: React.FC = () => {
   }}
 >
   Skills
-</Typography>
-<Divider sx={{ display: {md: 'none'}}}/>
+</Typography> */}
+{/* <Divider sx={{ display: {md: 'none'}}}/> */}
     <motion.div
       whileHover={{ scale: 1.15 }}
       style={{ minHeight: "160px", display: "flex" }}
